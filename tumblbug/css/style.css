@@ -170,7 +170,8 @@ a {
 .eye_btn img {
     width: 24px;
     height: 24px;
-    opacity: 0.65;
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(64%) sepia(6%) saturate(116%) hue-rotate(174deg) brightness(92%) contrast(91%);
 }
 
 .login_options {
