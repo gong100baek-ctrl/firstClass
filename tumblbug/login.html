@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="텀블벅 로그인 화면">
+    <title>텀블벅 로그인</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="login_page">
+        <div class="status_bar" aria-hidden="true">
+            <span class="status_time">9:40</span>
+            <span class="dynamic_island"></span>
+            <span class="status_icons">
+                <span class="status_signal"></span>
+                <span class="status_wifi"></span>
+                <span class="status_battery"></span>
+            </span>
+        </div>
+
+        <header class="header">
+            <a class="back_btn" href="../index.html" aria-label="이전 페이지로 이동">
+                <img src="../king/img/back_icon.svg" alt="">
+            </a>
+            <a class="brand" href="#" aria-label="텀블벅 홈">tumblbug</a>
+        </header>
+
+        <section class="intro" aria-labelledby="login-title">
+            <p class="intro_sub">간편하게 로그인하고</p>
+            <h1 id="login-title" class="intro_title">
+                세상에 하나뿐인<br>
+                특별한 프로젝트를 발견해보세요
+            </h1>
+        </section>
+
+        <form class="login_form" action="#" method="post">
+            <div class="field">
+                <label class="field_label" for="email">이메일 주소</label>
+                <div class="input_wrap">
+                    <input
+                        class="input"
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="이메일 주소를 입력해주세요"
+                    >
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="field_label" for="password">비밀번호</label>
+                <div class="input_wrap">
+                    <input
+                        class="input password_input"
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="비밀번호를 입력해 주세요"
+                    >
+                    <button class="eye_btn" type="button" aria-label="비밀번호 표시">
+                        <img src="../king/img/eye_icon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="login_options">
+                <label class="option">
+                    <input type="checkbox" checked>
+                    <span class="option_box" aria-hidden="true"></span>
+                    <span>자동 로그인</span>
+                </label>
+
+                <label class="option">
+                    <input type="checkbox">
+                    <span class="option_box" aria-hidden="true"></span>
+                    <span>아이디 저장</span>
+                </label>
+            </div>
+
+            <button class="login_btn" type="submit">로그인</button>
+        </form>
+
+        <nav class="account_links" aria-label="계정 메뉴">
+            <a href="#">아이디 찾기</a>
+            <a href="#">비밀번호 재설정</a>
+            <a href="#">회원가입</a>
+        </nav>
+
+        <section class="sns" aria-labelledby="sns-title">
+            <h2 id="sns-title" class="sns_title">다른 방법으로 로그인</h2>
+            <div class="sns_list">
+                <a class="sns_link" href="#" aria-label="카카오 로그인">
+                    <img src="../king/img/kakao_logo_icon.svg" alt="">
+                </a>
+                <a class="sns_link" href="#" aria-label="네이버 로그인">
+                    <img src="../king/img/naver_logo_icon.svg" alt="">
+                </a>
+                <a class="sns_link" href="#" aria-label="애플 로그인">
+                    <img src="../king/img/apple_logo_icon.svg" alt="">
+                </a>
+                <a class="sns_link" href="#" aria-label="삼성 로그인">
+                    <img src="../king/img/samsung_logo_icon.svg" alt="">
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
