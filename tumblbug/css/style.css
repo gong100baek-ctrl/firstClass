@@ -23,7 +23,7 @@ body {
 }
 
 body {
-    background: #f5f5f5;
+    background: var(--white);
     color: var(--text);
     font-family: "Noto Sans KR", sans-serif;
     font-size: 14px;
@@ -38,6 +38,8 @@ input {
 
 button {
     border: 0;
+    padding: 0;
+    background: none;
 }
 
 a {
@@ -49,8 +51,6 @@ a {
     width: min(100%, 350px);
     min-height: 100vh;
     margin: 0 auto;
-    border-left: none;
-    border-right: none;
     background: var(--white);
 }
 
@@ -62,38 +62,41 @@ a {
 .back_btn {
     position: absolute;
     left: 0;
-    top: 32px;
-    width: 48px;
-    height: 48px;
-    padding: 6px;
+    top: 36px;
+    display: block;
+    width: 32px;
+    height: 32px;
 }
 
 .back_btn img {
-    width: 100%;
-    height: 100%;
+    width: 32px;
+    height: 32px;
 }
 
 .brand {
     display: block;
-    padding-top: 7px;
+    padding-top: 8px;
     text-align: center;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
+    font-size: 23px;
     font-style: italic;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 1.2;
 }
 
 .intro {
-    padding: 9px 15px 31px;
+    height: 146px;
+    padding: 12px 0 0;
     text-align: center;
 }
 
 .intro_sub {
-    margin: 0 0 4px;
-    color: #555;
-    font-size: 15px;
+    margin: 0 0 5px;
+    color: #555555;
+    font-size: 14px;
     font-weight: 400;
+    line-height: 22px;
 }
 
 .intro_title {
@@ -109,76 +112,80 @@ a {
 }
 
 .field {
-    margin: 0;
+    margin: 0 0 11px;
+}
+
+.field:last-of-type {
+    margin-bottom: 0;
 }
 
 .field_label {
     display: block;
-    height: 25px;
-    padding: 0 0 7px;
-    font-size: 10px;
-    font-weight: 700;
+    height: 21px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
 }
 
 .input_wrap {
     position: relative;
-    border-top: 1px solid var(--line);
-}
-
-.field:last-of-type .input_wrap {
-    border-bottom: 1px solid var(--line);
+    border: 1px solid var(--line);
 }
 
 .input {
     display: block;
-    width: 350px;
-    height: 50px;
-    padding: 0 16px;
+    width: 100%;
+    height: 49px;
+    padding: 0 20px;
     border: 0;
     outline: 0;
     color: var(--text);
     background: var(--white);
-    font-size: 11px;
+    font-size: 14px;
+    line-height: 49px;
 }
 
 .input::placeholder {
-    color: #c6c6c6;
+    color: #A7A7A7;
 }
 
 .password_input {
-    padding-right: 48px;
+    padding-right: 50px;
 }
 
 .eye_btn {
     position: absolute;
-    right: 8px;
+    right: 9px;
     top: 50%;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .eye_btn img {
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
     opacity: 0.65;
 }
 
 .login_options {
     display: flex;
     align-items: center;
-    gap: 18px;
-    height: 50px;
-    padding: 0;
+    gap: 29px;
+    height: 62px;
 }
 
 .option {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: #555;
-    font-size: 10px;
+    gap: 8px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 400;
     cursor: pointer;
 }
 
@@ -192,18 +199,18 @@ a {
 .option_box {
     display: grid;
     place-items: center;
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     border: 1px solid var(--line);
     border-radius: 3px;
-    background: #fff;
+    background: var(--white);
 }
 
 .option_box::after {
     content: "✓";
-    color: #bbb;
-    font-size: 14px;
-    font-weight: 800;
+    color: #A6A6A6;
+    font-size: 18px;
+    font-weight: 700;
     line-height: 1;
 }
 
@@ -213,16 +220,21 @@ a {
 }
 
 .option input:checked + .option_box::after {
-    color: #fff;
+    color: var(--white);
+}
+
+.option input:focus-visible + .option_box {
+    outline: 2px solid var(--tumblbug-red);
+    outline-offset: 2px;
 }
 
 .login_btn {
     display: block;
-    width: 350px;
+    width: 100%;
     height: 50px;
     background: var(--tumblbug-red);
-    color: #fff;
-    font-size: 11px;
+    color: var(--white);
+    font-size: 15px;
     font-weight: 800;
     cursor: pointer;
 }
@@ -231,36 +243,62 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;
-    height: 42px;
-    padding: 0 5px;
-    font-size: 9px;
+    gap: 0;
+    height: 54px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.account_links a {
+    position: relative;
+    padding: 0 13px;
+    white-space: nowrap;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
-.account_links a {
-    white-space: nowrap;
+.account_links a + a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 12px;
+    background: #D6D6D6;
+    transform: translateY(-50%);
 }
 
 .sns {
-    margin-top: 49px;
-    padding-bottom: 24px;
+    margin-top: 42px;
+    padding-bottom: 23px;
     text-align: center;
 }
 
 .sns_title {
-    margin: 0 0 20px;
-    color: #c8c8c8;
-    font-size: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 31px;
+    color: #BDBDBD;
+    font-size: 13px;
     font-weight: 400;
+    line-height: 18px;
+}
+
+.sns_title::before,
+.sns_title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #F0F0F0;
 }
 
 .sns_list {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 9px;
+    gap: 19px;
 }
 
 .sns_link {
@@ -270,8 +308,8 @@ a {
 }
 
 .sns_link img {
-    width: 100%;
-    height: 100%;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
 }
 
