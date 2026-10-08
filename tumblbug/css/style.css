@@ -92,13 +92,13 @@ a {
 .intro_sub {
     margin: 0 0 4px;
     color: #555;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 400;
 }
 
 .intro_title {
     margin: 0;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     line-height: 1.55;
     letter-spacing: -0.06em;
