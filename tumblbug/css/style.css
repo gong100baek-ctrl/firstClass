@@ -49,8 +49,8 @@ a {
     width: min(100%, 350px);
     min-height: 100vh;
     margin: 0 auto;
-    border-left: 1px solid var(--tumblbug-red);
-    border-right: 1px solid var(--tumblbug-red);
+    border-left: none;
+    border-right: none;
     background: var(--white);
 }
 
