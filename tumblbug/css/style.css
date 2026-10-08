@@ -252,6 +252,7 @@ a {
 }
 
 .account_links a {
+    color: #000000;
     position: relative;
     padding: 0 13px;
     white-space: nowrap;
