@@ -46,7 +46,7 @@ a {
 }
 
 .login_page {
-    width: min(100%, 390px);
+    width: min(100%, 350px);
     min-height: 100vh;
     margin: 0 auto;
     border-left: 1px solid var(--tumblbug-red);
@@ -54,104 +54,15 @@ a {
     background: var(--white);
 }
 
-.status_bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 52px;
-    padding: 0 18px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.status_time {
-    letter-spacing: -0.03em;
-}
-
-.status_icons {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.status_signal,
-.status_wifi {
-    position: relative;
-    display: block;
-    width: 14px;
-    height: 10px;
-}
-
-.status_signal::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: #000;
-    box-shadow: -4px 2px 0 #000, -8px 4px 0 #000;
-}
-
-.status_wifi::before {
-    content: "";
-    position: absolute;
-    inset: 1px 0 0;
-    border: 1.5px solid #000;
-    border-color: #000 transparent transparent transparent;
-    border-radius: 50%;
-    transform: rotate(0deg);
-}
-
-.status_battery {
-    width: 21px;
-    height: 10px;
-    border: 1.5px solid #000;
-    border-radius: 3px;
-    position: relative;
-}
-
-.status_battery::after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    right: -3px;
-    width: 2px;
-    height: 4px;
-    border-radius: 0 1px 1px 0;
-    background: #000;
-}
-
-.status_battery::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    border-radius: 1px;
-    background: #000;
-}
-
-.dynamic_island {
-    position: absolute;
-    left: 50%;
-    top: 7px;
-    width: 82px;
-    height: 27px;
-    transform: translateX(-50%);
-    border-radius: 999px;
-    background: #000;
-}
-
 .header {
     position: relative;
-    height: 92px;
+    height: 88px;
 }
 
 .back_btn {
     position: absolute;
-    left: 12px;
-    top: 4px;
+    left: 0;
+    top: 32px;
     width: 28px;
     height: 28px;
     padding: 6px;
@@ -164,33 +75,33 @@ a {
 
 .brand {
     display: block;
-    padding-top: 8px;
+    padding-top: 7px;
     text-align: center;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
+    font-size: 18px;
     font-style: italic;
     font-weight: 700;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
 }
 
 .intro {
-    padding: 16px 20px 46px;
+    padding: 9px 15px 31px;
     text-align: center;
 }
 
 .intro_sub {
-    margin: 0 0 5px;
+    margin: 0 0 4px;
     color: #555;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 400;
 }
 
 .intro_title {
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 800;
     line-height: 1.55;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.06em;
 }
 
 .login_form {
@@ -201,14 +112,11 @@ a {
     margin: 0;
 }
 
-.field + .field {
-    margin-top: 0;
-}
-
 .field_label {
     display: block;
-    padding: 0 18px 8px;
-    font-size: 12px;
+    height: 25px;
+    padding: 0 0 7px;
+    font-size: 10px;
     font-weight: 700;
 }
 
@@ -224,13 +132,13 @@ a {
 .input {
     display: block;
     width: 100%;
-    height: 49px;
-    padding: 0 18px;
+    height: 50px;
+    padding: 0 16px;
     border: 0;
     outline: 0;
     color: var(--text);
     background: var(--white);
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .input::placeholder {
@@ -243,7 +151,7 @@ a {
 
 .eye_btn {
     position: absolute;
-    right: 14px;
+    right: 8px;
     top: 50%;
     width: 25px;
     height: 25px;
@@ -260,17 +168,17 @@ a {
 .login_options {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
     height: 50px;
-    padding: 0 10px;
+    padding: 0;
 }
 
 .option {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
     color: #555;
-    font-size: 12px;
+    font-size: 10px;
     cursor: pointer;
 }
 
@@ -314,7 +222,7 @@ a {
     height: 50px;
     background: var(--tumblbug-red);
     color: #fff;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
     cursor: pointer;
 }
@@ -323,9 +231,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 19px;
-    padding: 17px 10px 0;
-    font-size: 11px;
+    gap: 18px;
+    height: 42px;
+    padding: 0 5px;
+    font-size: 9px;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -335,15 +244,15 @@ a {
 }
 
 .sns {
-    margin-top: 64px;
-    padding-bottom: 56px;
+    margin-top: 49px;
+    padding-bottom: 24px;
     text-align: center;
 }
 
 .sns_title {
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     color: #c8c8c8;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 400;
 }
 
@@ -351,13 +260,13 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 9px;
 }
 
 .sns_link {
     display: block;
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
 }
 
 .sns_link img {
@@ -366,18 +275,8 @@ a {
     object-fit: contain;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 350px) {
     .login_page {
         width: 100%;
-        border-left: 1px solid var(--tumblbug-red);
-        border-right: 1px solid var(--tumblbug-red);
-    }
-
-    .intro {
-        padding-bottom: 40px;
-    }
-
-    .sns {
-        margin-top: 56px;
     }
 }
