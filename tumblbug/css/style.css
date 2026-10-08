@@ -218,7 +218,7 @@ a {
 
 .login_btn {
     display: block;
-    width: 100%;
+    width: 350px;
     height: 50px;
     background: var(--tumblbug-red);
     color: #fff;
