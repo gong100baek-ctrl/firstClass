@@ -1,0 +1,383 @@
+@import url("../font/css/notosanskr.css");
+
+:root {
+    --tumblbug-red: #FD5744;
+    --text: #000000;
+    --gray: #9EA0A1;
+    --line: #E4E4E4;
+    --blue-gray: #5CA0BC;
+    --white: #FFFFFF;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #f5f5f5;
+    color: var(--text);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.login_page {
+    width: min(100%, 390px);
+    min-height: 100vh;
+    margin: 0 auto;
+    border-left: 1px solid var(--tumblbug-red);
+    border-right: 1px solid var(--tumblbug-red);
+    background: var(--white);
+}
+
+.status_bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    padding: 0 18px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status_time {
+    letter-spacing: -0.03em;
+}
+
+.status_icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status_signal,
+.status_wifi {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 10px;
+}
+
+.status_signal::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #000;
+    box-shadow: -4px 2px 0 #000, -8px 4px 0 #000;
+}
+
+.status_wifi::before {
+    content: "";
+    position: absolute;
+    inset: 1px 0 0;
+    border: 1.5px solid #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%;
+    transform: rotate(0deg);
+}
+
+.status_battery {
+    width: 21px;
+    height: 10px;
+    border: 1.5px solid #000;
+    border-radius: 3px;
+    position: relative;
+}
+
+.status_battery::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    width: 2px;
+    height: 4px;
+    border-radius: 0 1px 1px 0;
+    background: #000;
+}
+
+.status_battery::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 1px;
+    background: #000;
+}
+
+.dynamic_island {
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 82px;
+    height: 27px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #000;
+}
+
+.header {
+    position: relative;
+    height: 92px;
+}
+
+.back_btn {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+}
+
+.back_btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.brand {
+    display: block;
+    padding-top: 8px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.intro {
+    padding: 16px 20px 46px;
+    text-align: center;
+}
+
+.intro_sub {
+    margin: 0 0 5px;
+    color: #555;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.intro_title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: -0.05em;
+}
+
+.login_form {
+    margin: 0;
+}
+
+.field {
+    margin: 0;
+}
+
+.field + .field {
+    margin-top: 0;
+}
+
+.field_label {
+    display: block;
+    padding: 0 18px 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.input_wrap {
+    position: relative;
+    border-top: 1px solid var(--line);
+}
+
+.field:last-of-type .input_wrap {
+    border-bottom: 1px solid var(--line);
+}
+
+.input {
+    display: block;
+    width: 100%;
+    height: 49px;
+    padding: 0 18px;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    background: var(--white);
+    font-size: 13px;
+}
+
+.input::placeholder {
+    color: #c6c6c6;
+}
+
+.password_input {
+    padding-right: 48px;
+}
+
+.eye_btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    transform: translateY(-50%);
+}
+
+.eye_btn img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.65;
+}
+
+.login_options {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 50px;
+    padding: 0 10px;
+}
+
+.option {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.option_box {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #fff;
+}
+
+.option_box::after {
+    content: "✓";
+    color: #bbb;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.option input:checked + .option_box {
+    border-color: var(--tumblbug-red);
+    background: var(--tumblbug-red);
+}
+
+.option input:checked + .option_box::after {
+    color: #fff;
+}
+
+.login_btn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: var(--tumblbug-red);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.account_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    padding: 17px 10px 0;
+    font-size: 11px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.account_links a {
+    white-space: nowrap;
+}
+
+.sns {
+    margin-top: 64px;
+    padding-bottom: 56px;
+    text-align: center;
+}
+
+.sns_title {
+    margin: 0 0 22px;
+    color: #c8c8c8;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.sns_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.sns_link {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
+.sns_link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 420px) {
+    .login_page {
+        width: 100%;
+        border-left: 1px solid var(--tumblbug-red);
+        border-right: 1px solid var(--tumblbug-red);
+    }
+
+    .intro {
+        padding-bottom: 40px;
+    }
+
+    .sns {
+        margin-top: 56px;
+    }
+}
