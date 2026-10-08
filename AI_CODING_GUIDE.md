@@ -32,6 +32,8 @@ firstClass/
 │     └─ sdgothicneo.css
 ├─ king/
 │  ├─ login.html
+│  ├─ password_reset.html
+│  ├─ password_reset2.html
 │  └─ img/
 │     ├─ apple_logo_icon.svg
 │     ├─ back_icon.svg
@@ -868,3 +870,114 @@ AI가 코드를 검토할 때는 다음 순서로 확인한다.
 - [ ] 새 브랜드에 필요한 부분만 변경했는가?
 - [ ] 실제 화면과 비교했는가?
 - [ ] 작은 화면에서 레이아웃이 깨지지 않는가?
+
+
+---
+
+## 23. 비밀번호 재설정 화면
+
+현재 버거킹 UI에는 로그인 화면 외에 비밀번호 재설정 화면이 추가되어 있다.
+
+관련 파일:
+
+```text
+king/
+├─ login.html
+├─ password_reset.html
+└─ password_reset2.html
+```
+
+### 23-1. 재설정 1
+
+`password_reset.html`은 비밀번호 입력 전/검사 상태를 기준으로 만든 화면이다.
+
+주요 구조:
+
+- `header`
+- 페이지 제목 `h1`
+- 닫기 버튼
+- 안내 제목 `h2`
+- 새로운 비밀번호 입력창
+- 비밀번호 확인 입력창
+- 비밀번호 조건 안내
+- 주의 문구
+- SNS 비밀번호 재설정 안내
+- 완료 버튼
+
+비밀번호 입력창에는 기존 로그인 화면에서 사용하던 비밀번호 입력 구조와 `eye_icon.svg`를 재사용한다.
+
+### 23-2. 재설정 2
+
+`password_reset2.html`은 조건을 충족한 상태의 화면이다.
+
+재설정 1과 기본 HTML 구조와 스타일 방향을 공유하지만 다음 상태를 보여준다.
+
+- 비밀번호 입력값이 입력된 상태
+- 비밀번호 조건이 충족된 상태
+- 조건 항목이 체크된 상태
+- 완료 버튼이 활성화된 상태
+
+따라서 재설정 1과 2는 별도의 HTML 문서로 관리하며, `index.html`에서 각각 연결한다.
+
+```html
+<a href="king/password_reset.html">버거킹 비밀번호 재설정 UI - 1</a>
+<a href="king/password_reset2.html">버거킹 비밀번호 재설정 UI - 2</a>
+```
+
+### 23-3. 비밀번호 재설정 타이포그래피
+
+재설정 화면의 안내 제목은 두 줄의 크기를 다르게 사용한다.
+
+```html
+<h2 id="reset-title">
+    <span>새로운 비밀번호를</span><br>
+    <strong>입력해 주세요.</strong>
+</h2>
+```
+
+현재 기준:
+
+- `새로운 비밀번호를`: **18px**
+- `입력해 주세요.`: **24px**
+
+따라서 한 개의 `font-size`로 두 문장을 처리하지 않고, `span`과 `strong`을 나누어 각각 크기를 지정한다.
+
+### 23-4. 완료 버튼 폰트
+
+완료 버튼은 프로젝트에서 사용하는 `Sandoll GothicNeoRound` 폰트를 사용한다.
+
+```css
+.complete_btn {
+    font-family: var(--font);
+}
+```
+
+여기서 `--font`는 현재 다음과 같이 정의되어 있다.
+
+```css
+--font: "Sandoll GothicNeoRound", sans-serif;
+```
+
+재설정 1과 재설정 2 모두 같은 기준을 유지한다.
+
+### 23-5. 기존 구조 재사용 원칙
+
+비밀번호 재설정 화면을 만들 때도 로그인 화면의 구조와 스타일을 최대한 재사용한다.
+
+재사용 대상:
+
+- `#wrap`
+- `header`
+- `h1`
+- `main`
+- `form`
+- `fieldset`
+- `legend.sr-only`
+- `.password_box`
+- `.pw_btn`
+- `eye_icon.svg`
+- 기존 폰트 연결
+- `default.css`
+- `:root` 색상 변수
+
+화면 상태가 다르더라도 기존 로그인 UI와 공통되는 부분을 새롭게 중복 작성하지 않는다.
