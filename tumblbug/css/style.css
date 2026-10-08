@@ -63,8 +63,8 @@ a {
     position: absolute;
     left: 0;
     top: 32px;
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 40px;
     padding: 6px;
 }
 
@@ -131,7 +131,7 @@ a {
 
 .input {
     display: block;
-    width: 100%;
+    width: 350px;
     height: 50px;
     padding: 0 16px;
     border: 0;
