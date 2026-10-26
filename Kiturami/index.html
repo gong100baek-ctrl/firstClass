@@ -15,31 +15,22 @@
         <header>제목공간</header>
         <main>
             <div class="hero-sec">
-                <!-- Slider main container -->
                 <div class="swiper visual">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                         <!-- Slides -->
                         <div class="swiper-slide">
                             <img src="img/visual01.png" alt="방방난방시스템" class="PC">
                             <img src="img/m_visual01.png" alt="모바일 방방난방시스템" class="Mo">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/visual02.png" alt="따숨케어"
-                            class="PC">
-                            <img src="img/m_visual02.png" alt="모바일 따숨케어"
-                            class="Mo">
+                            <img src="img/visual02.png" alt="따숨케어" class="PC">
+                            <img src="img/m_visual02.png" alt="모바일 따숨케어" class="Mo">
                         </div>
                     </div>
-                    <!-- If we need pagination -->
+
                     <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
+                    <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
+                    <div class="swiper-scrollbar" aria-hidden="true"></div>
                 </div>
             </div>
         </main>
@@ -47,22 +38,19 @@
     </div>
     <script>
         const swiper = new Swiper('.hero-sec > .swiper', {
-            // Optional parameters
             direction: 'horizontal',
             loop: true,
 
-            // If we need pagination
             pagination: {
                 el: '.visual .swiper-pagination',
+                clickable: true,
             },
 
-            // Navigation arrows
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
             },
 
-            // And if we need scrollbar
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
             },
