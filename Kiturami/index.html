@@ -27,10 +27,8 @@
                         </div>
                     </div>
 
-                    <div class="swiper-pagination"></div>
                     <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                     <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
-                    <div class="swiper-scrollbar" aria-hidden="true"></div>
                 </div>
             </div>
         </main>
@@ -41,18 +39,9 @@
             direction: 'horizontal',
             loop: true,
 
-            pagination: {
-                el: '.visual .swiper-pagination',
-                clickable: true,
-            },
-
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
-            },
-
-            scrollbar: {
-                el: '.visual .swiper-scrollbar',
             },
         });
     </script>
