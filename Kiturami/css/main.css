@@ -19,11 +19,11 @@ body {
     object-fit: cover;
 }
 
-/* Figma hero controls */
+/* Figma hero arrows */
 .hero-sec .swiper-button-prev,
 .hero-sec .swiper-button-next {
-    width: 95px;
-    height: 95px;
+    width: 48px;
+    height: 48px;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -31,14 +31,13 @@ body {
 }
 
 .hero-sec .swiper-button-prev {
-    left: 12px;
+    left: 4px;
 }
 
 .hero-sec .swiper-button-next {
-    right: 12px;
+    right: 4px;
 }
 
-/* Match the white chevrons shown in the Figma hero. */
 .hero-sec .swiper-button-prev::after,
 .hero-sec .swiper-button-next::after {
     content: "";
@@ -57,8 +56,71 @@ body {
     transform: rotate(45deg);
 }
 
-/* Pagination and scrollbar are not present in the Figma hero. */
-.hero-sec .swiper-pagination,
+/* Figma hero pagination */
+.hero-sec .hero-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 17px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.hero-sec .swiper-pagination {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.hero-sec .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px !important;
+    border-radius: 50%;
+    background: #007fca;
+    opacity: 1;
+}
+
+.hero-sec .swiper-pagination-bullet-active {
+    background: #006bc5;
+}
+
+/* Figma autoplay control */
+.hero-sec .swiper-autoplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-sec .pause-icon {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 14px;
+    border-left: 4px solid #006bc5;
+    border-right: 4px solid #006bc5;
+}
+
+.hero-sec .swiper-autoplay.is-play .pause-icon {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid #006bc5;
+    border-right: 0;
+}
+
+/* The Figma screenshot does not show a visible scrollbar, so it is kept hidden. */
 .hero-sec .swiper-scrollbar {
     display: none;
 }
@@ -103,5 +165,16 @@ body {
         width: 11px;
         height: 11px;
         border-width: 3px;
+    }
+
+    .hero-sec .hero-controls {
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .hero-sec .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 2px !important;
     }
 }
