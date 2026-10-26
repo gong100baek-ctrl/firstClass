@@ -27,6 +27,7 @@ body {
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 2;
 }
 
 .hero-sec .swiper-button-prev {
@@ -37,6 +38,7 @@ body {
     right: 12px;
 }
 
+/* Match the white chevrons shown in the Figma hero. */
 .hero-sec .swiper-button-prev::after,
 .hero-sec .swiper-button-next::after {
     content: "";
@@ -55,32 +57,8 @@ body {
     transform: rotate(45deg);
 }
 
-/* Figma pagination: 12px circles / 8px gap / 40px from the hero bottom */
-.hero-sec .swiper-pagination {
-    bottom: 40px;
-    left: 50%;
-    width: auto;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.hero-sec .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    margin: 0 !important;
-    border-radius: 50%;
-    opacity: 1;
-    background: #7bb7dc;
-}
-
-.hero-sec .swiper-pagination-bullet-active {
-    background: #1675b8;
-}
-
-/* The Figma hero does not contain a visible scrollbar. */
+/* Pagination and scrollbar are not present in the Figma hero. */
+.hero-sec .swiper-pagination,
 .hero-sec .swiper-scrollbar {
     display: none;
 }
