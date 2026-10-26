@@ -29,6 +29,13 @@
 
                     <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                     <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
+
+                    <div class="hero-controls">
+                        <div class="swiper-pagination"></div>
+                        <button type="button" class="swiper-autoplay" aria-label="배너 일시정지" aria-pressed="false">
+                            <span class="pause-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </main>
@@ -38,11 +45,34 @@
         const swiper = new Swiper('.hero-sec > .swiper', {
             direction: 'horizontal',
             loop: true,
-
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.visual .swiper-pagination',
+                clickable: true,
+            },
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
             },
+        });
+
+        const autoplayButton = document.querySelector('.swiper-autoplay');
+
+        autoplayButton.addEventListener('click', () => {
+            if (swiper.autoplay.running) {
+                swiper.autoplay.stop();
+                autoplayButton.setAttribute('aria-label', '배너 재생');
+                autoplayButton.setAttribute('aria-pressed', 'true');
+                autoplayButton.classList.add('is-play');
+            } else {
+                swiper.autoplay.start();
+                autoplayButton.setAttribute('aria-label', '배너 일시정지');
+                autoplayButton.setAttribute('aria-pressed', 'false');
+                autoplayButton.classList.remove('is-play');
+            }
         });
     </script>
 </body>
