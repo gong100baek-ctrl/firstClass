@@ -19,7 +19,7 @@ body {
     object-fit: cover;
 }
 
-/* Figma hero arrows */
+/* Swiper navigation buttons */
 .hero-sec .swiper-button-prev,
 .hero-sec .swiper-button-next {
     width: 48px;
@@ -38,22 +38,10 @@ body {
     right: 4px;
 }
 
+/* Swiper default ::after arrow removed */
 .hero-sec .swiper-button-prev::after,
 .hero-sec .swiper-button-next::after {
-    content: "";
-    display: block;
-    width: 17px;
-    height: 17px;
-    border-top: 4px solid #fff;
-    border-right: 4px solid #fff;
-}
-
-.hero-sec .swiper-button-prev::after {
-    transform: rotate(-135deg);
-}
-
-.hero-sec .swiper-button-next::after {
-    transform: rotate(45deg);
+    display: none;
 }
 
 /* Figma hero pagination */
@@ -162,9 +150,7 @@ body {
 
     .hero-sec .swiper-button-prev::after,
     .hero-sec .swiper-button-next::after {
-        width: 11px;
-        height: 11px;
-        border-width: 3px;
+        display: none;
     }
 
     .hero-sec .hero-controls {
