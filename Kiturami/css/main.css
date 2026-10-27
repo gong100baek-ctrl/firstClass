@@ -19,6 +19,43 @@ body {
     object-fit: cover;
 }
 
+/* Figma hero arrows */
+.hero-sec .swiper-button-prev,
+.hero-sec .swiper-button-next {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.hero-sec .swiper-button-prev {
+    left: 4px;
+}
+
+.hero-sec .swiper-button-next {
+    right: 4px;
+}
+
+.hero-sec .swiper-button-prev::after,
+.hero-sec .swiper-button-next::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+}
+
+.hero-sec .swiper-button-prev::after {
+    transform: rotate(-135deg);
+}
+
+.hero-sec .swiper-button-next::after {
+    transform: rotate(45deg);
+}
+
 /* Figma hero pagination */
 .hero-sec .hero-controls {
     position: absolute;
@@ -88,12 +125,6 @@ body {
     display: none;
 }
 
-/* Swiper navigation remains enabled in JavaScript, but the default/white arrows are hidden visually. */
-.hero-sec .swiper-button-prev,
-.hero-sec .swiper-button-next {
-    display: none;
-}
-
 @media (max-width: 1024px) {
     .PC {
         display: none;
@@ -113,6 +144,27 @@ body {
 
     .hero-sec .swiper {
         height: 100dvh;
+    }
+
+    .hero-sec .swiper-button-prev,
+    .hero-sec .swiper-button-next {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero-sec .swiper-button-prev {
+        left: 4px;
+    }
+
+    .hero-sec .swiper-button-next {
+        right: 4px;
+    }
+
+    .hero-sec .swiper-button-prev::after,
+    .hero-sec .swiper-button-next::after {
+        width: 11px;
+        height: 11px;
+        border-width: 3px;
     }
 
     .hero-sec .hero-controls {
