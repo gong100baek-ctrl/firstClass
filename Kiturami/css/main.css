@@ -34,7 +34,10 @@ body {
     margin: 0 auto;
     padding: 0 48px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 .logo {
@@ -71,18 +74,27 @@ body {
 
 .gnb {
     margin-left: auto;
+    flex: 0 0 auto;
 }
 
 .gnb ul {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
     gap: 42px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+.gnb li {
+    flex: 0 0 auto;
+}
+
 .gnb a {
+    display: block;
     color: var(--color-text-primary);
     font-size: 14px;
     font-weight: 500;
@@ -104,6 +116,7 @@ body {
 
 .language button {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 6px;
     padding: 0;
@@ -113,6 +126,7 @@ body {
     font-family: inherit;
     font-size: 13px;
     font-weight: 500;
+    white-space: nowrap;
     cursor: pointer;
 }
 
