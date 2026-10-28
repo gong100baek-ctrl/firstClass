@@ -76,7 +76,7 @@
                             <img src="img/m_visual01.png" alt="모바일 방방난방시스템" class="Mo">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/visual02.png" alt="따숨케어" class="PC">
+                            <img src="img/visual02.png" alt="모바일 따숨케어" class="PC">
                             <img src="img/m_visual02.png" alt="모바일 따숨케어" class="Mo">
                         </div>
                     </div>
@@ -115,36 +115,25 @@
             },
         });
 
-        // 회사소개에 마우스를 올렸을 때만 서브메뉴를 표시합니다.
+        // 헤더 영역 안에 마우스가 있는 동안 서브메뉴를 유지합니다.
         const header = document.querySelector('.header');
-        const companyMenu = document.querySelector('.gnb-company');
-        const companyTrigger = companyMenu.querySelector('a');
+        const companyTrigger = document.querySelector('.gnb-company > a');
         const menuToggle = document.querySelector('.menu-toggle');
-        const megaMenu = document.querySelector('.mega-menu');
         const closeMegaMenu = () => {
             header.classList.remove('mega-menu-open');
             companyTrigger.setAttribute('aria-expanded', 'false');
         };
 
-        companyMenu.addEventListener('mouseenter', () => {
+        header.addEventListener('mouseenter', () => {
             if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
                 header.classList.add('mega-menu-open');
                 companyTrigger.setAttribute('aria-expanded', 'true');
             }
         });
 
-        companyMenu.addEventListener('mouseleave', (event) => {
-            if (!megaMenu.contains(event.relatedTarget)) {
-                closeMegaMenu();
-            }
-        });
-
-        megaMenu.addEventListener('mouseenter', () => {
-            header.classList.add('mega-menu-open');
-            companyTrigger.setAttribute('aria-expanded', 'true');
-        });
-
-        megaMenu.addEventListener('mouseleave', closeMegaMenu);
+        // 서브메뉴까지 header 안에 포함되어 있으므로,
+        // 서브메뉴 위로 이동해도 닫히지 않고 header 밖으로 나갈 때만 닫힙니다.
+        header.addEventListener('mouseleave', closeMegaMenu);
 
         companyTrigger.addEventListener('click', (event) => {
             event.preventDefault();
