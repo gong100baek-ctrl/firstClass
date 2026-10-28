@@ -27,17 +27,17 @@
 
                 <nav class="gnb" id="site-navigation" aria-label="주요 메뉴">
                     <ul>
-                        <li class="gnb-item">
-                            <a href="#" aria-expanded="false" aria-controls="submenu-company">회사소개</a>
+                        <li class="gnb-item gnb-company">
+                            <a href="#" aria-expanded="false" aria-controls="header-mega-menu">회사소개</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false" aria-controls="submenu-products">제품소개</a>
+                            <a href="#" aria-expanded="false">제품소개</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false" aria-controls="submenu-pr">홍보센터</a>
+                            <a href="#" aria-expanded="false">홍보센터</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false" aria-controls="submenu-support">고객센터</a>
+                            <a href="#" aria-expanded="false">고객센터</a>
                         </li>
                         <li class="gnb-item gnb-shop">
                             <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
@@ -115,26 +115,41 @@
             },
         });
 
-        // Show the full submenu panel whenever the pointer enters the header.
+        // 회사소개에 마우스를 올렸을 때만 서브메뉴를 표시합니다.
         const header = document.querySelector('.header');
+        const companyMenu = document.querySelector('.gnb-company');
+        const companyTrigger = companyMenu.querySelector('a');
         const menuToggle = document.querySelector('.menu-toggle');
-        const menuTriggers = document.querySelectorAll('.gnb-item > a[aria-controls]');
-        const closeMegaMenu = () => header.classList.remove('mega-menu-open');
+        const megaMenu = document.querySelector('.mega-menu');
+        const closeMegaMenu = () => {
+            header.classList.remove('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'false');
+        };
 
-        header.addEventListener('mouseenter', () => {
+        companyMenu.addEventListener('mouseenter', () => {
             if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
                 header.classList.add('mega-menu-open');
+                companyTrigger.setAttribute('aria-expanded', 'true');
             }
         });
 
-        header.addEventListener('mouseleave', closeMegaMenu);
+        companyMenu.addEventListener('mouseleave', (event) => {
+            if (!megaMenu.contains(event.relatedTarget)) {
+                closeMegaMenu();
+            }
+        });
 
-        menuTriggers.forEach((trigger) => {
-            trigger.addEventListener('click', (event) => {
-                event.preventDefault();
-                header.classList.add('mega-menu-open');
-                trigger.setAttribute('aria-expanded', 'true');
-            });
+        megaMenu.addEventListener('mouseenter', () => {
+            header.classList.add('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'true');
+        });
+
+        megaMenu.addEventListener('mouseleave', closeMegaMenu);
+
+        companyTrigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            const isOpen = header.classList.toggle('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', String(isOpen));
         });
 
         document.addEventListener('keydown', (event) => {
