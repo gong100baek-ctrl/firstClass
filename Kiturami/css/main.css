@@ -753,7 +753,7 @@ body {
     background: #fff;
     border-top: 0;
     border-bottom: 0;
-    box-shadow: 0 -30px 30px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.10);
 }
 
 .header .mega-menu-inner {
