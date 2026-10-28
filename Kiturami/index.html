@@ -47,13 +47,13 @@
 
                 <div class="mega-menu" id="header-mega-menu" aria-label="회사소개 하위 메뉴">
                     <nav class="mega-menu-inner" aria-label="회사소개 메뉴">
-                        <a href="https://krb.co.kr/">기업비전</a>
-                        <a href="https://krb.co.kr/">기업연혁</a>
-                        <a href="https://krb.co.kr/">CI소개</a>
-                        <a href="https://krb.co.kr/">국내외 지사</a>
-                        <a href="https://krb.co.kr/">수상실적</a>
-                        <a href="https://krb.co.kr/">채용안내</a>
-                        <a href="https://krb.co.kr/">찾아오시는 길</a>
+                        <a href="https://krb.co.kr/about">기업비전</a>
+                        <a href="https://krb.co.kr/history">기업연혁</a>
+                        <a href="https://krb.co.kr/ci">CI소개</a>
+                        <a href="https://krb.co.kr/branch">국내외 지사</a>
+                        <a href="https://krb.co.kr/winner">수상실적</a>
+                        <a href="https://krb.co.kr/recruit">채용안내</a>
+                        <a href="https://krb.co.kr/location">찾아오시는 길</a>
                     </nav>
                 </div>
 
@@ -115,36 +115,37 @@
             },
         });
 
-        // 회사소개와 그 서브메뉴에 마우스가 있을 때만 메뉴를 유지합니다.
+        // 회사소개와 서브메뉴 사이를 이동해도 메뉴가 유지되도록 합니다.
         const header = document.querySelector('.header');
         const companyMenu = document.querySelector('.gnb-company');
         const companyTrigger = companyMenu.querySelector('a');
         const megaMenu = document.querySelector('.mega-menu');
         const menuToggle = document.querySelector('.menu-toggle');
+        let closeTimer;
+
+        const openMegaMenu = () => {
+            clearTimeout(closeTimer);
+            header.classList.add('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'true');
+        };
+
         const closeMegaMenu = () => {
+            clearTimeout(closeTimer);
             header.classList.remove('mega-menu-open');
             companyTrigger.setAttribute('aria-expanded', 'false');
         };
 
-        companyMenu.addEventListener('mouseenter', () => {
-            if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-                header.classList.add('mega-menu-open');
-                companyTrigger.setAttribute('aria-expanded', 'true');
-            }
-        });
+        const delayedCloseMegaMenu = () => {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(closeMegaMenu, 120);
+        };
 
-        companyMenu.addEventListener('mouseleave', (event) => {
-            if (!megaMenu.contains(event.relatedTarget)) {
-                closeMegaMenu();
-            }
-        });
+        companyMenu.addEventListener('mouseenter', openMegaMenu);
+        companyMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
 
-        megaMenu.addEventListener('mouseenter', () => {
-            header.classList.add('mega-menu-open');
-            companyTrigger.setAttribute('aria-expanded', 'true');
-        });
-
-        megaMenu.addEventListener('mouseleave', closeMegaMenu);
+        // 서브메뉴 위에 마우스를 올리면 닫기 예약을 취소합니다.
+        megaMenu.addEventListener('mouseenter', openMegaMenu);
+        megaMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
