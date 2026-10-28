@@ -2,17 +2,13 @@
     /* Semantic Color Variables */
     --color-background-default: #f8f4fc;
     --color-surface-default: #ffffff;
-
     --color-text-primary: #1f2937;
     --color-text-secondary: #6b7280;
     --color-text-link: #3ea6f0;
-
     --color-border-default: #e5e7eb;
-
     --color-action-primary: #0171bd;
     --color-action-secondary: #e99d08;
     --color-action-outline: #0171bd;
-
     --color-accent-blue: #3ea6f0;
     --color-accent-orange: #ffd8a6;
 }
@@ -20,6 +16,115 @@
 body {
     background-color: var(--color-background-default);
     font-family: "Pretendard Variable", sans-serif;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    height: 110px;
+    background-color: var(--color-surface-default);
+    position: relative;
+    z-index: 10;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    text-decoration: none;
+}
+
+.logo-en {
+    color: var(--color-action-primary);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1.1px;
+    line-height: 0.95;
+}
+
+.logo-ko {
+    color: var(--color-action-primary);
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1;
+}
+
+.gnb {
+    margin-left: auto;
+}
+
+.gnb ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gnb a {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.35px;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.gnb a:hover {
+    color: var(--color-action-primary);
+}
+
+.language {
+    flex: 0 0 auto;
+    margin-left: 42px;
+}
+
+.language button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.language-icon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.language-arrow {
+    margin-left: 2px;
+    font-size: 13px;
+    line-height: 1;
 }
 
 .Mo {
@@ -132,9 +237,26 @@ body {
     border-right: 0;
 }
 
-/* The Figma screenshot does not show a visible scrollbar, so it is kept hidden. */
 .hero-sec .swiper-scrollbar {
     display: none;
+}
+
+@media (max-width: 1200px) {
+    .header-inner {
+        padding: 0 32px;
+    }
+
+    .gnb ul {
+        gap: 26px;
+    }
+
+    .gnb a {
+        font-size: 13px;
+    }
+
+    .language {
+        margin-left: 26px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -148,10 +270,36 @@ body {
 
     .header {
         position: fixed;
-        width: 100%;
+        top: 0;
         height: 60px;
-        background-color: var(--color-action-secondary);
-        z-index: 10;
+    }
+
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .logo a {
+        width: 82px;
+    }
+
+    .logo-en {
+        font-size: 18px;
+    }
+
+    .logo-ko {
+        font-size: 12px;
+    }
+
+    .gnb {
+        display: none;
+    }
+
+    .language {
+        margin-left: auto;
+    }
+
+    .language button {
+        font-size: 12px;
     }
 
     .hero-sec .swiper {
