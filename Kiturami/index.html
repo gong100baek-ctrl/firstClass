@@ -127,7 +127,7 @@
             header.classList.add('mega-menu-open');
             companyTrigger.setAttribute('aria-expanded', 'true');
 
-            // 모바일에서 회사소개 + 버튼에 마우스를 올리면 서브메뉴를 표시합니다.
+            // 모바일에서는 회사소개의 + 영역에서만 서브메뉴를 표시합니다.
             if (window.matchMedia('(max-width: 1024px)').matches) {
                 megaMenu.style.display = 'block';
                 megaMenu.style.top = '116px';
@@ -172,7 +172,25 @@
             closeTimer = setTimeout(closeMegaMenu, 120);
         };
 
-        companyMenu.addEventListener('mouseenter', openMegaMenu);
+        // PC: 회사소개 전체에 마우스를 올리면 서브메뉴를 표시합니다.
+        companyMenu.addEventListener('mouseenter', () => {
+            if (!window.matchMedia('(max-width: 1024px)').matches) {
+                openMegaMenu();
+            }
+        });
+
+        // 모바일: 회사소개 전체가 아니라 오른쪽 + 영역에서만 열립니다.
+        companyTrigger.addEventListener('mousemove', (event) => {
+            if (!window.matchMedia('(max-width: 1024px)').matches) return;
+            const rect = companyTrigger.getBoundingClientRect();
+            const plusAreaWidth = 44;
+            if (event.clientX >= rect.right - plusAreaWidth) {
+                openMegaMenu();
+            } else {
+                delayedCloseMegaMenu();
+            }
+        });
+
         companyMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
         megaMenu.addEventListener('mouseenter', openMegaMenu);
         megaMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
