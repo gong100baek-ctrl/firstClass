@@ -1,6 +1,25 @@
+:root {
+    /* Semantic Color Variables */
+    --color-background-default: #f8f4fc;
+    --color-surface-default: #ffffff;
+
+    --color-text-primary: #1f2937;
+    --color-text-secondary: #6b7280;
+    --color-text-link: #3ea6f0;
+
+    --color-border-default: #e5e7eb;
+
+    --color-action-primary: #0171bd;
+    --color-action-secondary: #e99d08;
+    --color-action-outline: #0171bd;
+
+    --color-accent-blue: #3ea6f0;
+    --color-accent-orange: #ffd8a6;
+}
+
 body {
-    background-color: yellow;
-    font-family: "pretendard Variable", sans-serif;
+    background-color: var(--color-background-default);
+    font-family: "Pretendard Variable", sans-serif;
 }
 
 .Mo {
@@ -69,12 +88,12 @@ body {
     height: 10px;
     margin: 0 3px !important;
     border-radius: 50%;
-    background: #007fca;
+    background: var(--color-action-primary);
     opacity: 1;
 }
 
 .hero-sec .swiper-pagination-bullet-active {
-    background: #006bc5;
+    background: var(--color-action-primary);
 }
 
 /* Figma autoplay control */
@@ -95,8 +114,8 @@ body {
     display: block;
     width: 12px;
     height: 14px;
-    border-left: 4px solid #006bc5;
-    border-right: 4px solid #006bc5;
+    border-left: 4px solid var(--color-action-primary);
+    border-right: 4px solid var(--color-action-primary);
 }
 
 .hero-sec .swiper-autoplay.is-play .pause-icon {
@@ -104,7 +123,7 @@ body {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 11px solid #006bc5;
+    border-left: 11px solid var(--color-action-primary);
     border-right: 0;
 }
 
@@ -126,7 +145,7 @@ body {
         position: fixed;
         width: 100%;
         height: 60px;
-        background-color: orange;
+        background-color: var(--color-action-secondary);
         z-index: 10;
     }
 
