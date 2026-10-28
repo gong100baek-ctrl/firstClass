@@ -86,7 +86,7 @@
     height: 430px;
 }
 
-.product-card-visual {
+.img-box {
     position: absolute;
     inset: 0;
     display: flex;
@@ -94,7 +94,7 @@
     justify-content: center;
 }
 
-.product-card-visual::before {
+.img-box::before {
     content: "";
     position: absolute;
     inset: 0;
