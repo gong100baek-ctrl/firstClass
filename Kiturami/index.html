@@ -20,16 +20,31 @@
                         <span class="logo-ko">귀뚜라미</span>
                     </a>
                 </h1>
-                <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+
+                <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-navigation">
+                    <span></span><span></span><span></span>
+                </button>
+
                 <nav class="gnb" id="site-navigation" aria-label="주요 메뉴">
                     <ul>
-                        <li class="gnb-item gnb-company"><a href="#" aria-expanded="false" aria-controls="header-mega-menu">회사소개</a></li>
-                        <li class="gnb-item"><a href="#" aria-expanded="false">제품소개</a></li>
-                        <li class="gnb-item"><a href="#" aria-expanded="false">홍보센터</a></li>
-                        <li class="gnb-item"><a href="#" aria-expanded="false">고객센터</a></li>
-                        <li class="gnb-item gnb-shop"><a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a></li>
+                        <li class="gnb-item gnb-company">
+                            <a href="#" aria-expanded="false" aria-controls="header-mega-menu">회사소개</a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="#" aria-expanded="false">제품소개</a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="#" aria-expanded="false">홍보센터</a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="#" aria-expanded="false">고객센터</a>
+                        </li>
+                        <li class="gnb-item gnb-shop">
+                            <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
+                        </li>
                     </ul>
                 </nav>
+
                 <div class="mega-menu" id="header-mega-menu" aria-label="회사소개 하위 메뉴">
                     <nav class="mega-menu-inner" aria-label="회사소개 메뉴">
                         <a href="https://krb.co.kr/about">기업비전</a>
@@ -41,43 +56,155 @@
                         <a href="https://krb.co.kr/location">찾아오시는 길</a>
                     </nav>
                 </div>
-                <div class="language"><button type="button" aria-label="언어 선택" aria-expanded="false"><span class="language-icon" aria-hidden="true">◎</span>한국어<span class="language-arrow" aria-hidden="true">⌄</span></button></div>
+
+                <div class="language">
+                    <button type="button" aria-label="언어 선택" aria-expanded="false">
+                        <span class="language-icon" aria-hidden="true">◎</span>
+                        한국어
+                        <span class="language-arrow" aria-hidden="true">⌄</span>
+                    </button>
+                </div>
             </div>
         </header>
+
         <main>
             <section class="hero-sec">
                 <div class="swiper visual">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="img/visual01.png" alt="방방난방시스템" class="PC"><img src="img/m_visual01.png" alt="모바일 방방난방시스템" class="Mo"></div>
-                        <div class="swiper-slide"><img src="img/visual02.png" alt="모바일 따숨케어" class="PC"><img src="img/m_visual02.png" alt="모바일 따숨케어" class="Mo"></div>
+                        <div class="swiper-slide">
+                            <img src="img/visual01.png" alt="방방난방시스템" class="PC">
+                            <img src="img/m_visual01.png" alt="모바일 방방난방시스템" class="Mo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/visual02.png" alt="모바일 따숨케어" class="PC">
+                            <img src="img/m_visual02.png" alt="모바일 따숨케어" class="Mo">
+                        </div>
                     </div>
+
                     <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                     <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
-                    <div class="hero-controls"><div class="swiper-pagination"></div><button type="button" class="swiper-autoplay" aria-label="배너 일시정지" aria-pressed="false"><span class="pause-icon" aria-hidden="true"></span></button></div>
+
+                    <div class="hero-controls">
+                        <div class="swiper-pagination"></div>
+                        <button type="button" class="swiper-autoplay" aria-label="배너 일시정지" aria-pressed="false">
+                            <span class="pause-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
             </section>
         </main>
+
         <footer class="footer">&copy;</footer>
     </div>
+
     <script>
-        const swiper = new Swiper('.hero-sec > .swiper', { direction: 'horizontal', loop: true, autoplay: { delay: 5000, disableOnInteraction: false }, pagination: { el: '.visual .swiper-pagination', clickable: true }, navigation: { nextEl: '.visual .swiper-button-next', prevEl: '.visual .swiper-button-prev' } });
+        const swiper = new Swiper('.hero-sec > .swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.visual .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.visual .swiper-button-next',
+                prevEl: '.visual .swiper-button-prev',
+            },
+        });
+
         const header = document.querySelector('.header');
         const companyMenu = document.querySelector('.gnb-company');
         const companyTrigger = companyMenu.querySelector('a');
         const megaMenu = document.querySelector('.mega-menu');
         const menuToggle = document.querySelector('.menu-toggle');
         let closeTimer;
-        const openMegaMenu = () => { clearTimeout(closeTimer); header.classList.add('mega-menu-open'); companyTrigger.setAttribute('aria-expanded', 'true'); };
-        const closeMegaMenu = () => { clearTimeout(closeTimer); header.classList.remove('mega-menu-open'); companyTrigger.setAttribute('aria-expanded', 'false'); };
-        const delayedCloseMegaMenu = () => { clearTimeout(closeTimer); closeTimer = setTimeout(closeMegaMenu, 120); };
+
+        const openMegaMenu = () => {
+            clearTimeout(closeTimer);
+            header.classList.add('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'true');
+
+            // 모바일에서 회사소개 + 버튼에 마우스를 올리면 서브메뉴를 회사소개 아래에 표시합니다.
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                megaMenu.style.top = '116px';
+                megaMenu.style.right = '20px';
+                megaMenu.style.left = '20px';
+                megaMenu.style.width = 'auto';
+                megaMenu.style.padding = '18px 20px 20px';
+                megaMenu.style.backgroundColor = 'var(--color-surface-default)';
+                megaMenu.style.border = '1px solid var(--color-border-default)';
+                megaMenu.style.boxShadow = '0 12px 22px rgba(31, 41, 55, 0.10)';
+                megaMenu.style.opacity = '1';
+                megaMenu.style.visibility = 'visible';
+                megaMenu.style.pointerEvents = 'auto';
+                megaMenu.style.transform = 'translateY(0)';
+            }
+        };
+
+        const closeMegaMenu = () => {
+            clearTimeout(closeTimer);
+            header.classList.remove('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'false');
+
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                megaMenu.style.removeProperty('top');
+                megaMenu.style.removeProperty('right');
+                megaMenu.style.removeProperty('left');
+                megaMenu.style.removeProperty('width');
+                megaMenu.style.removeProperty('padding');
+                megaMenu.style.removeProperty('background-color');
+                megaMenu.style.removeProperty('border');
+                megaMenu.style.removeProperty('box-shadow');
+                megaMenu.style.removeProperty('opacity');
+                megaMenu.style.removeProperty('visibility');
+                megaMenu.style.removeProperty('pointer-events');
+                megaMenu.style.removeProperty('transform');
+            }
+        };
+
+        const delayedCloseMegaMenu = () => {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(closeMegaMenu, 120);
+        };
+
         companyMenu.addEventListener('mouseenter', openMegaMenu);
         companyMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
         megaMenu.addEventListener('mouseenter', openMegaMenu);
         megaMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
-        document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { closeMegaMenu(); header.classList.remove('menu-open'); menuToggle.setAttribute('aria-expanded', 'false'); } });
-        menuToggle.addEventListener('click', () => { const isOpen = header.classList.toggle('menu-open'); menuToggle.setAttribute('aria-expanded', String(isOpen)); menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기'); if (!isOpen) closeMegaMenu(); });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMegaMenu();
+                header.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = header.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+            if (!isOpen) closeMegaMenu();
+        });
+
         const autoplayButton = document.querySelector('.swiper-autoplay');
-        autoplayButton.addEventListener('click', () => { if (swiper.autoplay.running) { swiper.autoplay.stop(); autoplayButton.setAttribute('aria-label', '배너 재생'); autoplayButton.setAttribute('aria-pressed', 'true'); autoplayButton.classList.add('is-play'); } else { swiper.autoplay.start(); autoplayButton.setAttribute('aria-label', '배너 일시정지'); autoplayButton.setAttribute('aria-pressed', 'false'); autoplayButton.classList.remove('is-play'); } });
+
+        autoplayButton.addEventListener('click', () => {
+            if (swiper.autoplay.running) {
+                swiper.autoplay.stop();
+                autoplayButton.setAttribute('aria-label', '배너 재생');
+                autoplayButton.setAttribute('aria-pressed', 'true');
+                autoplayButton.classList.add('is-play');
+            } else {
+                swiper.autoplay.start();
+                autoplayButton.setAttribute('aria-label', '배너 일시정지');
+                autoplayButton.setAttribute('aria-pressed', 'false');
+                autoplayButton.classList.remove('is-play');
+            }
+        });
     </script>
 </body>
 </html>
