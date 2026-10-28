@@ -41,13 +41,14 @@ body {
 /* Swiper navigation buttons */
 .hero-sec .swiper-button-prev,
 .hero-sec .swiper-button-next {
-    width: 48px;
-    height: 48px;
+    width: 95px;
+    height: 95px;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 .hero-sec .swiper-button-prev {
@@ -63,8 +64,8 @@ body {
 .hero-sec .swiper-button-next::after {
     display: block;
     color: #ffffff;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 42px;
+    font-weight: 800;
 }
 
 /* Figma hero pagination */
@@ -159,8 +160,8 @@ body {
 
     .hero-sec .swiper-button-prev,
     .hero-sec .swiper-button-next {
-        width: 48px;
-        height: 48px;
+        width: 95px;
+        height: 95px;
     }
 
     .hero-sec .swiper-button-prev {
@@ -175,6 +176,8 @@ body {
     .hero-sec .swiper-button-next::after {
         display: block;
         color: #ffffff;
+        font-size: 42px;
+        font-weight: 800;
     }
 
     .hero-sec .hero-controls {
