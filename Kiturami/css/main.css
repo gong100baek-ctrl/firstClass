@@ -635,3 +635,113 @@ body {
         transform: translateY(-6px) rotate(-45deg);
     }
 }
+
+
+/* Header-wide mega menu: open when the pointer enters the header */
+.header {
+    position: relative;
+}
+
+.header .mega-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 40;
+    padding: 24px 48px 28px;
+    background: var(--color-surface-default);
+    border-top: 1px solid var(--color-border-default);
+    border-bottom: 1px solid var(--color-border-default);
+    box-shadow: 0 12px 22px rgba(31, 41, 55, 0.10);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+.header.mega-menu-open .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.mega-menu-inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    width: 100%;
+    max-width: 1724px;
+    margin: 0 auto;
+}
+
+.mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+}
+
+.mega-menu-column h2 {
+    width: 100%;
+    margin: 0 0 4px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border-default);
+    color: var(--color-action-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mega-menu-column a {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.mega-menu-column a:hover,
+.mega-menu-column a:focus-visible {
+    color: var(--color-action-primary);
+}
+
+@media (max-width: 1200px) {
+    .header .mega-menu {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+
+    .mega-menu-inner {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header .mega-menu {
+        display: none;
+    }
+
+    .header.menu-open .gnb {
+        display: block;
+    }
+
+    .header.menu-open .gnb-item {
+        position: relative;
+    }
+
+    .header.menu-open .gnb-item > a[aria-controls]::before {
+        content: "+";
+        margin-left: auto;
+        font-size: 20px;
+    }
+
+    .header.menu-open .gnb-item > a[aria-controls][aria-expanded="true"]::before {
+        content: "−";
+    }
+
+    .header.menu-open .gnb-item > a[aria-controls] {
+        width: 100%;
+    }
+}
