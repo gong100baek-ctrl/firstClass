@@ -115,31 +115,36 @@
             },
         });
 
-        // 헤더 영역 안에 마우스가 있는 동안 서브메뉴를 유지합니다.
+        // 회사소개와 그 서브메뉴에 마우스가 있을 때만 메뉴를 유지합니다.
         const header = document.querySelector('.header');
-        const companyTrigger = document.querySelector('.gnb-company > a');
+        const companyMenu = document.querySelector('.gnb-company');
+        const companyTrigger = companyMenu.querySelector('a');
+        const megaMenu = document.querySelector('.mega-menu');
         const menuToggle = document.querySelector('.menu-toggle');
         const closeMegaMenu = () => {
             header.classList.remove('mega-menu-open');
             companyTrigger.setAttribute('aria-expanded', 'false');
         };
 
-        header.addEventListener('mouseenter', () => {
+        companyMenu.addEventListener('mouseenter', () => {
             if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
                 header.classList.add('mega-menu-open');
                 companyTrigger.setAttribute('aria-expanded', 'true');
             }
         });
 
-        // 서브메뉴까지 header 안에 포함되어 있으므로,
-        // 서브메뉴 위로 이동해도 닫히지 않고 header 밖으로 나갈 때만 닫힙니다.
-        header.addEventListener('mouseleave', closeMegaMenu);
-
-        companyTrigger.addEventListener('click', (event) => {
-            event.preventDefault();
-            const isOpen = header.classList.toggle('mega-menu-open');
-            companyTrigger.setAttribute('aria-expanded', String(isOpen));
+        companyMenu.addEventListener('mouseleave', (event) => {
+            if (!megaMenu.contains(event.relatedTarget)) {
+                closeMegaMenu();
+            }
         });
+
+        megaMenu.addEventListener('mouseenter', () => {
+            header.classList.add('mega-menu-open');
+            companyTrigger.setAttribute('aria-expanded', 'true');
+        });
+
+        megaMenu.addEventListener('mouseleave', closeMegaMenu);
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
