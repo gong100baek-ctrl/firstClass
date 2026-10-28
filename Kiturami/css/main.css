@@ -745,3 +745,52 @@ body {
         width: 100%;
     }
 }
+
+
+/* Company submenu bar — matches the supplied reference image */
+.header .mega-menu {
+    padding: 25px 24px 27px;
+    background: #fff;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 0 8px 18px rgba(30, 40, 55, 0.10);
+}
+
+.header .mega-menu-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 28px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header .mega-menu-inner > a {
+    display: block;
+    flex: 0 0 auto;
+    padding: 2px 0;
+    color: #555e6d;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.header .mega-menu-inner > a:hover,
+.header .mega-menu-inner > a:focus-visible {
+    color: var(--color-action-primary);
+}
+
+@media (max-width: 900px) {
+    .header .mega-menu-inner {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .header .mega-menu-inner > a {
+        font-size: 13px;
+    }
+}
