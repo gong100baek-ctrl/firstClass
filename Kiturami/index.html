@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
     <script src="../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -92,6 +93,46 @@
                     </div>
                 </div>
             </section>
+
+            <section class="product-sec" aria-labelledby="product-title">
+                <div class="product-inner">
+                    <div class="product-heading">
+                        <div class="product-heading-copy">
+                            <h2 id="product-title">보일러는 역시 귀뚜라미!</h2>
+                            <p>차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.</p>
+                        </div>
+                        <a class="product-more" href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
+                    </div>
+
+                    <div class="swiper product-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide product-card product-card--oil">
+                                <div class="product-card-visual" aria-hidden="true"><span class="product-shape product-shape--oil"></span></div>
+                                <span class="product-label">기름보일러</span>
+                            </div>
+                            <div class="swiper-slide product-card product-card--gas">
+                                <div class="product-card-visual" aria-hidden="true"><span class="product-shape product-shape--gas"></span></div>
+                                <span class="product-label">가스보일러</span>
+                            </div>
+                            <div class="swiper-slide product-card product-card--water product-card--active">
+                                <div class="product-card-visual" aria-hidden="true"><span class="product-shape product-shape--water"></span></div>
+                                <span class="product-label">온수기</span>
+                            </div>
+                            <div class="swiper-slide product-card product-card--electric">
+                                <div class="product-card-visual" aria-hidden="true"><span class="product-shape product-shape--electric"></span></div>
+                                <span class="product-label">신재생/중대형/전기</span>
+                            </div>
+                            <div class="swiper-slide product-card product-card--mat">
+                                <div class="product-card-visual" aria-hidden="true"><span class="product-shape product-shape--mat"></span></div>
+                                <span class="product-label">난방매트</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="product-button-prev" aria-label="이전 제품"></button>
+                        <button type="button" class="product-button-next" aria-label="다음 제품"></button>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">&copy;</footer>
@@ -115,6 +156,33 @@
             },
         });
 
+        const productSwiper = new Swiper('.product-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 4.7,
+            centeredSlides: true,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.product-button-next',
+                prevEl: '.product-button-prev',
+            },
+            breakpoints: {
+                1025: {
+                    slidesPerView: 4.7,
+                    centeredSlides: true,
+                },
+                768: {
+                    slidesPerView: 2.3,
+                    centeredSlides: false,
+                },
+                0: {
+                    slidesPerView: 1.2,
+                    centeredSlides: false,
+                    spaceBetween: 16,
+                },
+            },
+        });
+
         const header = document.querySelector('.header');
         const companyMenu = document.querySelector('.gnb-company');
         const companyTrigger = companyMenu.querySelector('a');
@@ -127,7 +195,6 @@
             header.classList.add('mega-menu-open');
             companyTrigger.setAttribute('aria-expanded', 'true');
 
-            // 모바일에서는 회사소개의 + 영역에서만 서브메뉴를 표시합니다.
             if (window.matchMedia('(max-width: 1024px)').matches) {
                 megaMenu.style.display = 'block';
                 megaMenu.style.top = '116px';
@@ -172,14 +239,12 @@
             closeTimer = setTimeout(closeMegaMenu, 120);
         };
 
-        // PC: 회사소개 전체에 마우스를 올리면 서브메뉴를 표시합니다.
         companyMenu.addEventListener('mouseenter', () => {
             if (!window.matchMedia('(max-width: 1024px)').matches) {
                 openMegaMenu();
             }
         });
 
-        // 모바일: 회사소개 전체가 아니라 오른쪽 + 영역에서만 열립니다.
         companyTrigger.addEventListener('mousemove', (event) => {
             if (!window.matchMedia('(max-width: 1024px)').matches) return;
             const rect = companyTrigger.getBoundingClientRect();
