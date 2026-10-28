@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,33 @@
     <script src="../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <div id="warp">
-        <header>제목공간</header>
+    <div id="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="logo">
+                    <a href="index.html" aria-label="귀뚜라미 홈">
+                        <img src="img/logo.png" alt="귀뚜라미">
+                    </a>
+                </h1>
+
+                <nav class="gnb" aria-label="주요 메뉴">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">홍보센터</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">귀뚜라미몰 바로가기</a></li>
+                    </ul>
+                </nav>
+
+                <div class="language">
+                    <button type="button" aria-label="언어 선택">한국어 <span aria-hidden="true">⌄</span></button>
+                </div>
+            </div>
+        </header>
+
         <main>
-            <div class="hero-sec">
+            <section class="hero-sec">
                 <div class="swiper visual">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -37,10 +60,12 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
-        <footer>&copy;</footer>
+
+        <footer class="footer">&copy;</footer>
     </div>
+
     <script>
         const swiper = new Swiper('.hero-sec > .swiper', {
             direction: 'horizontal',
