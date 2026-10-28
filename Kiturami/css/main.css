@@ -47,6 +47,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
+    color: #ffffff;
 }
 
 .hero-sec .swiper-button-prev {
@@ -57,10 +58,13 @@ body {
     right: 4px;
 }
 
-/* Swiper default ::after arrow removed */
+/* Swiper navigation arrow - white */
 .hero-sec .swiper-button-prev::after,
 .hero-sec .swiper-button-next::after {
-    display: none;
+    display: block;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 /* Figma hero pagination */
@@ -169,7 +173,8 @@ body {
 
     .hero-sec .swiper-button-prev::after,
     .hero-sec .swiper-button-next::after {
-        display: none;
+        display: block;
+        color: #ffffff;
     }
 
     .hero-sec .hero-controls {
