@@ -41,8 +41,8 @@ body {
 /* Swiper navigation buttons */
 .hero-sec .swiper-button-prev,
 .hero-sec .swiper-button-next {
-    width: 95px;
-    height: 95px;
+    width: 47.5px;
+    height: 47.5px;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -64,7 +64,7 @@ body {
 .hero-sec .swiper-button-next::after {
     display: block;
     color: #ffffff;
-    font-size: 42px;
+    font-size: 21px;
     font-weight: 800;
 }
 
@@ -160,8 +160,8 @@ body {
 
     .hero-sec .swiper-button-prev,
     .hero-sec .swiper-button-next {
-        width: 95px;
-        height: 95px;
+        width: 47.5px;
+        height: 47.5px;
     }
 
     .hero-sec .swiper-button-prev {
@@ -176,7 +176,7 @@ body {
     .hero-sec .swiper-button-next::after {
         display: block;
         color: #ffffff;
-        font-size: 42px;
+        font-size: 21px;
         font-weight: 800;
     }
 
