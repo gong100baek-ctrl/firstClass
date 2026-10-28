@@ -29,65 +29,54 @@
                     <ul>
                         <li class="gnb-item">
                             <a href="#" aria-expanded="false" aria-controls="submenu-company">회사소개</a>
-                            <div class="submenu-panel" id="submenu-company">
-                                <div class="submenu-inner">
-                                    <strong>회사소개</strong>
-                                    <ul>
-                                        <li><a href="https://krb.co.kr/">귀뚜라미 소개</a></li>
-                                        <li><a href="https://krb.co.kr/">경영이념</a></li>
-                                        <li><a href="https://krb.co.kr/">회사연혁</a></li>
-                                        <li><a href="https://krb.co.kr/">사업장 안내</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </li>
                         <li class="gnb-item">
                             <a href="#" aria-expanded="false" aria-controls="submenu-products">제품소개</a>
-                            <div class="submenu-panel" id="submenu-products">
-                                <div class="submenu-inner">
-                                    <strong>제품소개</strong>
-                                    <ul>
-                                        <li><a href="https://krb.co.kr/">가정용 보일러</a></li>
-                                        <li><a href="https://krb.co.kr/">온수기</a></li>
-                                        <li><a href="https://krb.co.kr/">난방 시스템</a></li>
-                                        <li><a href="https://krb.co.kr/">제품 검색</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </li>
                         <li class="gnb-item">
                             <a href="#" aria-expanded="false" aria-controls="submenu-pr">홍보센터</a>
-                            <div class="submenu-panel" id="submenu-pr">
-                                <div class="submenu-inner">
-                                    <strong>홍보센터</strong>
-                                    <ul>
-                                        <li><a href="https://krb.co.kr/pr/27834">귀뚜라미 소식</a></li>
-                                        <li><a href="https://krb.co.kr/">보도자료</a></li>
-                                        <li><a href="https://krb.co.kr/">홍보 영상</a></li>
-                                        <li><a href="https://krb.co.kr/">광고 자료</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </li>
                         <li class="gnb-item">
                             <a href="#" aria-expanded="false" aria-controls="submenu-support">고객센터</a>
-                            <div class="submenu-panel" id="submenu-support">
-                                <div class="submenu-inner">
-                                    <strong>고객센터</strong>
-                                    <ul>
-                                        <li><a href="https://krb.co.kr/">A/S 안내</a></li>
-                                        <li><a href="https://krb.co.kr/">자가진단</a></li>
-                                        <li><a href="https://krb.co.kr/">자주 묻는 질문</a></li>
-                                        <li><a href="https://krb.co.kr/">고객 문의</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </li>
                         <li class="gnb-item gnb-shop">
                             <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
                         </li>
                     </ul>
                 </nav>
+
+                <div class="mega-menu" id="header-mega-menu" aria-label="전체 하위 메뉴">
+                    <div class="mega-menu-inner">
+                        <section class="mega-menu-column">
+                            <h2>회사소개</h2>
+                            <a href="https://krb.co.kr/">귀뚜라미 소개</a>
+                            <a href="https://krb.co.kr/">경영이념</a>
+                            <a href="https://krb.co.kr/">회사연혁</a>
+                            <a href="https://krb.co.kr/">사업장 안내</a>
+                        </section>
+                        <section class="mega-menu-column">
+                            <h2>제품소개</h2>
+                            <a href="https://krb.co.kr/">가정용 보일러</a>
+                            <a href="https://krb.co.kr/">온수기</a>
+                            <a href="https://krb.co.kr/">난방 시스템</a>
+                            <a href="https://krb.co.kr/">제품 검색</a>
+                        </section>
+                        <section class="mega-menu-column">
+                            <h2>홍보센터</h2>
+                            <a href="https://krb.co.kr/pr/27834">귀뚜라미 소식</a>
+                            <a href="https://krb.co.kr/">보도자료</a>
+                            <a href="https://krb.co.kr/">홍보 영상</a>
+                            <a href="https://krb.co.kr/">광고 자료</a>
+                        </section>
+                        <section class="mega-menu-column">
+                            <h2>고객센터</h2>
+                            <a href="https://krb.co.kr/">A/S 안내</a>
+                            <a href="https://krb.co.kr/">자가진단</a>
+                            <a href="https://krb.co.kr/">자주 묻는 질문</a>
+                            <a href="https://krb.co.kr/">고객 문의</a>
+                        </section>
+                    </div>
+                </div>
 
                 <div class="language">
                     <button type="button" aria-label="언어 선택" aria-expanded="false">
@@ -147,42 +136,31 @@
             },
         });
 
-        // Header submenu interactions: hover, keyboard focus, and tap/click
+        // Show the full submenu panel whenever the pointer enters the header.
         const header = document.querySelector('.header');
         const menuToggle = document.querySelector('.menu-toggle');
-        const menuItems = document.querySelectorAll('.gnb-item > a[aria-controls]');
-        const closeSubmenus = () => {
-            document.querySelectorAll('.gnb-item.is-open').forEach((item) => {
-                item.classList.remove('is-open');
-                const trigger = item.querySelector(':scope > a[aria-controls]');
-                if (trigger) trigger.setAttribute('aria-expanded', 'false');
-            });
-        };
+        const menuTriggers = document.querySelectorAll('.gnb-item > a[aria-controls]');
+        const closeMegaMenu = () => header.classList.remove('mega-menu-open');
 
-        menuItems.forEach((trigger) => {
-            const item = trigger.closest('.gnb-item');
+        header.addEventListener('mouseenter', () => {
+            if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                header.classList.add('mega-menu-open');
+            }
+        });
+
+        header.addEventListener('mouseleave', closeMegaMenu);
+
+        menuTriggers.forEach((trigger) => {
             trigger.addEventListener('click', (event) => {
                 event.preventDefault();
-                const willOpen = !item.classList.contains('is-open');
-                closeSubmenus();
-                if (willOpen) {
-                    item.classList.add('is-open');
-                    trigger.setAttribute('aria-expanded', 'true');
-                }
-            });
-            item.addEventListener('mouseenter', () => {
-                if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-                    closeSubmenus();
-                    item.classList.add('is-open');
-                    trigger.setAttribute('aria-expanded', 'true');
-                }
+                header.classList.add('mega-menu-open');
+                trigger.setAttribute('aria-expanded', 'true');
             });
         });
 
-        header.addEventListener('mouseleave', closeSubmenus);
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
-                closeSubmenus();
+                closeMegaMenu();
                 header.classList.remove('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
@@ -192,7 +170,7 @@
             const isOpen = header.classList.toggle('menu-open');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
             menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-            if (!isOpen) closeSubmenus();
+            if (!isOpen) closeMegaMenu();
         });
 
         const autoplayButton = document.querySelector('.swiper-autoplay');
