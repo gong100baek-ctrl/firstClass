@@ -124,6 +124,12 @@
     object-position: center;
 }
 
+/* The water heater photo is shot wide, so zoom in on the product to match the other cards. */
+.product-card--water .img-box--photo img {
+    transform: scale(1.5);
+    transform-origin: 50% 42%;
+}
+
 /* Temporary product silhouettes for categories that do not have a photo yet. */
 .product-shape {
     position: relative;
