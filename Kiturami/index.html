@@ -233,8 +233,35 @@
             },
         });
 
-        // 새로고침, 이미지/폰트 로딩 후, 뒤로가기(캐시 복원) 시에도 항상 기름보일러부터 시작
-        const showFirstProduct = () => productSwiper.slideToLoop(0, 0);
+        // 기름보일러는 첫 번째(왼쪽)에서 시작하고, 화면 중앙에 있는 카드만 강조
+        const updateCenterProduct = () => {
+            const swiperRect = productSwiper.el.getBoundingClientRect();
+            const centerX = swiperRect.left + swiperRect.width / 2;
+            let closestSlide = null;
+            let closestDistance = Infinity;
+
+            productSwiper.slides.forEach((slide) => {
+                slide.classList.remove('is-center-product');
+                const rect = slide.getBoundingClientRect();
+                const distance = Math.abs((rect.left + rect.width / 2) - centerX);
+
+                if (rect.right > swiperRect.left && rect.left < swiperRect.right && distance < closestDistance) {
+                    closestDistance = distance;
+                    closestSlide = slide;
+                }
+            });
+
+            if (closestSlide) closestSlide.classList.add('is-center-product');
+        };
+
+        const showFirstProduct = () => {
+            productSwiper.slideToLoop(0, 0);
+            updateCenterProduct();
+        };
+
+        productSwiper.on('slideChangeTransitionEnd', updateCenterProduct);
+        productSwiper.on('resize', updateCenterProduct);
+        updateCenterProduct();
         window.addEventListener('load', showFirstProduct);
         window.addEventListener('pageshow', (event) => {
             if (event.persisted) showFirstProduct();
