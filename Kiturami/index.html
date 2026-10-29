@@ -87,11 +87,18 @@
                 </div>
 
                 <div class="language">
-                    <button type="button" aria-label="언어 선택" aria-expanded="false">
+                    <button class="language-toggle" type="button" aria-label="언어 선택" aria-expanded="false" aria-controls="language-menu">
                         <img class="language-icon" src="images/web.svg" alt="" aria-hidden="true">
-                        한국어
+                        <span class="language-current">한국어</span>
                         <img class="language-arrow" src="images/chevron-down.svg" alt="" aria-hidden="true">
                     </button>
+                    <div class="language-menu" id="language-menu" hidden>
+                        <button type="button" class="language-option" data-language="한국어">한국어</button>
+                        <button type="button" class="language-option" data-language="English">English</button>
+                        <button type="button" class="language-option" data-language="日本語">日本語</button>
+                        <button type="button" class="language-option" data-language="中文">中文</button>
+                        <button type="button" class="language-option" data-language="Русский">Русский</button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -231,6 +238,38 @@
         window.addEventListener('load', showFirstProduct);
         window.addEventListener('pageshow', (event) => {
             if (event.persisted) showFirstProduct();
+        });
+
+        const language = document.querySelector('.language');
+        const languageToggle = document.querySelector('.language-toggle');
+        const languageMenu = document.querySelector('.language-menu');
+        const languageCurrent = document.querySelector('.language-current');
+
+        languageToggle.addEventListener('click', () => {
+            const isOpen = languageToggle.getAttribute('aria-expanded') === 'true';
+            languageToggle.setAttribute('aria-expanded', String(!isOpen));
+            languageMenu.hidden = isOpen;
+            language.classList.toggle('is-open', !isOpen);
+        });
+
+        languageMenu.querySelectorAll('.language-option').forEach((option) => {
+            option.addEventListener('click', () => {
+                languageCurrent.textContent = option.dataset.language;
+                languageMenu.querySelectorAll('.language-option').forEach((item) => {
+                    item.classList.toggle('is-selected', item === option);
+                });
+                languageToggle.setAttribute('aria-expanded', 'false');
+                languageMenu.hidden = true;
+                language.classList.remove('is-open');
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!language.contains(event.target)) {
+                languageToggle.setAttribute('aria-expanded', 'false');
+                languageMenu.hidden = true;
+                language.classList.remove('is-open');
+            }
         });
 
         const header = document.querySelector('.header');
