@@ -110,6 +110,15 @@
     box-shadow: 0 18px 30px rgba(31, 41, 55, 0.18);
 }
 
+/* Enlarge only the product image in the currently centered slide. */
+.product-shape {
+    transition: transform 0.45s ease;
+}
+
+.product-card.swiper-slide-active .product-shape {
+    transform: scale(1.2);
+}
+
 .product-shape--oil {
     width: 125px;
     height: 235px;
