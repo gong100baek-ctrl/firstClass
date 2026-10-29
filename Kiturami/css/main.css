@@ -136,9 +136,10 @@ body {
 }
 
 .language-arrow {
+    width: 16px;
+    height: 16px;
     margin-left: 2px;
-    font-size: 13px;
-    line-height: 1;
+    object-fit: contain;
 }
 
 .Mo {
