@@ -120,6 +120,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 6px;
+    width: 112px;
     padding: 0;
     border: 0;
     background: transparent;
@@ -143,10 +144,6 @@ body {
     margin-left: 2px;
     object-fit: contain;
     transition: transform 0.2s ease;
-}
-
-.language.is-open .language-arrow {
-    transform: rotate(180deg);
 }
 
 .language-menu {
