@@ -41,7 +41,7 @@
                             <a href="#" aria-expanded="false" aria-controls="customer-mega-menu">고객센터</a>
                         </li>
                         <li class="gnb-item gnb-shop">
-                            <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
+                            <a href="https://kituramimall.com/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
                         </li>
                     </ul>
                 </nav>
@@ -129,7 +129,7 @@
                             <h2 id="product-title">보일러는 역시 귀뚜라미!</h2>
                             <p>차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.</p>
                         </div>
-                        <a class="product-more" href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
+                        <a class="product-more" href="https://krb.co.kr/product" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
                     </div>
 
                     <div class="swiper product-swiper">
@@ -205,6 +205,7 @@
         const productSwiper = new Swiper('.product-swiper', {
             direction: 'horizontal',
             loop: true,
+            initialSlide: 0, // 첫 번째 슬라이드 = 기름보일러
             slidesPerView: 4.7,
             centeredSlides: true,
             spaceBetween: 30,
@@ -223,6 +224,13 @@
                     spaceBetween: 16,
                 },
             },
+        });
+
+        // 새로고침, 이미지/폰트 로딩 후, 뒤로가기(캐시 복원) 시에도 항상 기름보일러부터 시작
+        const showFirstProduct = () => productSwiper.slideToLoop(0, 0);
+        window.addEventListener('load', showFirstProduct);
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) showFirstProduct();
         });
 
         const header = document.querySelector('.header');
