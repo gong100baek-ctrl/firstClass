@@ -131,8 +131,9 @@ body {
 }
 
 .language-icon {
-    font-size: 15px;
-    line-height: 1;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 .language-arrow {
