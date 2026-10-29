@@ -32,13 +32,13 @@
                             <a href="#" aria-expanded="false" aria-controls="header-mega-menu">회사소개</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false">제품소개</a>
+                            <a href="#" aria-expanded="false" aria-controls="product-mega-menu">제품소개</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false">홍보센터</a>
+                            <a href="#" aria-expanded="false" aria-controls="promo-mega-menu">홍보센터</a>
                         </li>
                         <li class="gnb-item">
-                            <a href="#" aria-expanded="false">고객센터</a>
+                            <a href="#" aria-expanded="false" aria-controls="customer-mega-menu">고객센터</a>
                         </li>
                         <li class="gnb-item gnb-shop">
                             <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a>
@@ -46,15 +46,49 @@
                     </ul>
                 </nav>
 
-                <div class="mega-menu" id="header-mega-menu" aria-label="회사소개 하위 메뉴">
+                <div class="mega-menu is-active" id="header-mega-menu" aria-label="회사소개 하위 메뉴">
                     <nav class="mega-menu-inner" aria-label="회사소개 메뉴">
-                        <a href="https://krb.co.kr/about">기업비전</a>
-                        <a href="https://krb.co.kr/history">기업연혁</a>
-                        <a href="https://krb.co.kr/ci">CI소개</a>
-                        <a href="https://krb.co.kr/branch">국내외지사</a>
-                        <a href="https://krb.co.kr/winner">수상실적</a>
-                        <a href="https://krb.co.kr/recruit">채용안내</a>
-                        <a href="https://krb.co.kr/location">찾아오시는 길</a>
+                        <a href="https://krb.co.kr/about" target="_blank" rel="noopener noreferrer">기업비전</a>
+                        <a href="https://krb.co.kr/history" target="_blank" rel="noopener noreferrer">기업연혁</a>
+                        <a href="https://krb.co.kr/ci" target="_blank" rel="noopener noreferrer">CI소개</a>
+                        <a href="https://krb.co.kr/branch" target="_blank" rel="noopener noreferrer">국내외지사</a>
+                        <a href="https://krb.co.kr/winner" target="_blank" rel="noopener noreferrer">수상실적</a>
+                        <a href="https://krb.co.kr/recruit" target="_blank" rel="noopener noreferrer">채용안내</a>
+                        <a href="https://krb.co.kr/location" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+                    </nav>
+                </div>
+
+                <div class="mega-menu" id="product-mega-menu" aria-label="제품소개 하위 메뉴">
+                    <nav class="mega-menu-inner" aria-label="제품소개 메뉴">
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">가스보일러</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">기름보일러</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">온수기</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">신재생/중대형/전기</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">난방매트</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">시스템 제품</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">공기청정/환기</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">에어컨</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">실내온도조절기</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">기타</a>
+                    </nav>
+                </div>
+
+                <div class="mega-menu" id="promo-mega-menu" aria-label="홍보센터 하위 메뉴">
+                    <nav class="mega-menu-inner" aria-label="홍보센터 메뉴">
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미 소식</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">보도자료</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">홍보영상</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">광고자료</a>
+                    </nav>
+                </div>
+
+                <div class="mega-menu" id="customer-mega-menu" aria-label="고객센터 하위 메뉴">
+                    <nav class="mega-menu-inner" aria-label="고객센터 메뉴">
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">자주 묻는 질문</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">A/S 안내</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">서비스센터 찾기</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">제품 사용 설명서</a>
+                        <a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">1:1 문의</a>
                     </nav>
                 </div>
 
@@ -184,81 +218,68 @@
         });
 
         const header = document.querySelector('.header');
-        const companyMenu = document.querySelector('.gnb-company');
-        const companyTrigger = companyMenu.querySelector('a');
-        const megaMenu = document.querySelector('.mega-menu');
         const menuToggle = document.querySelector('.menu-toggle');
+        const menuTriggers = document.querySelectorAll('.gnb-item > a[aria-controls]');
+        const megaMenus = document.querySelectorAll('.header .mega-menu');
         let closeTimer;
 
-        const openMegaMenu = () => {
+        const openMegaMenu = (trigger) => {
             clearTimeout(closeTimer);
+            const targetId = trigger.getAttribute('aria-controls');
+            megaMenus.forEach((menu) => {
+                menu.classList.toggle('is-active', menu.id === targetId);
+            });
             header.classList.add('mega-menu-open');
-            companyTrigger.setAttribute('aria-expanded', 'true');
-
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-                megaMenu.style.display = 'block';
-                megaMenu.style.top = '116px';
-                megaMenu.style.right = '20px';
-                megaMenu.style.left = '20px';
-                megaMenu.style.width = 'auto';
-                megaMenu.style.padding = '18px 20px 20px';
-                megaMenu.style.backgroundColor = 'var(--color-surface-default)';
-                megaMenu.style.border = '1px solid var(--color-border-default)';
-                megaMenu.style.boxShadow = '0 12px 22px rgba(31, 41, 55, 0.10)';
-                megaMenu.style.opacity = '1';
-                megaMenu.style.visibility = 'visible';
-                megaMenu.style.pointerEvents = 'auto';
-                megaMenu.style.transform = 'translateY(0)';
-            }
+            menuTriggers.forEach((item) => {
+                item.setAttribute('aria-expanded', String(item === trigger));
+            });
+            const parent = trigger.closest('.gnb-item');
+            document.querySelectorAll('.gnb-item').forEach((item) => item.classList.toggle('is-open', item === parent));
         };
 
         const closeMegaMenu = () => {
             clearTimeout(closeTimer);
             header.classList.remove('mega-menu-open');
-            companyTrigger.setAttribute('aria-expanded', 'false');
-
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-                megaMenu.style.removeProperty('display');
-                megaMenu.style.removeProperty('top');
-                megaMenu.style.removeProperty('right');
-                megaMenu.style.removeProperty('left');
-                megaMenu.style.removeProperty('width');
-                megaMenu.style.removeProperty('padding');
-                megaMenu.style.removeProperty('background-color');
-                megaMenu.style.removeProperty('border');
-                megaMenu.style.removeProperty('box-shadow');
-                megaMenu.style.removeProperty('opacity');
-                megaMenu.style.removeProperty('visibility');
-                megaMenu.style.removeProperty('pointer-events');
-                megaMenu.style.removeProperty('transform');
-            }
+            menuTriggers.forEach((item) => item.setAttribute('aria-expanded', 'false'));
+            document.querySelectorAll('.gnb-item').forEach((item) => item.classList.remove('is-open'));
         };
 
         const delayedCloseMegaMenu = () => {
             clearTimeout(closeTimer);
-            closeTimer = setTimeout(closeMegaMenu, 120);
+            closeTimer = setTimeout(closeMegaMenu, 140);
         };
 
-        companyMenu.addEventListener('mouseenter', () => {
-            if (!window.matchMedia('(max-width: 1024px)').matches) {
-                openMegaMenu();
-            }
+        menuTriggers.forEach((trigger) => {
+            const parent = trigger.closest('.gnb-item');
+            parent.addEventListener('mouseenter', () => {
+                if (!window.matchMedia('(max-width: 1024px)').matches) {
+                    openMegaMenu(trigger);
+                }
+            });
+            parent.addEventListener('mouseleave', () => {
+                if (!window.matchMedia('(max-width: 1024px)').matches) {
+                    delayedCloseMegaMenu();
+                }
+            });
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (window.matchMedia('(max-width: 1024px)').matches) {
+                    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+                    if (isOpen) {
+                        closeMegaMenu();
+                    } else {
+                        openMegaMenu(trigger);
+                    }
+                } else {
+                    openMegaMenu(trigger);
+                }
+            });
         });
 
-        companyTrigger.addEventListener('mousemove', (event) => {
-            if (!window.matchMedia('(max-width: 1024px)').matches) return;
-            const rect = companyTrigger.getBoundingClientRect();
-            const plusAreaWidth = 44;
-            if (event.clientX >= rect.right - plusAreaWidth) {
-                openMegaMenu();
-            } else {
-                delayedCloseMegaMenu();
-            }
+        megaMenus.forEach((menu) => {
+            menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+            menu.addEventListener('mouseleave', delayedCloseMegaMenu);
         });
-
-        companyMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
-        megaMenu.addEventListener('mouseenter', openMegaMenu);
-        megaMenu.addEventListener('mouseleave', delayedCloseMegaMenu);
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
