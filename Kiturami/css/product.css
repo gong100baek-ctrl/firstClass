@@ -101,7 +101,7 @@ a.product-card:focus-visible {
     transition: transform 0.45s ease;
 }
 
-.product-card.swiper-slide-active {
+.product-card.is-center-product {
     transform: scale(1.05);
 }
 
@@ -157,7 +157,7 @@ a.product-card:focus-visible {
     transition: transform 0.45s ease;
 }
 
-.product-card.swiper-slide-active .product-shape {
+.product-card.is-center-product .product-shape {
     transform: scale(1.2);
 }
 
