@@ -187,6 +187,11 @@
         const productSwiper = new Swiper('.product-swiper', {
             direction: 'horizontal',
             loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
             slidesPerView: 4.7,
             centeredSlides: true,
             spaceBetween: 30,
