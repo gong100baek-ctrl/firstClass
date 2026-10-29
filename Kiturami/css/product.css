@@ -82,6 +82,19 @@
     background: linear-gradient(145deg, #dbe9ef 0%, #b6cbd7 58%, #e9ddca 100%);
 }
 
+/* Each card is a link to its product page. */
+a.product-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.product-card:focus-visible {
+    outline: 3px solid var(--color-action-primary, #0b6fd6);
+    outline-offset: 4px;
+}
+
 /* Enlarge the centered product card as well as its product image. */
 .product-card {
     transform: scale(0.96);
