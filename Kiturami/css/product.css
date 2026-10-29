@@ -111,7 +111,20 @@
     background: linear-gradient(125deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 42%), linear-gradient(180deg, rgba(255,255,255,0) 65%, rgba(245,230,207,0.7) 100%);
 }
 
-/* Temporary product silhouettes: the repository currently contains only hero image assets. */
+/* Product photos: fill the card; the photo already carries its own wall/shelf lighting. */
+.img-box--photo::before {
+    display: none;
+}
+
+.img-box--photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Temporary product silhouettes for categories that do not have a photo yet. */
 .product-shape {
     position: relative;
     z-index: 1;
