@@ -82,6 +82,16 @@
     background: linear-gradient(145deg, #dbe9ef 0%, #b6cbd7 58%, #e9ddca 100%);
 }
 
+/* Enlarge the centered product card as well as its product image. */
+.product-card {
+    transform: scale(0.96);
+    transition: transform 0.45s ease;
+}
+
+.product-card.swiper-slide-active {
+    transform: scale(1.05);
+}
+
 .product-card--active {
     height: 430px;
 }
