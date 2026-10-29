@@ -890,3 +890,9 @@ body {
         white-space: normal;
     }
 }
+    .support-panel {
+      background-image: url("../img/as-bg.png");
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
