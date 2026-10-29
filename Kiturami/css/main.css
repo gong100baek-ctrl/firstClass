@@ -110,11 +110,12 @@ body {
 }
 
 .language {
+    position: relative;
     flex: 0 0 auto;
     margin-left: 42px;
 }
 
-.language button {
+.language-toggle {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -141,6 +142,48 @@ body {
     height: 16px;
     margin-left: 2px;
     object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.language.is-open .language-arrow {
+    transform: rotate(180deg);
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 100;
+    min-width: 150px;
+    padding: 6px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.language-menu[hidden] {
+    display: none;
+}
+
+.language-option {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #222222;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.language-option:hover,
+.language-option:focus-visible,
+.language-option.is-selected {
+    background: #f2f2f2;
 }
 
 .Mo {
