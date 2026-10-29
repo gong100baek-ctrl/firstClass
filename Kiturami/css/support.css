@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: stretch;
     gap: 60px;
-    width: min(1760px, calc(100% - 80px));
+    width: min(1700px, calc(100% - 80px));
     min-height: 440px;
     margin: 0 auto;
 }
