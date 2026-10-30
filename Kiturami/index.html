@@ -646,6 +646,28 @@
             "귀뚜라미 블로그":"Блог Kiturami","귀뚜라미 페이스북":"Kiturami в Facebook","귀뚜라미 유튜브":"Kiturami на YouTube","귀뚜라미 인스타그램":"Kiturami в Instagram"
         });
 
+        // 푸터 주소, 저작권, 수상 연도와 수상 문구를 모든 언어에 등록
+        Object.assign(translations.English, {
+            "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34":"Head Office: 850 Eumbong-ro, Tangjeong-myeon, Asan-si, Chungcheongnam-do / R&D Center: 86 Magokjungang-ro, Gangseo-gu, Seoul / Cheongdo Plant: 34 Wolgok 2-gil, Cheongdo-eup, Cheongdo-gun, Gyeongsangbuk-do",
+            "Copyright © 2015 KITURAMI All Rights Reserved.":"Copyright © 2015 KITURAMI. All rights reserved.",
+            "2026년 28년 연속":"28 consecutive years in 2026","2025년 13년 연속":"13 consecutive years in 2025","2021년 6년 연속":"6 consecutive years in 2021","2026년 10년 연속":"10 consecutive years in 2026","2025년 9년 연속":"9 consecutive years in 2025","2026년 6년 연속":"6 consecutive years in 2026","2025년 5년 연속":"5 consecutive years in 2025","2025년 25년 연속":"25 consecutive years in 2025"
+        });
+        Object.assign(translations.日本語, {
+            "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34":"本社：忠清南道牙山市湯井面ウムボン路850 / R&Dセンター：ソウル特別市江西区麻谷中央路86 / 清道事業所：慶尚北道清道郡清道邑ウォルゴク2ギル34",
+            "Copyright © 2015 KITURAMI All Rights Reserved.":"Copyright © 2015 KITURAMI. All Rights Reserved.",
+            "2026년 28년 연속":"2026年・28年連続","2025년 13년 연속":"2025年・13年連続","2021년 6년 연속":"2021年・6年連続","2026년 10년 연속":"2026年・10年連続","2025년 9년 연속":"2025年・9年連続","2026년 6년 연속":"2026年・6年連続","2025년 5년 연속":"2025年・5年連続","2025년 25년 연속":"2025年・25年連続"
+        });
+        Object.assign(translations.中文, {
+            "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34":"总部：韩国忠清南道牙山市汤井面阴峰路850号 / 研发中心：韩国首尔特别市江西区麻谷中央路86号 / 清道工厂：韩国庆尚北道清道郡清道邑月谷2街34号",
+            "Copyright © 2015 KITURAMI All Rights Reserved.":"版权所有 © 2015 KITURAMI。保留所有权利。",
+            "2026년 28년 연속":"2026年，连续28年","2025년 13년 연속":"2025年，连续13年","2021년 6년 연속":"2021年，连续6年","2026년 10년 연속":"2026年，连续10年","2025년 9년 연속":"2025年，连续9年","2026년 6년 연속":"2026年，连续6年","2025년 5년 연속":"2025年，连续5年","2025년 25년 연속":"2025年，连续25年"
+        });
+        Object.assign(translations.Русский, {
+            "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34":"Главный офис: 850 Eumbong-ro, Танджон-мён, Асан, провинция Чхунчхон-Намдо / Центр R&D: 86 Magokjungang-ro, Канcогу, Сеул / Предприятие в Чхондо: 34 Wolgok 2-gil, Чхондо, провинция Кёнсан-Пукто",
+            "Copyright © 2015 KITURAMI All Rights Reserved.":"Авторские права © 2015 KITURAMI. Все права защищены.",
+            "2026년 28년 연속":"28-й год подряд, 2026","2025년 13년 연속":"13-й год подряд, 2025","2021년 6년 연속":"6-й год подряд, 2021","2026년 10년 연속":"10-й год подряд, 2026","2025년 9년 연속":"9-й год подряд, 2025","2026년 6년 연속":"6-й год подряд, 2026","2025년 5년 연속":"5-й год подряд, 2025","2025년 25년 연속":"25-й год подряд, 2025"
+        });
+
         const originalTexts = new Map();
         const originalAttributes = new Map();
         document.querySelectorAll('[aria-label], img[alt]').forEach((element) => {
