@@ -105,15 +105,17 @@
 
 .support-link-icon {
     display: inline-flex;
-    flex: 0 0 30px;
-    width: 30px;
-    height: 30px;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
     color: #6078b0;
 }
 .support-link-icon svg {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
 }
 
 .support-link-arrow {
@@ -167,15 +169,17 @@
 
 .support-resource-icon {
     display: inline-flex;
-    flex: 0 0 32px;
-    width: 32px;
-    height: 32px;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
     color: #111111;
 }
 .support-resource-icon svg {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 26px;
+    height: 26px;
+    max-width: 26px;
+    max-height: 26px;
 }
 
 .support-resource-description {
