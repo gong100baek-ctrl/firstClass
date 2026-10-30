@@ -698,6 +698,22 @@
                     node.nodeValue = original;
                 }
             });
+
+            // 푸터 주소는 공백/특수문자에 따른 정확한 문구 매칭 문제를 피하도록 전용으로 적용
+            const footerAddress = document.querySelector('.ft-address > p:first-child');
+            const footerAddressText = "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34";
+            const footerAddressTranslations = {
+                "English": "Head Office: 850 Eumbong-ro, Tangjeong-myeon, Asan-si, Chungcheongnam-do / R&D Center: 86 Magokjungang-ro, Gangseo-gu, Seoul / Cheongdo Plant: 34 Wolgok 2-gil, Cheongdo-eup, Cheongdo-gun, Gyeongsangbuk-do",
+                "日本語": "本社：忠清南道牙山市湯井面ウムボン路850 / R&Dセンター：ソウル特別市江西区麻谷中央路86 / 清道事業所：慶尚北道清道郡清道邑ウォルゴク2ギル34",
+                "中文": "总部：韩国忠清南道牙山市汤井面阴峰路850号 / 研发中心：韩国首尔特别市江西区麻谷中央路86号 / 清道工厂：韩国庆尚北道清道郡清道邑月谷2街34号",
+                "Русский": "Главный офис: 850 Eumbong-ro, Танджон-мён, Асан, провинция Чхунчхон-Намдо / Центр R&D: 86 Magokjungang-ro, Канcогу, Сеул / Предприятие в Чхондо: 34 Wolgok 2-gil, Чхондо, провинция Кёнсан-Пукто"
+            };
+            if (footerAddress) {
+                footerAddress.textContent = selectedLanguage === "한국어"
+                    ? footerAddressText
+                    : (footerAddressTranslations[selectedLanguage] || footerAddressText);
+            }
+
             const settings = languageSettings[selectedLanguage];
             originalAttributes.forEach(({ element, attribute, value }) => {
                 element.setAttribute(attribute, selectedLanguage === "한국어" ? value : (dictionary[value] || value));
