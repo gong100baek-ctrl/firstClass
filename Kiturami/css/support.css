@@ -154,8 +154,6 @@
     background: url(../images/support-engineer.png) no-repeat center / 100% 100%;
     /* The hands are in the lower half of the photo: lift it so they sit above the white card. */
     transform: translateY(-50%);
-    /* The original photo is washed out: add contrast and color so the hands and tools read clearly. */
-    filter: contrast(1.28) saturate(1.2) brightness(0.94);
     /* Fade the lower edge of the photo into the panel color. */
     -webkit-mask-image: linear-gradient(#000 82%, transparent);
     mask-image: linear-gradient(#000 82%, transparent);
