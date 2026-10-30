@@ -758,14 +758,17 @@
                     : (footerAddressTranslations[selectedLanguage] || footerAddressText);
             }
 
-            // 수상 문구는 줄별 텍스트 노드에 직접 번역을 적용
+            // 수상 문구는 일반 번역 결과가 아닌 저장된 원본 문구를 기준으로 번역
             document.querySelectorAll('.ft-award p').forEach((paragraph) => {
                 paragraph.childNodes.forEach((node) => {
                     if (node.nodeType !== Node.TEXT_NODE) return;
-                    const originalLine = node.nodeValue.trim();
+                    const originalText = originalTexts.get(node);
+                    if (originalText === undefined) return;
+
+                    const originalLine = originalText.trim();
                     const translatedLine = (awardLineTranslations[selectedLanguage] || {})[originalLine];
                     if (translatedLine) {
-                        node.nodeValue = node.nodeValue.replace(originalLine, translatedLine);
+                        node.nodeValue = originalText.replace(originalLine, translatedLine);
                     }
                 });
             });
