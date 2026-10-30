@@ -142,6 +142,29 @@
     overflow: hidden;
 }
 
+/* Engineer repair photo behind the content, slightly blurred */
+.support-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -12px;
+    right: -12px;
+    aspect-ratio: 1126 / 944;
+    z-index: 0;
+    background: url(../images/support-engineer.png) no-repeat center / 100% 100%;
+    /* The hands are in the lower half of the photo: lift it so they sit above the white card. */
+    transform: translateY(-50%);
+    filter: blur(2.5px);
+    /* Fade the lower edge of the photo into the panel color. */
+    -webkit-mask-image: linear-gradient(#000 82%, transparent);
+    mask-image: linear-gradient(#000 82%, transparent);
+}
+
+.support-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
 .support-call {
     position: absolute;
     top: 24px;
