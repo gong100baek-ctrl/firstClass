@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/support.css">
     <link rel="stylesheet" href="css/pr.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -282,7 +283,86 @@
             </section>
         </main>
 
-        <footer class="footer">&copy;</footer>
+        <footer class="footer">
+            <div class="ft-top">
+                <div class="ft-inner ft-top-inner">
+                    <!-- 아래 # 링크는 실제 페이지 주소가 정해지면 교체 -->
+                    <nav class="ft-nav" aria-label="푸터 메뉴">
+                        <ul>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">위치기반서비스이용약관</a></li>
+                            <li><a href="#">이메일무단수집거부</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                            <li><a href="https://kituramimall.com/" target="_blank" rel="noopener noreferrer">온라인쇼핑몰 로그인</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="ft-family">
+                        <label class="sr-only" for="family-site">패밀리 사이트 선택</label>
+                        <select id="family-site">
+                            <option value="" selected>Family Site</option>
+                            <option value="https://krb.co.kr/">귀뚜라미보일러</option>
+                            <option value="https://kituramimall.com/">귀뚜라미몰</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ft-info">
+                <div class="ft-inner ft-info-inner">
+                    <address class="ft-address">
+                        <p>본사 : 충청남도 아산시 탕정면 음봉로 850 / R&amp;D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34</p>
+                        <p>귀뚜라미보일러 서비스센터 <a href="tel:15889000">1588-9000</a></p>
+                        <p class="ft-copy">Copyright &copy; 2015 KITURAMI All Rights Reserved.</p>
+                    </address>
+
+                    <ul class="ft-sns">
+                        <li><a href="#"><img src="images/ft-blog.svg" alt="귀뚜라미 블로그"></a></li>
+                        <li><a href="#"><img src="images/ft-facebook.svg" alt="귀뚜라미 페이스북"></a></li>
+                        <li><a href="#"><img src="images/ft-youtube.svg" alt="귀뚜라미 유튜브"></a></li>
+                        <li><a href="#"><img src="images/ft-instagram.svg" alt="귀뚜라미 인스타그램"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ft-awards">
+                <ul class="ft-inner">
+                    <li class="ft-award">
+                        <img src="images/ft-award-1.png" alt="">
+                        <p>2026년 28년 연속<br>가정용보일러<br>브랜드파워 1위</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-2.png" alt="">
+                        <p>2025년 13년 연속<br>대한민국 100대<br>브랜드 선정</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-3.png" alt="">
+                        <p>2021년 6년 연속<br>품질경쟁력<br>우수기업 선정</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-4.png" alt="">
+                        <p>2026년 10년 연속<br>브랜드<br>고객충성도 1위</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-5.png" alt="">
+                        <p>2025년 9년 연속<br>소비자가<br>가장 추천하는<br>브랜드 1위</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-6.png" alt="">
+                        <p>2026년 6년 연속<br>콜센터품질지수<br>가정용보일러 부문<br>우수기업 선정</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-7.png" alt="">
+                        <p>2025년 5년 연속<br>한국의 소비자<br>보호지수 우수기업<br>선정</p>
+                    </li>
+                    <li class="ft-award">
+                        <img src="images/ft-award-8.png" alt="">
+                        <p>2025년 25년 연속<br>여성소비자가 뽑은<br>좋은 기업 대상</p>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -486,6 +566,11 @@
                 autoplayButton.setAttribute('aria-pressed', 'false');
                 autoplayButton.classList.remove('is-play');
             }
+        });
+        const familySite = document.getElementById('family-site');
+        familySite.addEventListener('change', () => {
+            if (familySite.value) window.open(familySite.value, '_blank', 'noopener');
+            familySite.selectedIndex = 0;
         });
     </script>
 </body>

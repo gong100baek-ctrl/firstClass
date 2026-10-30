@@ -1,0 +1,287 @@
+/* Footer */
+:root {
+    --ft-navy: #1e2638;
+    --ft-line: #f2f3f5;
+}
+
+.footer {
+    background: var(--color-surface-default);
+}
+
+.ft-inner {
+    width: min(1760px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* Top bar: policy links + family site */
+.ft-top {
+    background: var(--ft-navy);
+}
+
+.ft-top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 70px;
+}
+
+.ft-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ft-nav li + li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 0 20px;
+    background: rgba(255, 255, 255, 0.28);
+    vertical-align: middle;
+}
+
+.ft-nav li {
+    display: flex;
+    align-items: center;
+}
+
+.ft-nav a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    transition: opacity 0.2s ease;
+}
+
+.ft-nav a:hover,
+.ft-nav a:focus-visible {
+    opacity: 0.7;
+}
+
+.ft-family select {
+    width: 160px;
+    height: 40px;
+    padding: 0 36px 0 14px;
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E") no-repeat right 14px center;
+    color: #ffffff;
+    font: inherit;
+    font-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.ft-family select option {
+    color: #000000;
+}
+
+.ft-family select:focus-visible,
+.ft-nav a:focus-visible,
+.ft-sns a:focus-visible {
+    outline: 3px solid var(--color-accent-blue);
+    outline-offset: 3px;
+}
+
+/* Company info + social */
+.ft-info {
+    border-bottom: 1px solid var(--ft-line);
+}
+
+.ft-info-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 28px 0 32px;
+}
+
+.ft-address {
+    font-style: normal;
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+}
+
+.ft-address p {
+    margin: 0;
+    word-break: keep-all;
+}
+
+.ft-address a {
+    color: inherit;
+}
+
+.ft-copy {
+    margin-top: 6px;
+    color: #c4c9d1;
+}
+
+.ft-sns {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+}
+
+.ft-sns img {
+    display: block;
+    width: 44px;
+    height: 44px;
+    transition: transform 0.2s ease;
+}
+
+.ft-sns a:hover img,
+.ft-sns a:focus-visible img {
+    transform: translateY(-3px);
+}
+
+/* Awards */
+.ft-awards {
+    padding: 28px 0 40px;
+}
+
+.ft-awards ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 36px;
+}
+
+.ft-award {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ft-award img {
+    display: block;
+    flex: 0 0 auto;
+    height: 46px; /* the supplied badge images are small; keep close to their native size */
+    width: auto;
+}
+
+.ft-award p {
+    margin: 0;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+}
+
+@media (max-width: 1600px) {
+    .ft-awards ul {
+        gap: 20px 22px;
+    }
+
+    .ft-award {
+        gap: 8px;
+    }
+
+    .ft-award img {
+        height: 40px;
+    }
+
+    .ft-award p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ft-inner {
+        width: min(1760px, calc(100% - 64px));
+    }
+
+    .ft-awards ul {
+        gap: 20px 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ft-inner {
+        width: calc(100% - 40px);
+    }
+
+    .ft-top-inner {
+        padding: 16px 0;
+    }
+
+    .ft-nav a {
+        font-size: 14px;
+    }
+
+    .ft-nav li + li::before {
+        margin: 0 12px;
+    }
+
+    .ft-info-inner {
+        align-items: flex-start;
+        padding: 24px 0 28px;
+    }
+
+    .ft-address {
+        font-size: 14px;
+    }
+
+    .ft-awards {
+        padding: 24px 0 36px;
+    }
+
+    .ft-awards ul {
+        justify-content: flex-start;
+        gap: 20px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ft-top-inner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .ft-nav li {
+        padding: 3px 0;
+    }
+
+    .ft-family select {
+        width: 100%;
+    }
+
+    .ft-info-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ft-sns img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ft-awards ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .ft-award {
+        gap: 8px;
+    }
+
+    .ft-award img {
+        height: 38px;
+    }
+
+    .ft-award p {
+        font-size: 11.5px;
+        white-space: normal;
+        word-break: keep-all;
+    }
+}
