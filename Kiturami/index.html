@@ -632,7 +632,28 @@
             "中文": { code: "zh", label: "中文" },
             "Русский": { code: "ru", label: "Русский" }
         };
+        // 푸터 SNS 아이콘처럼 이미지의 대체 텍스트도 언어별로 변경
+        Object.assign(translations.English, {
+            "귀뚜라미 블로그":"Kiturami Blog","귀뚜라미 페이스북":"Kiturami Facebook","귀뚜라미 유튜브":"Kiturami YouTube","귀뚜라미 인스타그램":"Kiturami Instagram"
+        });
+        Object.assign(translations.日本語, {
+            "귀뚜라미 블로그":"キツラミブログ","귀뚜라미 페이스북":"キツラミFacebook","귀뚜라미 유튜브":"キツラミYouTube","귀뚜라미 인스타그램":"キツラミInstagram"
+        });
+        Object.assign(translations.中文, {
+            "귀뚜라미 블로그":"庆东博客","귀뚜라미 페이스북":"庆东Facebook","귀뚜라미 유튜브":"庆东YouTube","귀뚜라미 인스타그램":"庆东Instagram"
+        });
+        Object.assign(translations.Русский, {
+            "귀뚜라미 블로그":"Блог Kiturami","귀뚜라미 페이스북":"Kiturami в Facebook","귀뚜라미 유튜브":"Kiturami на YouTube","귀뚜라미 인스타그램":"Kiturami в Instagram"
+        });
+
         const originalTexts = new Map();
+        const originalAttributes = new Map();
+        document.querySelectorAll('[aria-label], img[alt]').forEach((element) => {
+            ['aria-label', 'alt'].forEach((attribute) => {
+                const value = element.getAttribute(attribute);
+                if (value) originalAttributes.set(`${attribute}:${Array.from(element.parentNode?.children || []).indexOf(element)}:${element.tagName}:${value}`, { element, attribute, value });
+            });
+        });
         const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
             acceptNode(node) {
                 return node.parentElement.closest('script, style, .language-menu') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
@@ -656,12 +677,8 @@
                 }
             });
             const settings = languageSettings[selectedLanguage];
-            document.querySelectorAll('[aria-label], img[alt]').forEach((element) => {
-                ['aria-label', 'alt'].forEach((attribute) => {
-                    const originalValue = element.getAttribute(attribute);
-                    if (!originalValue) return;
-                    element.setAttribute(attribute, selectedLanguage === "한국어" ? originalValue : (dictionary[originalValue] || originalValue));
-                });
+            originalAttributes.forEach(({ element, attribute, value }) => {
+                element.setAttribute(attribute, selectedLanguage === "한국어" ? value : (dictionary[value] || value));
             });
             document.documentElement.lang = settings.code;
             document.title = selectedLanguage === "한국어" ? "귀뚜라미리뉴얼포트폴리오" :
