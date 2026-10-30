@@ -467,17 +467,117 @@
             language.classList.toggle('is-open', !isOpen);
         });
 
+        const translations = {
+            English: {
+                "회사소개":"About Us","제품소개":"Products","홍보센터":"PR Center","고객센터":"Customer Support","귀뚜라미몰 바로가기":"Kiturami Mall",
+                "기업비전":"Corporate Vision","기업연혁":"History","CI소개":"Brand Identity","국내외지사":"Global Network","수상실적":"Awards","채용안내":"Careers","찾아오시는 길":"Directions",
+                "가스보일러":"Gas Boilers","기름보일러":"Oil Boilers","온수기":"Water Heaters","신재생/중대형/전기":"Renewable Energy / Commercial / Electric","난방매트":"Heating Mats","시스템 제품":"System Products","공기청정/환기":"Air Purification / Ventilation","에어컨":"Air Conditioners","실내온도조절기":"Room Thermostats","기타":"Other Products",
+                "자가진단메뉴얼":"Self-Diagnosis Guide","A/S신청&문의하기":"Service Request & Inquiry","서비스센터찾기":"Find a Service Center","영업대리점 찾기":"Find a Sales Agency","온라인 공식판매점 찾기":"Find an Official Online Dealer","다운로드":"Downloads","제품등록":"Product Registration","안전을 위한 주의 사항":"Safety Information",
+                "보일러는 역시 귀뚜라미!":"Kiturami Boilers: The Right Choice!","차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.":"We create outstanding products with expertise and innovative technology.","VIEW MORE":"VIEW MORE",
+                "신재생/중대형/전기":"Renewable Energy / Commercial / Electric","기타 제품":"Other Products","PR CENTER":"PR CENTER","귀뚜라미의 생생하고 신속한 정보를 전달하는 홍보센터입니다.":"The latest news and updates from Kiturami.","News":"News",
+                "귀뚜라미보일러 고객센터":"Kiturami Boiler Customer Support","항상 저희 귀뚜라미 보일러를 사용해 주셔서 감사합니다.":"Thank you for choosing Kiturami boilers.","보일러에 관해 궁금한 점이나 불만이 있으시다면 언제든 전화주세요.":"Please call us anytime if you have questions or concerns about your boiler.","어떠한 질문이라도 친절하게 안내해드리겠습니다.":"We will be happy to assist you with any inquiry.",
+                "고객센터":"Customer Support","온라인쇼핑몰 바로가기":"Go to Online Store","e-카탈로그/사용설명서":"E-Catalog / User Manuals","검색부터 다운로드까지":"Search and download","제품별 e-카탈로그와":"Product e-catalogs and","사용설명서를 쉽게 이용 가능합니다!":"user manuals are easy to access!","동영상 가이드":"Video Guides","이젠 귀뚜라미를 더욱 쉽게 만나보세요!":"Discover how easy Kiturami can be!","동영상으로 귀뚜라미 제품 사용법을":"Learn how to use Kiturami products","알려드립니다.":"through our videos.","안전을 위한 주의사항":"Safety Information",
+                "개인정보처리방침":"Privacy Policy","이용약관":"Terms of Use","위치기반서비스이용약관":"Location-Based Services Terms","이메일무단수집거부":"No Unauthorized Email Collection","사이트맵":"Sitemap","온라인쇼핑몰 로그인":"Online Store Login","패밀리 사이트 선택":"Select a family site","귀뚜라미그룹":"Kiturami Group","귀뚜라미보일러":"Kiturami Boilers","귀뚜라미몰":"Kiturami Mall",
+                "본사 : 충청남도 아산시 탕정면 음봉로 850 / R&D 센터 : 서울특별시 강서구 마곡중앙로 86 / 청도사업장 : 경상북도 청도군 청도읍 월곡2길 34":"Head Office: 850 Eumbong-ro, Tangjeong-myeon, Asan-si, Chungcheongnam-do / R&D Center: 86 Magokjungang-ro, Gangseo-gu, Seoul / Qingdao Plant: 34 Wolgok 2-gil, Cheongdo-eup, Cheongdo-gun, Gyeongsangbuk-do",
+                "귀뚜라미보일러 서비스센터":"Kiturami Boiler Service Center","메뉴 열기":"Open menu","메뉴 닫기":"Close menu","언어 선택":"Select language","귀뚜라미 홈":"Kiturami Home","주요 메뉴":"Main navigation","이전 배너":"Previous banner","다음 배너":"Next banner","배너 일시정지":"Pause banner","배너 재생":"Play banner"
+            },
+            日本語: {
+                "회사소개":"会社紹介","제품소개":"製品紹介","홍보센터":"広報センター","고객센터":"お客様サポート","귀뚜라미몰 바로가기":"キツラミモール",
+                "기업비전":"企業ビジョン","기업연혁":"企業沿革","CI소개":"CI紹介","국내외지사":"国内外拠点","수상실적":"受賞実績","채용안내":"採用案内","찾아오시는 길":"アクセス",
+                "가스보일러":"ガスボイラー","기름보일러":"石油ボイラー","온수기":"給湯器","신재생/중대형/전기":"新エネルギー・大型・電気","난방매트":"暖房マット","시스템 제품":"システム製品","공기청정/환기":"空気清浄・換気","에어컨":"エアコン","실내온도조절기":"室内温度調節器","기타":"その他",
+                "자가진단메뉴얼":"自己診断マニュアル","A/S신청&문의하기":"修理のお申し込み・お問い合わせ","서비스센터찾기":"サービスセンター検索","영업대리점 찾기":"販売代理店検索","온라인 공식판매점 찾기":"公式オンライン販売店検索","다운로드":"ダウンロード","제품등록":"製品登録","안전을 위한 주의 사항":"安全上の注意",
+                "보일러는 역시 귀뚜라미!":"ボイラーなら、やっぱりキツラミ！","차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.":"独自のノウハウと先端技術で、優れた製品をお届けします。","VIEW MORE":"もっと見る",
+                "기타 제품":"その他の製品","PR CENTER":"広報センター","귀뚜라미의 생생하고 신속한 정보를 전달하는 홍보센터입니다.":"キツラミの最新情報をお届けする広報センターです。","News":"ニュース",
+                "귀뚜라미보일러 고객센터":"キツラミボイラー お客様サポート","항상 저희 귀뚜라미 보일러를 사용해 주셔서 감사합니다.":"いつもキツラミボイラーをご利用いただき、ありがとうございます。","보일러에 관해 궁금한 점이나 불만이 있으시다면 언제든 전화주세요.":"ボイラーについてご不明な点やご不満がございましたら、お電話ください。","어떠한 질문이라도 친절하게 안내해드리겠습니다.":"どのようなご質問にも丁寧にご案内いたします。",
+                "고객센터":"お客様サポート","온라인쇼핑몰 바로가기":"オンラインショップへ","e-카탈로그/사용설명서":"電子カタログ・取扱説明書","검색부터 다운로드까지":"検索からダウンロードまで","제품별 e-카탈로그와":"製品別電子カタログと","사용설명서를 쉽게 이용 가능합니다!":"取扱説明書を簡単にご利用いただけます！","동영상 가이드":"動画ガイド","이젠 귀뚜라미를 더욱 쉽게 만나보세요!":"動画でキツラミをもっと身近に！","동영상으로 귀뚜라미 제품 사용법을":"動画でキツラミ製品の使い方を","알려드립니다.":"ご紹介します。","안전을 위한 주의사항":"安全上の注意",
+                "개인정보처리방침":"個人情報保護方針","이용약관":"利用規約","위치기반서비스이용약관":"位置情報サービス利用規約","이메일무단수집거부":"メールアドレスの無断収集拒否","사이트맵":"サイトマップ","온라인쇼핑몰 로그인":"オンラインショップ ログイン","패밀리 사이트 선택":"ファミリーサイトを選択","귀뚜라미그룹":"キツラミグループ","귀뚜라미보일러":"キツラミボイラー","귀뚜라미몰":"キツラミモール",
+                "귀뚜라미보일러 서비스센터":"キツラミボイラー サービスセンター","메뉴 열기":"メニューを開く","메뉴 닫기":"メニューを閉じる","언어 선택":"言語を選択","귀뚜라미 홈":"キツラミ ホーム","주요 메뉴":"メインメニュー","이전 배너":"前のバナー","다음 배너":"次のバナー","배너 일시정지":"バナーを一時停止","배너 재생":"バナーを再生"
+            },
+            中文: {
+                "회사소개":"公司介绍","제품소개":"产品介绍","홍보센터":"宣传中心","고객센터":"客户服务","귀뚜라미몰 바로가기":"前往庆东商城",
+                "기업비전":"企业愿景","기업연혁":"企业历程","CI소개":"品牌标识介绍","국내외지사":"国内外分支机构","수상실적":"获奖记录","채용안내":"招聘信息","찾아오시는 길":"交通指南",
+                "가스보일러":"燃气锅炉","기름보일러":"燃油锅炉","온수기":"热水器","신재생/중대형/전기":"新能源／大型／电锅炉","난방매트":"采暖垫","시스템 제품":"系统产品","공기청정/환기":"空气净化／通风","에어컨":"空调","실내온도조절기":"室内温控器","기타":"其他",
+                "자가진단메뉴얼":"自助诊断指南","A/S신청&문의하기":"售后申请与咨询","서비스센터찾기":"查找服务中心","영업대리점 찾기":"查找销售代理店","온라인 공식판매점 찾기":"查找官方网店","다운로드":"下载","제품등록":"产品注册","안전을 위한 주의 사항":"安全须知",
+                "보일러는 역시 귀뚜라미!":"锅炉，当然选庆东！","차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.":"凭借专业经验与创新技术，打造优质产品。","VIEW MORE":"查看更多",
+                "기타 제품":"其他产品","PR CENTER":"宣传中心","귀뚜라미의 생생하고 신속한 정보를 전달하는 홍보센터입니다.":"为您传递庆东最新资讯的宣传中心。","News":"新闻",
+                "귀뚜라미보일러 고객센터":"庆东锅炉客户服务","항상 저희 귀뚜라미 보일러를 사용해 주셔서 감사합니다.":"感谢您一直使用庆东锅炉。","보일러에 관해 궁금한 점이나 불만이 있으시다면 언제든 전화주세요.":"如果您对锅炉有任何疑问或意见，欢迎随时致电。","어떠한 질문이라도 친절하게 안내해드리겠습니다.":"我们将热情为您解答。",
+                "고객센터":"客户服务","온라인쇼핑몰 바로가기":"前往网上商城","e-카탈로그/사용설명서":"电子目录／使用说明书","검색부터 다운로드까지":"从搜索到下载","제품별 e-카탈로그와":"各产品电子目录及","사용설명서를 쉽게 이용 가능합니다!":"使用说明书均可轻松获取！","동영상 가이드":"视频指南","이젠 귀뚜라미를 더욱 쉽게 만나보세요!":"通过视频，更轻松地了解庆东！","동영상으로 귀뚜라미 제품 사용법을":"通过视频介绍庆东产品的使用方法","알려드립니다.":"。","안전을 위한 주의사항":"安全须知",
+                "개인정보처리방침":"隐私政策","이용약관":"使用条款","위치기반서비스이용약관":"基于位置的服务条款","이메일무단수집거부":"拒绝未经许可收集电子邮件","사이트맵":"网站地图","온라인쇼핑몰 로그인":"网上商城登录","패밀리 사이트 선택":"选择关联网站","귀뚜라미그룹":"庆东集团","귀뚜라미보일러":"庆东锅炉","귀뚜라미몰":"庆东商城",
+                "귀뚜라미보일러 서비스센터":"庆东锅炉服务中心","메뉴 열기":"打开菜单","메뉴 닫기":"关闭菜单","언어 선택":"选择语言","귀뚜라미 홈":"庆东首页","주요 메뉴":"主导航","이전 배너":"上一张横幅","다음 배너":"下一张横幅","배너 일시정지":"暂停横幅","배너 재생":"播放横幅"
+            },
+            Русский: {
+                "회사소개":"О компании","제품소개":"Продукция","홍보센터":"Пресс-центр","고객센터":"Поддержка","귀뚜라미몰 바로가기":"Перейти в магазин Kiturami",
+                "기업비전":"Корпоративное видение","기업연혁":"История компании","CI소개":"Фирменный стиль","국내외지사":"Филиалы","수상실적":"Награды","채용안내":"Вакансии","찾아오시는 길":"Как добраться",
+                "가스보일러":"Газовые котлы","기름보일러":"Жидкотопливные котлы","온수기":"Водонагреватели","신재생/중대형/전기":"Возобновляемая энергия / Промышленные / Электрические","난방매트":"Маты с подогревом","시스템 제품":"Системная продукция","공기청정/환기":"Очистка и вентиляция воздуха","에어컨":"Кондиционеры","실내온도조절기":"Комнатные термостаты","기타":"Другое",
+                "자가진단메뉴얼":"Самодиагностика","A/S신청&문의하기":"Заявка на обслуживание и вопросы","서비스센터찾기":"Найти сервисный центр","영업대리점 찾기":"Найти дилера","온라인 공식판매점 찾기":"Найти официальный интернет-магазин","다운로드":"Загрузки","제품등록":"Регистрация продукта","안전을 위한 주의 사항":"Меры безопасности",
+                "보일러는 역시 귀뚜라미!":"Котлы Kiturami — правильный выбор!","차별화된 노하우와 신기술로 최고의 제품만을 생산합니다.":"Мы создаём качественную продукцию благодаря опыту и новым технологиям.","VIEW MORE":"Подробнее",
+                "기타 제품":"Другие продукты","PR CENTER":"ПРЕСС-ЦЕНТР","귀뚜라미의 생생하고 신속한 정보를 전달하는 홍보센터입니다.":"Новости и актуальная информация от Kiturami.","News":"Новости",
+                "귀뚜라미보일러 고객센터":"Служба поддержки котлов Kiturami","항상 저희 귀뚜라미 보일러를 사용해 주셔서 감사합니다.":"Спасибо, что выбираете котлы Kiturami.","보일러에 관해 궁금한 점이나 불만이 있으시다면 언제든 전화주세요.":"Если у вас есть вопросы или замечания по котлу, позвоните нам.","어떠한 질문이라도 친절하게 안내해드리겠습니다.":"Мы с радостью поможем вам.",
+                "고객센터":"Поддержка","온라인쇼핑몰 바로가기":"Перейти в интернет-магазин","e-카탈로그/사용설명서":"Электронный каталог / Руководства","검색부터 다운로드까지":"Поиск и загрузка","제품별 e-카탈로그와":"Каталоги и","사용설명서를 쉽게 이용 가능합니다!":"руководства для каждого изделия доступны онлайн!","동영상 가이드":"Видеоинструкции","이젠 귀뚜라미를 더욱 쉽게 만나보세요!":"Узнайте больше о Kiturami с помощью видео!","동영상으로 귀뚜라미 제품 사용법을":"Посмотрите, как пользоваться продукцией Kiturami","알려드립니다.":"в наших видео.","안전을 위한 주의사항":"Меры безопасности",
+                "개인정보처리방침":"Политика конфиденциальности","이용약관":"Условия использования","위치기반서비스이용약관":"Условия сервисов геолокации","이메일무단수집거부":"Запрет несанкционированного сбора email","사이트맵":"Карта сайта","온라인쇼핑몰 로그인":"Вход в интернет-магазин","패밀리 사이트 선택":"Выберите сайт группы","귀뚜라미그룹":"Группа Kiturami","귀뚜라미보일러":"Котлы Kiturami","귀뚜라미몰":"Магазин Kiturami",
+                "귀뚜라미보일러 서비스센터":"Сервисный центр Kiturami","메뉴 열기":"Открыть меню","메뉴 닫기":"Закрыть меню","언어 선택":"Выбрать язык","귀뚜라미 홈":"Главная Kiturami","주요 메뉴":"Главное меню","이전 배너":"Предыдущий баннер","다음 배너":"Следующий баннер","배너 일시정지":"Приостановить баннер","배너 재생":"Запустить баннер"
+            }
+        };
+
+        const languageSettings = {
+            "한국어": { code: "ko", label: "한국어" },
+            "English": { code: "en", label: "English" },
+            "日本語": { code: "ja", label: "日本語" },
+            "中文": { code: "zh", label: "中文" },
+            "Русский": { code: "ru", label: "Русский" }
+        };
+        const originalTexts = new Map();
+        const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                return node.parentElement.closest('script, style, .language-menu') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        while (textWalker.nextNode()) {
+            const node = textWalker.currentNode;
+            const key = node.nodeValue.trim();
+            if (key && !originalTexts.has(node)) originalTexts.set(node, node.nodeValue);
+        }
+
+        const applyLanguage = (selectedLanguage) => {
+            const dictionary = translations[selectedLanguage] || {};
+            originalTexts.forEach((original, node) => {
+                const key = original.trim();
+                const translated = dictionary[key];
+                if (translated) {
+                    node.nodeValue = original.replace(key, translated);
+                } else {
+                    node.nodeValue = original;
+                }
+            });
+            const settings = languageSettings[selectedLanguage];
+            document.documentElement.lang = settings.code;
+            document.title = selectedLanguage === "한국어" ? "귀뚜라미리뉴얼포트폴리오" :
+                ({ English: "Kiturami Website", 日本語: "キツラミ ウェブサイト", 中文: "庆东网站", Русский: "Сайт Kiturami" }[selectedLanguage]);
+            languageCurrent.textContent = settings.label;
+            document.querySelectorAll('.language-option').forEach((item) => {
+                item.classList.toggle('is-selected', item.dataset.language === selectedLanguage);
+            });
+            document.querySelector('.menu-toggle').setAttribute('aria-label', dictionary["메뉴 열기"] || "메뉴 열기");
+            document.querySelector('.gnb').setAttribute('aria-label', dictionary["주요 메뉴"] || "주요 메뉴");
+            document.querySelector('.header .logo a').setAttribute('aria-label', dictionary["귀뚜라미 홈"] || "귀뚜라미 홈");
+            document.querySelectorAll('.swiper-button-prev').forEach((item) => item.setAttribute('aria-label', dictionary["이전 배너"] || "이전 배너"));
+            document.querySelectorAll('.swiper-button-next').forEach((item) => item.setAttribute('aria-label', dictionary["다음 배너"] || "다음 배너"));
+            const pauseLabel = swiper.autoplay.running ? "배너 일시정지" : "배너 재생";
+            document.querySelector('.swiper-autoplay').setAttribute('aria-label', dictionary[pauseLabel] || pauseLabel);
+            localStorage.setItem('kiturami-language', selectedLanguage);
+        };
+
         languageMenu.querySelectorAll('.language-option').forEach((option) => {
             option.addEventListener('click', () => {
-                languageCurrent.textContent = option.dataset.language;
-                languageMenu.querySelectorAll('.language-option').forEach((item) => {
-                    item.classList.toggle('is-selected', item === option);
-                });
+                applyLanguage(option.dataset.language);
                 languageToggle.setAttribute('aria-expanded', 'false');
                 languageMenu.hidden = true;
                 language.classList.remove('is-open');
             });
         });
+
+        const savedLanguage = localStorage.getItem('kiturami-language') || '한국어';
+        applyLanguage(savedLanguage);
 
         document.addEventListener('click', (event) => {
             if (!language.contains(event.target)) {
