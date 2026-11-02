@@ -244,6 +244,79 @@
     color: #9aa0ab;
 }
 
+/* ---- Lower column: notice + online store links (two layers, each half) ---- */
+.cc-lower {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    min-width: 0;
+}
+
+.cc-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.cc-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 76px;
+    padding: 0 22px;
+    border-radius: 20px;
+    background: #e8f0fb;
+    color: #2a5aa0;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cc-link:hover,
+.cc-link:focus-visible {
+    background: #d9e5f8;
+    transform: translateY(-2px);
+}
+
+.cc-link:focus-visible {
+    outline: 3px solid #0b6bcb;
+    outline-offset: 3px;
+}
+
+.cc-link-icon {
+    display: inline-flex;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    color: #0b6bcb;
+}
+
+.cc-link-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cc-link-text {
+    min-width: 0;
+    word-break: keep-all;
+}
+
+.cc-link-arrow {
+    display: inline-flex;
+    flex: 0 0 20px;
+    width: 20px;
+    margin-left: auto;
+    color: #5f7fb5;
+}
+
+.cc-link-arrow svg {
+    width: 100%;
+    height: auto;
+}
+
 /* ---- Notice ---- */
 .cc-notice {
     position: relative;
@@ -385,6 +458,11 @@
         flex-basis: 18px;
         width: 18px;
     }
+
+    .cc-link {
+        padding: 0 16px;
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -414,7 +492,11 @@
     }
 
     .cc-notice {
-        min-height: 220px;
+        min-height: 150px;
+    }
+
+    .cc-links {
+        padding: 20px 28px;
     }
 }
 
@@ -539,8 +621,20 @@
     }
 
     .cc-notice {
-        padding: 28px 20px;
+        padding: 24px 20px;
         min-height: 0;
+    }
+
+    .cc-links {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .cc-link {
+        min-height: 56px;
+        padding: 0 16px;
+        font-size: 15px;
     }
 
     .cc-notice-head h3 {
