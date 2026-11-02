@@ -98,7 +98,7 @@
     </main>
     <script>
         const selectedTheme = new URLSearchParams(window.location.search).get('theme');
-        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal'];
+        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro'];
 
         if (allowedThemes.includes(selectedTheme) && selectedTheme !== 'default') {
             document.body.dataset.theme = selectedTheme;
