@@ -599,3 +599,33 @@ body[data-theme="brutal"] .login_btn {
     font-size: 14px;
 }
 
+/* 콘텐츠 영역 너비 소폭 확대 */
+.login_page {
+    width: min(100%, 380px);
+}
+
+body[data-theme="minimal"] .login_page {
+    width: min(100%, 440px);
+}
+
+body[data-theme="swiss"] .login_page {
+    width: min(100%, 500px);
+}
+
+body[data-theme="brutal"] .login_page {
+    width: min(100%, 450px);
+}
+
+@media (max-width: 480px) {
+    body[data-theme="minimal"] .login_page,
+    body[data-theme="swiss"] .login_page {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    body[data-theme="brutal"] .login_page {
+        width: calc(100% - 28px);
+    }
+}
+
