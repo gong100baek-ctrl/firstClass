@@ -208,3 +208,45 @@ h1 {
         margin-top: 36px;
     }
 }
+
+
+/* 추가 테마 미리보기 */
+.preview_dark {
+    border: 1px solid #414656;
+    background: #222633;
+    color: #fff;
+}
+.preview_dark .preview_line {
+    border-color: #697184;
+    background: #343b4c;
+}
+.preview_dark .preview_button {
+    background: #a78bfa;
+}
+.preview_pastel {
+    border: 1px solid #f0cbd8;
+    border-radius: 12px;
+    background: #fff0f5;
+    color: #75485a;
+}
+.preview_pastel .preview_line {
+    border: 1px solid #efc8d7;
+    border-radius: 8px;
+    background: #fff;
+}
+.preview_pastel .preview_button {
+    border-radius: 8px;
+    background: #e99ab5;
+}
+.preview_retro {
+    border: 2px dashed #6d4b32;
+    background: #f4e7ce;
+    color: #5c3d27;
+}
+.preview_retro .preview_line {
+    border: 1px solid #b99a70;
+    background: #fff9ed;
+}
+.preview_retro .preview_button {
+    background: #c65d32;
+}
