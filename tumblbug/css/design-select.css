@@ -1,0 +1,210 @@
+@import url("../../font/css/notosanskr.css");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f5f5f5;
+    color: #171717;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.selector {
+    width: min(100% - 40px, 760px);
+    margin: 0 auto;
+    padding: 38px 0 60px;
+}
+
+.back_link {
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.page_header {
+    margin: 48px 0 32px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #FD5744;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 5vw, 36px);
+    letter-spacing: -.06em;
+}
+
+.description {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.design_form fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.design_form legend {
+    grid-column: 1 / -1;
+    margin-bottom: 14px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.design_option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.design_option:has(input:checked) {
+    border: 2px solid #FD5744;
+    padding: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+
+.design_option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #FD5744;
+    flex: 0 0 auto;
+}
+
+.preview {
+    display: flex;
+    flex: 0 0 92px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    height: 112px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.preview_logo {
+    margin-bottom: 5px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.preview_line {
+    display: block;
+    height: 6px;
+    border: 1px solid #ddd;
+}
+
+.preview_line.short {
+    width: 70%;
+}
+
+.preview_button {
+    display: block;
+    height: 13px;
+    margin-top: 3px;
+    background: #FD5744;
+}
+
+.preview_minimal {
+    border: 0;
+    background: #f5f5f3;
+}
+.preview_minimal .preview_line {
+    border: 0;
+    border-bottom: 1px solid #aaa;
+}
+.preview_minimal .preview_button {
+    background: #171717;
+}
+
+.preview_swiss {
+    border: 2px solid #111;
+    background: #f2f0e9;
+}
+.preview_swiss .preview_logo {
+    text-align: right;
+}
+.preview_swiss .preview_line {
+    border: 1px solid #111;
+}
+.preview_swiss .preview_button {
+    background: #e53935;
+    border: 1px solid #111;
+}
+
+.preview_brutal {
+    border: 2px solid #111;
+    background: #f8e94b;
+    box-shadow: 3px 3px 0 #111;
+}
+.preview_brutal .preview_line {
+    border: 1px solid #111;
+    background: #fff;
+}
+.preview_brutal .preview_button {
+    background: #ff4b35;
+    border: 1px solid #111;
+}
+
+.option_text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+.option_text strong {
+    font-size: 14px;
+}
+.option_text small {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.submit_button {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 28px;
+    border: 0;
+    border-radius: 4px;
+    background: #FD5744;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.submit_button:hover {
+    background: #e84b39;
+}
+
+@media (max-width: 600px) {
+    .design_form fieldset {
+        grid-template-columns: 1fr;
+    }
+    .page_header {
+        margin-top: 36px;
+    }
+}
