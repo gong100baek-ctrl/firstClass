@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="텀블벅 로그인 화면 디자인 선택">
+    <title>텀블벅 로그인 디자인 선택</title>
+    <link rel="stylesheet" href="./css/design-select.css">
+</head>
+<body>
+    <main class="selector">
+        <a class="back_link" href="../index.html">← 메인으로</a>
+        <header class="page_header">
+            <p class="eyebrow">TUMBLBUG LOGIN UI</p>
+            <h1>로그인 디자인 선택</h1>
+            <p class="description">원하는 디자인을 선택하고 로그인 화면을 미리 확인해 보세요.</p>
+        </header>
+
+        <form id="design-form" class="design_form">
+            <fieldset>
+                <legend>디자인 테마</legend>
+                <label class="design_option">
+                    <input type="radio" name="theme" value="default" checked>
+                    <span class="preview preview_default"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
+                    <span class="option_text"><strong>Tumblbug 기본</strong><small>브랜드 고유의 레드 컬러와 기본 레이아웃</small></span>
+                </label>
+                <label class="design_option">
+                    <input type="radio" name="theme" value="minimal">
+                    <span class="preview preview_minimal"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
+                    <span class="option_text"><strong>Minimalism</strong><small>여백과 간결한 흑백 중심 디자인</small></span>
+                </label>
+                <label class="design_option">
+                    <input type="radio" name="theme" value="swiss">
+                    <span class="preview preview_swiss"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
+                    <span class="option_text"><strong>Swiss Style</strong><small>그리드와 강한 타이포그래피</small></span>
+                </label>
+                <label class="design_option">
+                    <input type="radio" name="theme" value="brutal">
+                    <span class="preview preview_brutal"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
+                    <span class="option_text"><strong>Neo Brutalism</strong><small>노란 배경과 굵은 테두리, 강한 그림자</small></span>
+                </label>
+            </fieldset>
+            <button class="submit_button" type="submit">선택한 디자인으로 로그인 화면 보기</button>
+        </form>
+    </main>
+    <script>
+        const designForm = document.querySelector('#design-form');
+
+        designForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const selectedTheme = new FormData(designForm).get('theme');
+            window.location.href = './login.html?theme=' + encodeURIComponent(selectedTheme);
+        });
+    </script>
+</body>
+</html>
