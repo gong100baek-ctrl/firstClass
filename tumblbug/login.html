@@ -20,6 +20,7 @@
                 <option value="pastel">Soft Pastel</option>
                 <option value="retro">Retro Editorial</option>
                 <option value="glass">Glassmorphism</option>
+                <option value="neo">Neumorphism</option>
             </select>
         </div>
         <header class="header">
@@ -111,7 +112,7 @@
     </main>
     <script>
         const selectedTheme = new URLSearchParams(window.location.search).get('theme');
-        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro', 'glass'];
+        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro', 'glass', 'neo'];
         const themeSelect = document.querySelector('#theme-select');
 
         function applyTheme(theme) {
