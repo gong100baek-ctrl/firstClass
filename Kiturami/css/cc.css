@@ -244,20 +244,19 @@
     color: #9aa0ab;
 }
 
-/* ---- Lower column: notice + online store links (two layers, each half) ---- */
+/* ---- Lower card: online store links ---- */
 .cc-lower {
     display: grid;
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-rows: minmax(0, 1fr);
     min-width: 0;
 }
 
 .cc-links {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: minmax(0, 1fr);
     gap: 16px;
-    align-items: center;
-    padding: 0 32px;
+    padding: 32px;
 }
 
 .cc-link {
@@ -265,11 +264,11 @@
     align-items: center;
     gap: 12px;
     min-height: 76px;
-    padding: 0 22px;
-    border-radius: 20px;
+    padding: 0 32px;
+    border-radius: 24px;
     background: #e8f0fb;
     color: #2a5aa0;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.5px;
     transition: background-color 0.2s ease, transform 0.2s ease;
@@ -317,121 +316,6 @@
     height: auto;
 }
 
-/* ---- Notice ---- */
-.cc-notice {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0 36px 0 40px;
-}
-
-.cc-notice-body {
-    flex: 1;
-    min-width: 0;
-}
-
-.cc-notice-head {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-}
-
-.cc-notice-head h3 {
-    margin: 0;
-    color: #111111;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.6px;
-}
-
-.cc-notice-more {
-    color: #555b66;
-    font-size: 16px;
-    letter-spacing: -0.3px;
-}
-
-.cc-notice-more:hover,
-.cc-notice-more:focus-visible {
-    color: #0b6bcb;
-}
-
-.cc-notice-list {
-    margin: 22px 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.cc-notice-item[hidden] {
-    display: none;
-}
-
-.cc-notice-title {
-    display: block;
-    overflow: hidden;
-    color: #2b2f36;
-    font-size: 24px;
-    line-height: 1.3;
-    letter-spacing: -0.5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.cc-notice-title:hover,
-.cc-notice-title:focus-visible {
-    color: #0b6bcb;
-}
-
-.cc-notice-date {
-    display: block;
-    margin-top: 14px;
-    color: #6b717c;
-    font-size: 18px;
-    letter-spacing: -0.2px;
-}
-
-.cc-notice-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-left: 24px;
-}
-
-.cc-notice-nav button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border: 1px solid #d6dae1;
-    border-radius: 50%;
-    background: #ffffff;
-    color: #111111;
-    cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.cc-notice-nav button:hover,
-.cc-notice-nav button:focus-visible {
-    border-color: #0b6bcb;
-    color: #0b6bcb;
-}
-
-.cc-notice-nav svg {
-    width: 16px;
-    height: 16px;
-}
-
-.cc-shortcut:focus-visible,
-.cc-btn:focus-visible,
-.cc-notice-more:focus-visible,
-.cc-notice-title:focus-visible,
-.cc-notice-nav button:focus-visible,
-.cc-phone:focus-visible {
-    outline: 3px solid #0b6bcb;
-    outline-offset: 3px;
-}
-
 @media (max-width: 1600px) {
     .cc-phone {
         font-size: 72px;
@@ -442,9 +326,6 @@
         padding: 48px 48px 50px;
     }
 
-    .cc-notice {
-        padding-right: 28px;
-    }
 
     .cc-shortcut {
         padding: 36px 20px 24px;
@@ -491,9 +372,6 @@
         min-height: 180px;
     }
 
-    .cc-notice {
-        min-height: 150px;
-    }
 
     .cc-links {
         padding: 20px 28px;
@@ -620,10 +498,6 @@
         display: none;
     }
 
-    .cc-notice {
-        padding: 24px 20px;
-        min-height: 0;
-    }
 
     .cc-links {
         grid-template-columns: minmax(0, 1fr);
@@ -637,28 +511,9 @@
         font-size: 15px;
     }
 
-    .cc-notice-head h3 {
-        font-size: 18px;
-    }
 
-    .cc-notice-more {
-        font-size: 13px;
-    }
 
-    .cc-notice-title {
-        font-size: 16px;
-    }
 
-    .cc-notice-date {
-        font-size: 14px;
-    }
 
-    .cc-notice-nav {
-        margin-left: 12px;
-    }
 
-    .cc-notice-nav button {
-        width: 40px;
-        height: 40px;
-    }
 }
