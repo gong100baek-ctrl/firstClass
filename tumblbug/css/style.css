@@ -322,3 +322,230 @@ a {
         width: 100%;
     }
 }
+
+
+/* 디자인 테마 선택 영역 */
+.theme_switcher {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 0 4px;
+    color: #666;
+    font-size: 11px;
+}
+.theme_switcher select {
+    max-width: 150px;
+    padding: 7px 28px 7px 9px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    background: #fff;
+    color: #222;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* 1. Minimalism */
+body[data-theme="minimal"] {
+    background: #f5f5f3;
+    color: #171717;
+}
+body[data-theme="minimal"] .login_page {
+    max-width: 420px;
+    padding: 0 34px;
+    background: #fff;
+    box-shadow: 0 12px 50px rgba(0,0,0,.045);
+}
+body[data-theme="minimal"] .brand {
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-size: 25px;
+    font-weight: 700;
+}
+body[data-theme="minimal"] .intro {
+    height: auto;
+    padding: 26px 0 48px;
+    text-align: left;
+}
+body[data-theme="minimal"] .intro_title {
+    font-size: 23px;
+    line-height: 1.45;
+}
+body[data-theme="minimal"] .input_wrap {
+    border: 0;
+    border-bottom: 1px solid #cfcfcf;
+}
+body[data-theme="minimal"] .input {
+    padding-left: 2px;
+}
+body[data-theme="minimal"] .option_box {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+body[data-theme="minimal"] .option input:checked + .option_box,
+body[data-theme="minimal"] .login_btn {
+    background: #171717;
+    border-color: #171717;
+}
+body[data-theme="minimal"] .login_btn {
+    height: 52px;
+    border-radius: 3px;
+}
+body[data-theme="minimal"] .sns_link,
+body[data-theme="minimal"] .sns_link img {
+    width: 40px;
+    height: 40px;
+}
+
+/* 2. Swiss Style */
+body[data-theme="swiss"] {
+    background: #f2f0e9;
+    color: #111;
+}
+body[data-theme="swiss"] .login_page {
+    max-width: 480px;
+    padding: 0 28px;
+    background: #f2f0e9;
+    border-left: 1px solid #111;
+    border-right: 1px solid #111;
+}
+body[data-theme="swiss"] .header {
+    height: 82px;
+    border-bottom: 4px solid #111;
+}
+body[data-theme="swiss"] .brand {
+    padding-top: 12px;
+    text-align: right;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    font-weight: 900;
+}
+body[data-theme="swiss"] .intro {
+    height: auto;
+    padding: 28px 0 30px;
+    text-align: left;
+    border-bottom: 1px solid #111;
+}
+body[data-theme="swiss"] .intro_sub {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+body[data-theme="swiss"] .intro_title {
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 900;
+}
+body[data-theme="swiss"] .login_form {
+    padding-top: 24px;
+}
+body[data-theme="swiss"] .input_wrap {
+    border: 2px solid #111;
+    background: #fff;
+}
+body[data-theme="swiss"] .option_box {
+    border: 2px solid #111;
+    border-radius: 0;
+}
+body[data-theme="swiss"] .option input:checked + .option_box,
+body[data-theme="swiss"] .login_btn {
+    background: #e53935;
+    border-color: #111;
+}
+body[data-theme="swiss"] .login_btn {
+    height: 54px;
+    border: 2px solid #111;
+    box-shadow: 4px 4px 0 #111;
+    font-weight: 900;
+}
+body[data-theme="swiss"] .sns {
+    padding-top: 18px;
+    border-top: 1px solid #111;
+}
+
+/* 3. Neo Brutalism */
+body[data-theme="brutal"] {
+    background: #f8e94b;
+    color: #111;
+}
+body[data-theme="brutal"] .login_page {
+    max-width: 430px;
+    min-height: calc(100vh - 36px);
+    margin: 18px auto;
+    padding: 0 26px;
+    background: #fff;
+    border: 3px solid #111;
+    box-shadow: 10px 10px 0 #111;
+}
+body[data-theme="brutal"] .intro {
+    height: auto;
+    padding: 16px 0 30px;
+    text-align: left;
+}
+body[data-theme="brutal"] .intro_sub {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 8px;
+    background: #8de6d1;
+    border: 2px solid #111;
+    color: #111;
+    font-weight: 900;
+}
+body[data-theme="brutal"] .intro_title {
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 900;
+}
+body[data-theme="brutal"] .input_wrap {
+    border: 2px solid #111;
+    box-shadow: 3px 3px 0 #111;
+}
+body[data-theme="brutal"] .option_box {
+    border: 2px solid #111;
+    border-radius: 0;
+}
+body[data-theme="brutal"] .option input:checked + .option_box {
+    background: #8de6d1;
+    border-color: #111;
+}
+body[data-theme="brutal"] .option input:checked + .option_box::after {
+    color: #111;
+}
+body[data-theme="brutal"] .login_btn {
+    height: 54px;
+    background: #ff4b35;
+    color: #111;
+    border: 2px solid #111;
+    box-shadow: 5px 5px 0 #111;
+    font-size: 16px;
+    font-weight: 900;
+}
+body[data-theme="brutal"] .sns {
+    margin-top: 26px;
+    padding: 18px 12px 22px;
+    border: 2px solid #111;
+    box-shadow: 4px 4px 0 #111;
+    background: #f3f3f3;
+}
+body[data-theme="brutal"] .sns_title::before,
+body[data-theme="brutal"] .sns_title::after {
+    background: #111;
+}
+@media (max-width: 480px) {
+    body[data-theme="minimal"] .login_page,
+    body[data-theme="swiss"] .login_page {
+        width: 100%;
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+}
+@media (max-width: 430px) {
+    body[data-theme="brutal"] .login_page {
+        width: calc(100% - 28px);
+        padding: 0 20px;
+        margin: 14px auto;
+        min-height: calc(100vh - 28px);
+    }
+}
