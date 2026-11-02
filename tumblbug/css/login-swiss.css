@@ -1,0 +1,12 @@
+@import url("./style.css");
+:root{--tumblbug-red:#e53935;--line:#111}
+body{background:#f2f0e9;color:#111;font-family:Arial,"Noto Sans KR",sans-serif}
+.login_page{width:min(100%,480px);padding:0 28px;background:#f2f0e9;border-left:1px solid #111;border-right:1px solid #111}
+.header{height:82px;border-bottom:4px solid #111}.back_btn{top:25px;left:0}.brand{padding-top:12px;text-align:right;font-family:Arial,sans-serif;font-style:normal;font-weight:900;font-size:22px;letter-spacing:-1.5px}
+.intro{height:auto;padding:28px 0 30px;text-align:left;border-bottom:1px solid #111}.intro_sub{font-size:12px;text-transform:uppercase;font-weight:700;letter-spacing:1px;color:#444}.intro_title{font-size:28px;line-height:1.25;letter-spacing:-1.5px;font-weight:900}
+.login_form{padding-top:24px}.field{margin-bottom:18px}.field_label{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}.input_wrap{border:2px solid #111;background:#fff}.input{height:48px;padding:0 12px;background:#fff}.input:focus{outline:2px solid #e53935;outline-offset:2px}.password_input{padding-right:48px}
+.login_options{height:62px;gap:18px}.option{font-size:12px;font-weight:700;gap:7px}.option_box{width:19px;height:19px;border:2px solid #111;border-radius:0}.option_box::after{font-size:13px}.option input:checked+.option_box{background:#111;border-color:#111}
+.login_btn{height:54px;background:#e53935;color:#fff;border:2px solid #111;font-size:15px;font-weight:900;text-transform:uppercase;box-shadow:4px 4px 0 #111;transition:transform .15s,box-shadow .15s}.login_btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #111}
+.account_links{height:60px;font-size:11px;font-weight:700}.account_links a{padding:0 9px}.account_links a+a::before{background:#111}
+.sns{margin-top:30px;padding-top:18px;border-top:1px solid #111}.sns_title{font-size:11px;color:#111;font-weight:800;letter-spacing:.4px;margin-bottom:20px}.sns_title::before,.sns_title::after{background:#111}.sns_list{gap:18px}.sns_link,.sns_link img{width:40px;height:40px}
+@media(max-width:480px){.login_page{border:0;padding:0 22px}}
