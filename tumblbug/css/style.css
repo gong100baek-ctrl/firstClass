@@ -629,3 +629,197 @@ body[data-theme="brutal"] .login_page {
     }
 }
 
+
+
+/* 4. Dark Mode */
+body[data-theme="dark"] {
+    background: #171923;
+    color: #f5f6fa;
+}
+body[data-theme="dark"] .login_page {
+    width: min(100%, 440px);
+    padding: 0 30px;
+    background: #222633;
+    color: #f5f6fa;
+}
+body[data-theme="dark"] .back_btn img {
+    filter: brightness(0) invert(1);
+}
+body[data-theme="dark"] .intro_sub,
+body[data-theme="dark"] .field_label,
+body[data-theme="dark"] .option {
+    color: #d7dbea;
+}
+body[data-theme="dark"] .input_wrap {
+    border: 1px solid #454d60;
+    border-radius: 6px;
+    background: #2c3343;
+}
+body[data-theme="dark"] .input {
+    background: transparent;
+    color: #fff;
+}
+body[data-theme="dark"] .input::placeholder {
+    color: #9ba3b5;
+}
+body[data-theme="dark"] .option_box {
+    border-color: #596176;
+    background: #2c3343;
+}
+body[data-theme="dark"] .option input:checked + .option_box,
+body[data-theme="dark"] .login_btn {
+    border-color: #a78bfa;
+    background: #a78bfa;
+}
+body[data-theme="dark"] .login_btn {
+    border-radius: 6px;
+    color: #171923;
+}
+body[data-theme="dark"] .account_links a {
+    color: #e0e3ed;
+}
+body[data-theme="dark"] .account_links a + a::before,
+body[data-theme="dark"] .sns_title::before,
+body[data-theme="dark"] .sns_title::after {
+    background: #454d60;
+}
+body[data-theme="dark"] .sns_title {
+    color: #aeb5c5;
+}
+
+/* 5. Soft Pastel */
+body[data-theme="pastel"] {
+    background: #fff0f5;
+    color: #75485a;
+}
+body[data-theme="pastel"] .login_page {
+    width: min(100%, 440px);
+    padding: 0 32px;
+    background: #fffafc;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 10px 35px rgba(171, 105, 133, .10);
+}
+body[data-theme="pastel"] .brand {
+    color: #d77f9f;
+}
+body[data-theme="pastel"] .intro {
+    height: auto;
+    padding: 22px 0 34px;
+}
+body[data-theme="pastel"] .intro_sub {
+    color: #b17a90;
+}
+body[data-theme="pastel"] .intro_title {
+    color: #75485a;
+    font-size: 22px;
+}
+body[data-theme="pastel"] .input_wrap {
+    overflow: hidden;
+    border: 1px solid #f0cbd8;
+    border-radius: 10px;
+    background: #fff;
+}
+body[data-theme="pastel"] .input {
+    background: transparent;
+}
+body[data-theme="pastel"] .option_box {
+    border-color: #edc1d1;
+    border-radius: 7px;
+}
+body[data-theme="pastel"] .option input:checked + .option_box,
+body[data-theme="pastel"] .login_btn {
+    border-color: #e99ab5;
+    background: #e99ab5;
+}
+body[data-theme="pastel"] .login_btn {
+    border-radius: 10px;
+    color: #fff;
+}
+body[data-theme="pastel"] .account_links a {
+    color: #946477;
+}
+body[data-theme="pastel"] .sns_title::before,
+body[data-theme="pastel"] .sns_title::after {
+    background: #f2dce4;
+}
+
+/* 6. Retro Editorial */
+body[data-theme="retro"] {
+    background: #ead9b9;
+    color: #5c3d27;
+}
+body[data-theme="retro"] .login_page {
+    width: min(100%, 450px);
+    padding: 0 30px;
+    background: #f4e7ce;
+    border-left: 1px solid #b99a70;
+    border-right: 1px solid #b99a70;
+}
+body[data-theme="retro"] .brand {
+    color: #a64f2c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: -.08em;
+}
+body[data-theme="retro"] .header {
+    border-bottom: 1px solid #b99a70;
+}
+body[data-theme="retro"] .intro {
+    height: auto;
+    padding: 24px 0 34px;
+    text-align: left;
+}
+body[data-theme="retro"] .intro_sub {
+    color: #9a6845;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+body[data-theme="retro"] .intro_title {
+    color: #5c3d27;
+    font-family: Georgia, "Noto Sans KR", serif;
+    font-size: 23px;
+    letter-spacing: -.04em;
+}
+body[data-theme="retro"] .input_wrap {
+    border: 1px dashed #b99a70;
+    background: #fff9ed;
+}
+body[data-theme="retro"] .input {
+    background: transparent;
+}
+body[data-theme="retro"] .option_box {
+    border-color: #b99a70;
+    border-radius: 0;
+}
+body[data-theme="retro"] .option input:checked + .option_box,
+body[data-theme="retro"] .login_btn {
+    border-color: #5c3d27;
+    background: #c65d32;
+}
+body[data-theme="retro"] .login_btn {
+    border: 1px solid #5c3d27;
+    color: #fff9ed;
+    font-family: Georgia, "Noto Sans KR", serif;
+    letter-spacing: .04em;
+}
+body[data-theme="retro"] .account_links a {
+    color: #795438;
+}
+body[data-theme="retro"] .account_links a + a::before,
+body[data-theme="retro"] .sns_title::before,
+body[data-theme="retro"] .sns_title::after {
+    background: #cbb18a;
+}
+body[data-theme="retro"] .sns_title {
+    color: #9a7958;
+}
+@media (max-width: 480px) {
+    body[data-theme="dark"] .login_page,
+    body[data-theme="pastel"] .login_page,
+    body[data-theme="retro"] .login_page {
+        width: 100%;
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+}
