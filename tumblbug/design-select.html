@@ -19,6 +19,18 @@
         <form id="design-form" class="design_form">
             <fieldset>
                 <legend>디자인 테마</legend>
+                <div class="theme_dropdown_wrap">
+                    <label for="theme-dropdown">테마 빠른 선택</label>
+                    <select id="theme-dropdown" name="theme-dropdown">
+                        <option value="default">Tumblbug 기본</option>
+                        <option value="minimal">Minimalism</option>
+                        <option value="swiss">Swiss Style</option>
+                        <option value="brutal">Neo Brutalism</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="pastel">Soft Pastel</option>
+                        <option value="retro">Retro Editorial</option>
+                    </select>
+                </div>
                 <label class="design_option">
                     <input type="radio" name="theme" value="default" checked>
                     <span class="preview preview_default"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
@@ -60,6 +72,22 @@
     </main>
     <script>
         const designForm = document.querySelector('#design-form');
+
+        const themeDropdown = document.querySelector('#theme-dropdown');
+        const themeRadios = designForm.querySelectorAll('input[name="theme"]');
+
+        // 드롭다운에서 선택하면 같은 테마의 카드 라디오 버튼도 선택
+        themeDropdown.addEventListener('change', () => {
+            const matchingRadio = designForm.querySelector(`input[name="theme"][value="${themeDropdown.value}"]`);
+            if (matchingRadio) matchingRadio.checked = true;
+        });
+
+        // 카드에서 선택하면 드롭다운의 값도 함께 변경
+        themeRadios.forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (radio.checked) themeDropdown.value = radio.value;
+            });
+        });
 
         designForm.addEventListener('submit', (event) => {
             event.preventDefault();
