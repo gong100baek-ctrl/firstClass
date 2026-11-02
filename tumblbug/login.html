@@ -21,6 +21,17 @@
                 <option value="retro">Retro Editorial</option>
                 <option value="glass">Glassmorphism</option>
                 <option value="neo">Neumorphism</option>
+                <option value="corporate">Corporate Blue</option>
+                <option value="ocean">Ocean Breeze</option>
+                <option value="forest">Forest Green</option>
+                <option value="lavender">Lavender Dream</option>
+                <option value="sunset">Sunset Gradient</option>
+                <option value="mono">Monochrome</option>
+                <option value="y2k">Y2K Pop</option>
+                <option value="organic">Organic Earth</option>
+                <option value="luxury">Luxury Gold</option>
+                <option value="bauhaus">Bauhaus</option>
+                <option value="terminal">Terminal Green</option>
             </select>
         </div>
         <header class="header">
@@ -112,7 +123,7 @@
     </main>
     <script>
         const selectedTheme = new URLSearchParams(window.location.search).get('theme');
-        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro', 'glass', 'neo'];
+        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro', 'glass', 'neo', 'corporate', 'ocean', 'forest', 'lavender', 'sunset', 'mono', 'y2k', 'organic', 'luxury', 'bauhaus', 'terminal'];
         const themeSelect = document.querySelector('#theme-select');
 
         function applyTheme(theme) {
