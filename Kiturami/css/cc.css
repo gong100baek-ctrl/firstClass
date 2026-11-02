@@ -83,19 +83,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    background: #e8f0fb;
-    color: #0b6bcb;
-}
-
-.cc-headset svg {
-    width: 44px;
-    height: 44px;
 }
 
 .cc-notes {
@@ -431,13 +422,8 @@
     }
 
     .cc-headset {
-        width: 56px;
-        height: 56px;
-    }
-
-    .cc-headset svg {
-        width: 28px;
-        height: 28px;
+        width: 64px;
+        height: 64px;
     }
 
     .cc-notes {
