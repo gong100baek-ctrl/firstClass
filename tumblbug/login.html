@@ -9,6 +9,15 @@
 </head>
 <body>
     <main class="login_page">
+        <div class="theme_switcher">
+            <label for="theme-select">디자인 선택</label>
+            <select id="theme-select" aria-label="로그인 화면 디자인 선택">
+                <option value="default">Tumblbug 기본</option>
+                <option value="minimal">Minimalism</option>
+                <option value="swiss">Swiss Style</option>
+                <option value="brutal">Neo Brutalism</option>
+            </select>
+        </div>
         <header class="header">
             <a class="back_btn" href="../index.html" aria-label="이전 페이지로 이동">
                 <img src="../king/img/back_icon.svg" alt="">
@@ -96,5 +105,20 @@
             </div>
         </section>
     </main>
+    <script>
+        const themeSelect = document.querySelector('#theme-select');
+        const passwordInput = document.querySelector('#password');
+        const eyeButton = document.querySelector('.eye_btn');
+
+        themeSelect.addEventListener('change', () => {
+            document.body.dataset.theme = themeSelect.value;
+        });
+
+        eyeButton.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeButton.setAttribute('aria-label', isPassword ? '비밀번호 숨기기' : '비밀번호 표시');
+        });
+    </script>
 </body>
 </html>
