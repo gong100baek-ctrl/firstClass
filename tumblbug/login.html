@@ -9,6 +9,19 @@
 </head>
 <body>
     <main class="login_page">
+        <div class="theme_switcher">
+            <label for="theme-select">디자인 테마</label>
+            <select id="theme-select" aria-label="로그인 디자인 테마 선택">
+                <option value="default">Tumblbug 기본</option>
+                <option value="minimal">Minimalism</option>
+                <option value="swiss">Swiss Style</option>
+                <option value="brutal">Neo Brutalism</option>
+                <option value="dark">Dark Mode</option>
+                <option value="pastel">Soft Pastel</option>
+                <option value="retro">Retro Editorial</option>
+                <option value="glass">Glassmorphism</option>
+            </select>
+        </div>
         <header class="header">
             <a class="back_btn" href="../index.html" aria-label="이전 페이지로 이동">
                 <img src="../king/img/back_icon.svg" alt="">
@@ -98,11 +111,36 @@
     </main>
     <script>
         const selectedTheme = new URLSearchParams(window.location.search).get('theme');
-        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro'];
+        const allowedThemes = ['default', 'minimal', 'swiss', 'brutal', 'dark', 'pastel', 'retro', 'glass'];
+        const themeSelect = document.querySelector('#theme-select');
 
-        if (allowedThemes.includes(selectedTheme) && selectedTheme !== 'default') {
-            document.body.dataset.theme = selectedTheme;
+        function applyTheme(theme) {
+            if (!allowedThemes.includes(theme)) {
+                theme = 'default';
+            }
+
+            if (theme === 'default') {
+                delete document.body.dataset.theme;
+            } else {
+                document.body.dataset.theme = theme;
+            }
+
+            themeSelect.value = theme;
+
+            const url = new URL(window.location.href);
+            if (theme === 'default') {
+                url.searchParams.delete('theme');
+            } else {
+                url.searchParams.set('theme', theme);
+            }
+            window.history.replaceState({}, '', url);
         }
+
+        applyTheme(allowedThemes.includes(selectedTheme) ? selectedTheme : 'default');
+
+        themeSelect.addEventListener('change', (event) => {
+            applyTheme(event.target.value);
+        });
 
         const passwordInput = document.querySelector('#password');
         const eyeButton = document.querySelector('.eye_btn');
