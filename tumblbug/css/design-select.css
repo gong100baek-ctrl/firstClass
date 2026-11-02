@@ -250,3 +250,45 @@ h1 {
 .preview_retro .preview_button {
     background: #c65d32;
 }
+
+
+/* 테마 빠른 선택 드롭다운 */
+.theme_dropdown_wrap {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin: 0 0 2px;
+}
+.theme_dropdown_wrap label {
+    font-size: 13px;
+    font-weight: 700;
+}
+.theme_dropdown_wrap select {
+    width: min(100%, 240px);
+    min-height: 38px;
+    padding: 7px 34px 7px 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    background: #fff;
+    color: #171717;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+.theme_dropdown_wrap select:focus-visible {
+    outline: 2px solid #FD5744;
+    outline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+    .theme_dropdown_wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .theme_dropdown_wrap select {
+        width: 100%;
+    }
+}
