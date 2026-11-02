@@ -20,8 +20,8 @@
             <fieldset>
                 <legend>디자인 테마</legend>
                 <div class="theme_dropdown_wrap">
-                    <label for="theme-dropdown">테마 빠른 선택</label>
-                    <select id="theme-dropdown" name="theme-dropdown">
+                    <label for="theme-dropdown">원하는 로그인 디자인을 선택하세요.</label>
+                    <select id="theme-dropdown" name="theme" required>
                         <option value="default">Tumblbug 기본</option>
                         <option value="minimal">Minimalism</option>
                         <option value="swiss">Swiss Style</option>
@@ -31,67 +31,17 @@
                         <option value="retro">Retro Editorial</option>
                     </select>
                 </div>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="default" checked>
-                    <span class="preview preview_default"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Tumblbug 기본</strong><small>브랜드 고유의 레드 컬러와 기본 레이아웃</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="minimal">
-                    <span class="preview preview_minimal"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Minimalism</strong><small>여백과 간결한 흑백 중심 디자인</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="swiss">
-                    <span class="preview preview_swiss"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Swiss Style</strong><small>그리드와 강한 타이포그래피</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="brutal">
-                    <span class="preview preview_brutal"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Neo Brutalism</strong><small>노란 배경과 굵은 테두리, 강한 그림자</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="dark">
-                    <span class="preview preview_dark"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Dark Mode</strong><small>어두운 배경과 밝은 글자로 집중도 높은 디자인</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="pastel">
-                    <span class="preview preview_pastel"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Soft Pastel</strong><small>부드러운 파스텔 컬러와 둥근 모서리</small></span>
-                </label>
-                <label class="design_option">
-                    <input type="radio" name="theme" value="retro">
-                    <span class="preview preview_retro"><span class="preview_logo">tumblbug</span><span class="preview_line"></span><span class="preview_line short"></span><span class="preview_button"></span></span>
-                    <span class="option_text"><strong>Retro Editorial</strong><small>종이 질감의 크림색과 빈티지한 타이포그래피</small></span>
-                </label>
             </fieldset>
             <button class="submit_button" type="submit">선택한 디자인으로 로그인 화면 보기</button>
         </form>
     </main>
     <script>
         const designForm = document.querySelector('#design-form');
-
         const themeDropdown = document.querySelector('#theme-dropdown');
-        const themeRadios = designForm.querySelectorAll('input[name="theme"]');
-
-        // 드롭다운에서 선택하면 같은 테마의 카드 라디오 버튼도 선택
-        themeDropdown.addEventListener('change', () => {
-            const matchingRadio = designForm.querySelector(`input[name="theme"][value="${themeDropdown.value}"]`);
-            if (matchingRadio) matchingRadio.checked = true;
-        });
-
-        // 카드에서 선택하면 드롭다운의 값도 함께 변경
-        themeRadios.forEach((radio) => {
-            radio.addEventListener('change', () => {
-                if (radio.checked) themeDropdown.value = radio.value;
-            });
-        });
 
         designForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            const selectedTheme = new FormData(designForm).get('theme');
+            const selectedTheme = themeDropdown.value;
             window.location.href = './login.html?theme=' + encodeURIComponent(selectedTheme);
         });
     </script>
