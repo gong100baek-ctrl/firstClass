@@ -1,0 +1,316 @@
+/* Footer (Figma node 163:103) */
+.footer {
+    background: #ffffff;
+    color: #555b66;
+    border-top: 1px solid #e9ebef;
+}
+
+.ft-inner {
+    width: min(1760px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* logo + sns + family site */
+.ft-top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 56px 0 52px;
+}
+
+.ft-logo {
+    display: block;
+}
+
+.ft-logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+
+.ft-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ft-sns {
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ft-sns a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border: 1px solid #dfe2e8;
+    border-radius: 50%;
+    color: #3b414b;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ft-sns a:hover,
+.ft-sns a:focus-visible {
+    border-color: #0b6bcb;
+    color: #0b6bcb;
+}
+
+.ft-sns svg {
+    width: 22px;
+    height: 22px;
+}
+
+.ft-family select {
+    width: 220px;
+    height: 54px;
+    padding: 0 40px 0 22px;
+    border: 1px solid #dfe2e8;
+    border-radius: 27px;
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23333' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m1.5 1.5 4.5 4.5 4.5-4.5'/%3E%3C/svg%3E") no-repeat right 20px center;
+    color: #3b414b;
+    font: inherit;
+    font-size: 17px;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.ft-family select:focus-visible,
+.ft-nav a:focus-visible,
+.ft-sns a:focus-visible,
+.ft-logo:focus-visible,
+.ft-phone:focus-visible {
+    outline: 3px solid #0b6bcb;
+    outline-offset: 3px;
+}
+
+/* policy menu */
+.ft-nav {
+    border-top: 1px solid #e9ebef;
+    border-bottom: 1px solid #e9ebef;
+}
+
+.ft-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 36px;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.ft-nav a {
+    color: #6b717c;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+}
+
+.ft-nav li:first-child a {
+    color: #111111;
+    font-weight: 700;
+}
+
+.ft-nav a:hover,
+.ft-nav a:focus-visible {
+    color: #0b6bcb;
+}
+
+/* company info */
+.ft-info-inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    padding: 40px 0 46px;
+}
+
+.ft-info-item h2 {
+    margin: 0 0 16px;
+    color: #111111;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.ft-info-item p {
+    margin: 0;
+    color: #6b717c;
+    font-size: 19px;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+}
+
+.ft-info-item .ft-phone {
+    display: inline-block;
+    margin-top: -4px;
+    color: #111111;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+/* awards */
+.ft-awards-inner {
+    padding-bottom: 54px;
+}
+
+.ft-awards-title {
+    margin: 0 0 18px;
+    color: #111111;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.ft-awards ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ft-award {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ft-award img {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: 46px; /* badge images are small; keep close to their native size */
+}
+
+.ft-award p {
+    margin: 0;
+    color: #3b414b;
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+}
+
+.ft-copy {
+    margin: 22px 0 0;
+    color: #8b919b;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+@media (max-width: 1600px) {
+    .ft-award {
+        gap: 8px;
+    }
+
+    .ft-awards ul {
+        gap: 18px 18px;
+    }
+
+    .ft-award img {
+        height: 40px;
+    }
+
+    .ft-award p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ft-inner {
+        width: calc(100% - 64px);
+    }
+
+    .ft-info-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 28px;
+    }
+
+    .ft-nav ul {
+        gap: 12px 24px;
+        padding: 18px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ft-inner {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    .ft-top-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 36px 0 32px;
+    }
+
+    .ft-logo img {
+        width: 120px;
+    }
+
+    .ft-right {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .ft-sns a {
+        width: 46px;
+        height: 46px;
+    }
+
+    .ft-family select {
+        width: 100%;
+        height: 48px;
+    }
+
+    .ft-nav a {
+        font-size: 15px;
+    }
+
+    .ft-info-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding: 30px 0 34px;
+    }
+
+    .ft-info-item h2 {
+        margin-bottom: 8px;
+    }
+
+    .ft-info-item p {
+        font-size: 16px;
+    }
+
+    .ft-info-item .ft-phone {
+        font-size: 24px;
+    }
+
+    .ft-awards ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+    }
+
+    .ft-award p {
+        white-space: normal;
+    }
+
+    .ft-copy {
+        font-size: 14px;
+    }
+}
