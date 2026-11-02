@@ -933,3 +933,92 @@ body[data-theme="glass"] .sns_title::after {
         padding-left: 20px;
     }
 }
+
+
+/* 8. Neumorphism */
+body[data-theme="neo"] {
+    background: #e5e9f0;
+    color: #414b5b;
+}
+body[data-theme="neo"] .login_page {
+    width: min(100% - 36px, 460px);
+    min-height: calc(100vh - 48px);
+    margin: 24px auto;
+    padding: 0 32px 24px;
+    border-radius: 24px;
+    background: #e5e9f0;
+    box-shadow: 12px 12px 28px #c3c7cd, -12px -12px 28px #ffffff;
+}
+body[data-theme="neo"] .theme_switcher {
+    color: #596579;
+}
+body[data-theme="neo"] .theme_switcher select {
+    border: 0;
+    border-radius: 10px;
+    background: #e5e9f0;
+    color: #414b5b;
+    box-shadow: 4px 4px 8px #c3c7cd, -4px -4px 8px #ffffff;
+}
+body[data-theme="neo"] .back_btn img {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(13%) saturate(1000%) hue-rotate(180deg) brightness(92%);
+}
+body[data-theme="neo"] .brand,
+body[data-theme="neo"] .intro_title,
+body[data-theme="neo"] .field_label,
+body[data-theme="neo"] .option,
+body[data-theme="neo"] .account_links a {
+    color: #414b5b;
+}
+body[data-theme="neo"] .intro_sub,
+body[data-theme="neo"] .sns_title {
+    color: #778397;
+}
+body[data-theme="neo"] .input_wrap {
+    border: 0;
+    border-radius: 12px;
+    background: #e5e9f0;
+    box-shadow: inset 4px 4px 8px #c3c7cd, inset -4px -4px 8px #ffffff;
+}
+body[data-theme="neo"] .input {
+    background: transparent;
+    color: #414b5b;
+}
+body[data-theme="neo"] .input::placeholder {
+    color: #929baa;
+}
+body[data-theme="neo"] .option_box {
+    border: 0;
+    border-radius: 7px;
+    background: #e5e9f0;
+    box-shadow: 3px 3px 6px #c3c7cd, -3px -3px 6px #ffffff;
+}
+body[data-theme="neo"] .option input:checked + .option_box {
+    background: #d6deeb;
+    box-shadow: inset 3px 3px 6px #b9c0cb, inset -3px -3px 6px #f3fcff;
+}
+body[data-theme="neo"] .option input:checked + .option_box::after {
+    color: #647da5;
+}
+body[data-theme="neo"] .login_btn {
+    border-radius: 12px;
+    background: #e5e9f0;
+    color: #536b91;
+    box-shadow: 5px 5px 10px #c3c7cd, -5px -5px 10px #ffffff;
+}
+body[data-theme="neo"] .login_btn:active {
+    box-shadow: inset 4px 4px 8px #c3c7cd, inset -4px -4px 8px #ffffff;
+}
+body[data-theme="neo"] .account_links a + a::before,
+body[data-theme="neo"] .sns_title::before,
+body[data-theme="neo"] .sns_title::after {
+    background: #cbd1da;
+}
+@media (max-width: 480px) {
+    body[data-theme="neo"] .login_page {
+        width: calc(100% - 24px);
+        min-height: calc(100vh - 24px);
+        margin: 12px auto;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
