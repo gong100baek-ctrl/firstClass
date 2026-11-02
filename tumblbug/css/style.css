@@ -823,3 +823,113 @@ body[data-theme="retro"] .sns_title {
         padding-left: 22px;
     }
 }
+
+
+/* 로그인 화면에서 실시간 테마 선택 */
+.theme_switcher {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 0 8px;
+    color: #666;
+    font-size: 12px;
+}
+.theme_switcher label {
+    white-space: nowrap;
+}
+.theme_switcher select {
+    max-width: 190px;
+    min-height: 34px;
+    padding: 6px 28px 6px 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    background: #fff;
+    color: #222;
+    font-size: 12px;
+}
+
+/* 7. Glassmorphism */
+body[data-theme="glass"] {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, .85), transparent 28%),
+        radial-gradient(circle at 85% 75%, rgba(151, 190, 255, .75), transparent 30%),
+        linear-gradient(135deg, #c9dff2, #e8dff5 55%, #c8e7e4);
+    color: #26364b;
+}
+body[data-theme="glass"] .login_page {
+    width: min(100% - 36px, 460px);
+    min-height: calc(100vh - 48px);
+    margin: 24px auto;
+    padding: 0 32px 24px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .38);
+    box-shadow: 0 18px 55px rgba(62, 91, 130, .16);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+body[data-theme="glass"] .theme_switcher {
+    color: #40536d;
+}
+body[data-theme="glass"] .theme_switcher select {
+    border-color: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .55);
+    color: #26364b;
+}
+body[data-theme="glass"] .back_btn img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(16%) saturate(1200%) hue-rotate(177deg) brightness(92%);
+}
+body[data-theme="glass"] .brand,
+body[data-theme="glass"] .intro_title,
+body[data-theme="glass"] .field_label,
+body[data-theme="glass"] .option,
+body[data-theme="glass"] .account_links a {
+    color: #26364b;
+}
+body[data-theme="glass"] .intro_sub,
+body[data-theme="glass"] .sns_title {
+    color: #536984;
+}
+body[data-theme="glass"] .input_wrap {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .42);
+}
+body[data-theme="glass"] .input {
+    background: transparent;
+    color: #26364b;
+}
+body[data-theme="glass"] .input::placeholder {
+    color: #71839a;
+}
+body[data-theme="glass"] .option_box {
+    border-color: rgba(255, 255, 255, .9);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .5);
+}
+body[data-theme="glass"] .option input:checked + .option_box,
+body[data-theme="glass"] .login_btn {
+    border-color: rgba(91, 132, 190, .7);
+    background: rgba(91, 132, 190, .85);
+}
+body[data-theme="glass"] .login_btn {
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(74, 112, 166, .2);
+}
+body[data-theme="glass"] .account_links a + a::before,
+body[data-theme="glass"] .sns_title::before,
+body[data-theme="glass"] .sns_title::after {
+    background: rgba(255, 255, 255, .75);
+}
+@media (max-width: 480px) {
+    body[data-theme="glass"] .login_page {
+        width: calc(100% - 24px);
+        min-height: calc(100vh - 24px);
+        margin: 12px auto;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
