@@ -549,3 +549,53 @@ body[data-theme="brutal"] .sns_title::after {
         min-height: calc(100vh - 28px);
     }
 }
+
+/* 화면 안쪽 글씨 크기 조정 */
+.intro_sub,
+.field_label,
+.input,
+.option {
+    font-size: 13px;
+}
+
+.intro_title {
+    font-size: 15px;
+}
+
+.login_btn {
+    font-size: 14px;
+}
+
+.sns_title {
+    font-size: 12px;
+}
+
+/* 테마별 제목 크기 균형 조정 */
+body[data-theme="minimal"] .intro_title {
+    font-size: 21px;
+}
+
+body[data-theme="minimal"] .brand {
+    font-size: 23px;
+}
+
+body[data-theme="swiss"] .intro_title {
+    font-size: 23px;
+}
+
+body[data-theme="swiss"] .brand {
+    font-size: 20px;
+}
+
+body[data-theme="brutal"] .intro_title {
+    font-size: 22px;
+}
+
+body[data-theme="brutal"] .brand {
+    font-size: 22px;
+}
+
+body[data-theme="brutal"] .login_btn {
+    font-size: 14px;
+}
+
