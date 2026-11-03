@@ -954,3 +954,28 @@
 .product-bottom-cta { background:#fff; }
 @media(max-width:900px) { .product-intro-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; } }
 @media(max-width:600px) { .product-intro-grid { grid-template-columns:1fr; } .product-intro-card__visual { min-height:180px; } .product-intro-card__body { padding:22px; } }
+
+
+/* Mobile: show product category navigation in two rows */
+@media (max-width: 600px) {
+    .product-local-nav {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0;
+        overflow: visible;
+        padding: 0 12px;
+    }
+    .product-local-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        min-height: 54px;
+        padding: 8px 3px;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: break-word;
+        font-size: 11px;
+        line-height: 1.35;
+    }
+}
