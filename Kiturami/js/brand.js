@@ -1,42 +1,96 @@
-/* Brand page: mobile navigation, language selector and section position state */
+/* Brand page interactions: company mega menu, mobile navigation, language selector and section navigation */
 (() => {
     const header = document.querySelector(".header");
     const menuToggle = document.querySelector(".menu-toggle");
+    const companyItem = document.querySelector(".gnb-company");
+    const companyToggle = companyItem?.querySelector("a[aria-controls='header-mega-menu']");
+    const companyMenu = document.querySelector("#header-mega-menu");
     const language = document.querySelector(".language");
     const languageToggle = document.querySelector(".language-toggle");
     const languageMenu = document.querySelector(".language-menu");
     const languageCurrent = document.querySelector(".language-current");
     const familySite = document.querySelector("#family-site");
     const localLinks = [...document.querySelectorAll(".brand-local-nav a")];
-    const sections = localLinks
+    const sectionLinks = [...document.querySelectorAll("#header-mega-menu a[href^='#']")];
+    const allSectionLinks = [...localLinks, ...sectionLinks];
+    const sections = [...new Set(allSectionLinks
         .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
+        .filter(Boolean))];
+
+    const closeCompanyMenu = () => {
+        header?.classList.remove("mega-menu-open");
+        companyMenu?.classList.remove("is-active");
+        companyToggle?.setAttribute("aria-expanded", "false");
+    };
+
+    const openCompanyMenu = () => {
+        header?.classList.add("mega-menu-open");
+        companyMenu?.classList.add("is-active");
+        companyToggle?.setAttribute("aria-expanded", "true");
+    };
 
     if (header && menuToggle) {
         menuToggle.addEventListener("click", () => {
             const opened = header.classList.toggle("menu-open");
             menuToggle.setAttribute("aria-expanded", String(opened));
             menuToggle.setAttribute("aria-label", opened ? "메뉴 닫기" : "메뉴 열기");
-        });
-
-        header.querySelectorAll(".gnb a").forEach((link) => {
-            link.addEventListener("click", () => {
-                if (window.matchMedia("(max-width: 1024px)").matches) {
-                    header.classList.remove("menu-open");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                    menuToggle.setAttribute("aria-label", "메뉴 열기");
-                }
-            });
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                header.classList.remove("menu-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "메뉴 열기");
-            }
+            if (!opened) closeCompanyMenu();
         });
     }
+
+    if (companyItem && companyToggle && companyMenu) {
+        companyToggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            const opened = companyToggle.getAttribute("aria-expanded") === "true";
+            if (opened) closeCompanyMenu();
+            else openCompanyMenu();
+        });
+
+        companyItem.addEventListener("mouseenter", () => {
+            if (window.matchMedia("(min-width: 1025px)").matches) openCompanyMenu();
+        });
+
+        companyItem.addEventListener("focusin", () => openCompanyMenu());
+
+        header?.addEventListener("mouseleave", () => {
+            if (window.matchMedia("(min-width: 1025px)").matches) closeCompanyMenu();
+        });
+
+        companyMenu.querySelectorAll("a[href^='#']").forEach((link) => {
+            link.addEventListener("click", () => {
+                closeCompanyMenu();
+                header?.classList.remove("menu-open");
+                menuToggle?.setAttribute("aria-expanded", "false");
+                menuToggle?.setAttribute("aria-label", "메뉴 열기");
+            });
+        });
+    }
+
+    header?.querySelectorAll(".gnb a:not(.gnb-company > a)").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.matchMedia("(max-width: 1024px)").matches) {
+                header.classList.remove("menu-open");
+                menuToggle?.setAttribute("aria-expanded", "false");
+                menuToggle?.setAttribute("aria-label", "메뉴 열기");
+                closeCompanyMenu();
+            }
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeCompanyMenu();
+            header?.classList.remove("menu-open");
+            menuToggle?.setAttribute("aria-expanded", "false");
+            menuToggle?.setAttribute("aria-label", "메뉴 열기");
+            languageToggle?.setAttribute("aria-expanded", "false");
+            if (languageMenu) languageMenu.hidden = true;
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (header && !header.contains(event.target)) closeCompanyMenu();
+    });
 
     if (language && languageToggle && languageMenu && languageCurrent) {
         languageToggle.addEventListener("click", () => {
@@ -78,18 +132,17 @@
                     link.classList.toggle("is-active", link.hash === "#" + entry.target.id);
                 });
             });
-        }, { rootMargin: "-25% 0px -60% 0px" });
+        }, { rootMargin: "-22% 0px -65% 0px" });
 
         sections.forEach((section) => observer.observe(section));
     }
 
     localLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            if (header?.classList.contains("menu-open")) {
-                header.classList.remove("menu-open");
-                menuToggle?.setAttribute("aria-expanded", "false");
-                menuToggle?.setAttribute("aria-label", "메뉴 열기");
-            }
+            closeCompanyMenu();
+            header?.classList.remove("menu-open");
+            menuToggle?.setAttribute("aria-expanded", "false");
+            menuToggle?.setAttribute("aria-label", "메뉴 열기");
         });
     });
 })();
