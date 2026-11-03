@@ -644,7 +644,7 @@
 }
 
 .brand-page .brand-local-nav {
-    top: 0;
+    top: 90px;
     justify-content: flex-start;
     gap: 0;
     overflow-x: auto;
@@ -728,7 +728,11 @@
 
 @media (max-width: 1024px) {
     .brand-page .header .mega-menu {
-        position: static;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        z-index: 40;
         display: none;
         padding: 0 20px 18px;
         border: 0;
@@ -777,6 +781,7 @@
 
 @media (max-width: 600px) {
     .brand-page .brand-local-nav {
+        top: 60px;
         min-height: 56px;
     }
 
