@@ -13,12 +13,12 @@
 
 .trouble-inner {
     display: grid;
-    grid-template-columns: minmax(0, 748px) minmax(0, 770px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     justify-content: space-between;
     align-items: stretch;
     gap: 60px;
-    width: min(1700px, calc(100% - 80px));
-    min-height: 440px;
+    width: min(1200px, calc(100% - 80px));
+    min-height: 590px;
     margin: 0 auto;
 }
 
@@ -142,21 +142,16 @@
     overflow: hidden;
 }
 
-/* Engineer repair photo behind the content */
-.trouble-panel::before {
-    content: "";
+/* Reference layout: keep the engineer-photo area calm and uncluttered. */
+.trouble-panel-label {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    aspect-ratio: 1126 / 944;
-    z-index: 0;
-    background: url(../images/support-engineer.png) no-repeat center / 100% 100%;
-    /* The hands are in the lower half of the photo: lift it so they sit above the white card. */
-    transform: translateY(-50%);
-    /* Fade the lower edge of the photo into the panel color. */
-    -webkit-mask-image: linear-gradient(#000 82%, transparent);
-    mask-image: linear-gradient(#000 82%, transparent);
+    top: 26px;
+    left: 28px;
+    z-index: 1;
+    margin: 0;
+    color: #4f78a8;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .trouble-panel > * {
@@ -279,8 +274,9 @@
 
 @media (max-width: 1200px) {
     .trouble-inner {
-        width: min(1760px, calc(100% - 64px));
-        gap: 40px;
+        width: min(1200px, calc(100% - 64px));
+        min-height: 540px;
+        gap: 36px;
     }
 
     .trouble-diagnosis h2 {
@@ -349,7 +345,7 @@
     }
 
     .trouble-panel {
-        min-height: 380px;
+        min-height: 420px;
         padding: 20px;
         border-radius: 28px;
     }
