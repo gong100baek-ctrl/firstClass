@@ -32,6 +32,20 @@
         navItems.forEach((item) => {
             const trigger = item.querySelector(":scope > a[aria-controls]");
             const submenu = item.querySelector(":scope > .mega-menu");
+
+            // 모든 GNB 항목에 적용: 서브메뉴가 없는 항목에 마우스를 올려도
+            // 이전에 열려 있던 서브메뉴를 먼저 닫는다.
+            item.addEventListener("mouseenter", () => {
+                if (window.matchMedia("(max-width: 1024px)").matches) return;
+
+                closeSubmenus();
+                if (submenu) {
+                    item.classList.add("is-open");
+                    trigger?.setAttribute("aria-expanded", "true");
+                    header.classList.add("mega-menu-open");
+                }
+            });
+
             if (!trigger || !submenu) return;
 
             trigger.addEventListener("click", (event) => {
@@ -47,13 +61,6 @@
                 header.classList.toggle("mega-menu-open", willOpen);
             });
 
-            item.addEventListener("mouseenter", () => {
-                if (!window.matchMedia("(max-width: 1024px)").matches) {
-                    closeSubmenus();
-                    item.classList.add("is-open");
-                    header.classList.add("mega-menu-open");
-                }
-            });
         });
 
         header.addEventListener("mouseleave", () => {
