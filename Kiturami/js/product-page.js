@@ -17,7 +17,7 @@
  const openMenu=()=>{header?.classList.add("mega-menu-open");productMenu?.classList.add("is-active");productToggle?.setAttribute("aria-expanded","true");};
  menuToggle?.addEventListener("click",()=>{const opened=header.classList.toggle("menu-open");menuToggle.setAttribute("aria-expanded",String(opened));menuToggle.setAttribute("aria-label",opened?"메뉴 닫기":"메뉴 열기");if(!opened)closeMenu();});
  if(productItem&&productToggle&&productMenu){
-  productToggle.addEventListener("click",event=>{event.preventDefault();productToggle.getAttribute("aria-expanded")==="true"?closeMenu():openMenu();});
+  productToggle.addEventListener("click",()=>{productToggle.getAttribute("aria-expanded")==="true"?closeMenu():openMenu();});
   productItem.addEventListener("mouseenter",()=>{if(matchMedia("(min-width: 1025px)").matches)openMenu();});
   productItem.addEventListener("focusin",openMenu);
   header?.addEventListener("mouseleave",()=>{if(matchMedia("(min-width: 1025px)").matches)closeMenu();});
