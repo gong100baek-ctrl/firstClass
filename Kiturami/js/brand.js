@@ -16,6 +16,7 @@
             item.classList.remove("is-open");
             item.querySelector(":scope > a[aria-controls]")?.setAttribute("aria-expanded", "false");
         });
+        header?.querySelectorAll(".mega-menu").forEach((menu) => menu.classList.remove("is-active"));
         header?.classList.remove("mega-menu-open");
     };
 
