@@ -40,7 +40,6 @@
 
     if (companyItem && companyToggle && companyMenu) {
         companyToggle.addEventListener("click", (event) => {
-            event.preventDefault();
             const opened = companyToggle.getAttribute("aria-expanded") === "true";
             if (opened) closeCompanyMenu();
             else openCompanyMenu();
