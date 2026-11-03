@@ -34,13 +34,12 @@
             if (!trigger || !submenu) return;
 
             trigger.addEventListener("click", (event) => {
-                if (window.matchMedia("(max-width: 1024px)").matches) {
-                    event.preventDefault();
-                    const willOpen = !item.classList.contains("is-open");
-                    closeSubmenus();
-                    item.classList.toggle("is-open", willOpen);
-                    trigger.setAttribute("aria-expanded", String(willOpen));
-                }
+                event.preventDefault();
+                const willOpen = !item.classList.contains("is-open");
+                closeSubmenus();
+                item.classList.toggle("is-open", willOpen);
+                trigger.setAttribute("aria-expanded", String(willOpen));
+                header.classList.toggle("mega-menu-open", willOpen);
             });
 
             item.addEventListener("mouseenter", () => {
