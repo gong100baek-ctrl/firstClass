@@ -1083,3 +1083,81 @@
         font-size: clamp(10px, 2.7vw, 12px);
     }
 }
+
+
+/* About hero banner Swiper */
+.about-hero-swiper {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: #d9efff;
+}
+.about-visual-swiper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.about-visual-swiper .swiper-slide {
+    width: 100%;
+}
+.about-visual-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.about-swiper-prev,
+.about-swiper-next {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    background: rgba(0,0,0,.28);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.about-swiper-prev { left: 24px; }
+.about-swiper-next { right: 24px; }
+.about-swiper-prev::after,
+.about-swiper-next::after {
+    display: block;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+}
+.about-swiper-prev::after { content: "‹"; }
+.about-swiper-next::after { content: "›"; }
+.about-swiper-pagination {
+    position: absolute;
+    right: 0;
+    bottom: 18px;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.about-swiper-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    background: rgba(255,255,255,.7);
+    opacity: 1;
+}
+.about-swiper-pagination .swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 8px;
+    background: #fff;
+}
+@media (max-width: 768px) {
+    .about-swiper-prev,
+    .about-swiper-next {
+        width: 34px;
+        height: 34px;
+    }
+    .about-swiper-prev { left: 10px; }
+    .about-swiper-next { right: 10px; }
+    .about-swiper-pagination { bottom: 10px; }
+}
