@@ -154,6 +154,17 @@
     font-weight: 500;
 }
 
+.trouble-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 34% 0;
+    z-index: 0;
+    /* Keep the tool and hands (lower part of the photo) in the visible area above the white card. */
+    background: url(../images/support-engineer.png) no-repeat 62% 88% / cover;
+    -webkit-mask-image: linear-gradient(#000 80%, transparent);
+    mask-image: linear-gradient(#000 80%, transparent);
+}
+
 .trouble-panel > * {
     position: relative;
     z-index: 1;
