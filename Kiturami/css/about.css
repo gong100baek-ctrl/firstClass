@@ -420,7 +420,6 @@
     transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
 }
 .header .gnb-item:hover > .mega-menu,
-.header .gnb-item:focus-within > .mega-menu,
 .header .gnb-item.is-open > .mega-menu {
     opacity: 1;
     visibility: visible;
