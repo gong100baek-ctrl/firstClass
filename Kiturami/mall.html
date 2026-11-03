@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="귀뚜라미 제품을 살펴보고 구매 및 이용 안내를 확인할 수 있는 쇼핑 안내 페이지입니다.">
+    <title>귀뚜라미몰 | 귀뚜라미</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mall.css">
+    <script src="js/mall.js" defer></script>
+</head>
+<body class="mall-page">
+<div id="wrap">
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html" aria-label="귀뚜라미 메인페이지"><span class="logo-en">Kiturami</span><span class="logo-ko">귀뚜라미</span></a></h1>
+            <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+            <nav class="gnb" id="site-navigation" aria-label="주요 메뉴">
+                <ul>
+                    <li class="gnb-item"><a href="brand.html" aria-controls="brand-mega-menu">회사소개</a></li>
+                    <li class="gnb-item"><a href="product.html" aria-controls="product-mega-menu">제품소개</a></li>
+                    <li class="gnb-item"><a href="pr.html">홍보센터</a></li>
+                    <li class="gnb-item"><a href="cc.html" aria-controls="customer-mega-menu">고객센터</a></li>
+                    <li class="gnb-item gnb-shop is-current"><a href="mall.html" aria-current="page">귀뚜라미몰 바로가기</a></li>
+                </ul>
+            </nav>
+            <div class="mega-menu" id="brand-mega-menu" aria-label="회사소개 하위 메뉴">
+                <nav class="mega-menu-inner" aria-label="회사소개 메뉴">
+                    <a href="brand.html">브랜드 소개</a><a href="brand.html#company-vision">기업비전</a><a href="brand.html#brand-history">기업연혁</a><a href="brand.html#ci-intro">CI소개</a><a href="brand.html#branches">국내외지사</a><a href="brand.html#awards">수상실적</a><a href="brand.html#recruit">채용안내</a><a href="brand.html#location">찾아오시는 길</a>
+                </nav>
+            </div>
+            <div class="mega-menu" id="product-mega-menu" aria-label="제품소개 하위 메뉴">
+                <nav class="mega-menu-inner" aria-label="제품소개 메뉴">
+                    <a href="product.html#gas-boiler">가스보일러</a><a href="product.html#oil-boiler">기름보일러</a><a href="product.html#water-heater">온수기</a><a href="product.html#renewable">신재생/중대형/전기</a><a href="product.html#heating-mat">난방매트</a><a href="product.html#system">시스템 제품</a><a href="product.html#air-care">공기청정/환기</a><a href="product.html#air-conditioner">에어컨</a><a href="product.html#thermostat">실내온도조절기</a><a href="product.html#etc">기타</a>
+                </nav>
+            </div>
+            <div class="mega-menu" id="customer-mega-menu" aria-label="고객센터 하위 메뉴">
+                <nav class="mega-menu-inner" aria-label="고객센터 메뉴">
+                    <a href="cc.html#self-check">자가진단메뉴얼</a><a href="cc.html#as-request">A/S신청&amp;문의하기</a><a href="cc.html#service-center">서비스센터찾기</a><a href="cc.html#support-menu">다운로드</a><a href="cc.html#support-menu">제품등록</a>
+                </nav>
+            </div>
+            <div class="language">
+                <button class="language-toggle" type="button" aria-label="언어 선택" aria-expanded="false" aria-controls="language-menu"><img class="language-icon" src="images/web.svg" alt=""><span class="language-current">한국어</span><img class="language-arrow" src="images/chevron-down.svg" alt=""></button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <button type="button" class="language-option is-selected" data-language="한국어">한국어</button>
+                    <button type="button" class="language-option" data-language="English">English</button>
+                    <button type="button" class="language-option" data-language="日本語">日本語</button>
+                    <button type="button" class="language-option" data-language="中文">中文</button>
+                    <button type="button" class="language-option" data-language="Русский">Русский</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mall-main">
+        <section class="mall-hero">
+            <div class="mall-container mall-hero__inner">
+                <p class="mall-eyebrow">KITURAMI SHOPPING GUIDE</p>
+                <h2>일상에 따뜻함을 더하는<br><span>귀뚜라미 제품을 만나보세요.</span></h2>
+                <p class="mall-hero__desc">생활에 필요한 난방·냉방·생활가전 제품을 한곳에서 살펴보세요.</p>
+                <a class="mall-button mall-button--light" href="#mall-products">제품 둘러보기 <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="mall-hero__label">PRODUCTS &amp; SHOPPING</div>
+        </section>
+
+        <nav class="mall-local-nav" aria-label="쇼핑 안내 메뉴">
+            <a href="#mall-products">제품 카테고리</a>
+            <a href="#purchase-guide">구매 안내</a>
+            <a href="#member-guide">온라인몰 이용 안내</a>
+        </nav>
+
+        <section class="mall-section mall-products" id="mall-products">
+            <div class="mall-container">
+                <div class="mall-heading">
+                    <p class="mall-eyebrow mall-eyebrow--blue">PRODUCT CATEGORY</p>
+                    <h2>필요한 제품을<br><span>카테고리별로 살펴보세요.</span></h2>
+                    <p>제품별 특징과 상세 구성은 제품 소개 페이지에서 확인할 수 있습니다.</p>
+                </div>
+                <div class="mall-category-grid">
+                    <a class="mall-category-card" href="product.html#gas-boiler"><img src="images/Kiturami02.png" alt="가스보일러"><span>01</span><strong>가스보일러</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#oil-boiler"><img src="images/Kiturami01.png" alt="기름보일러"><span>02</span><strong>기름보일러</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#water-heater"><img src="images/Kiturami03.png" alt="온수기"><span>03</span><strong>온수기</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#renewable"><img src="images/Kiturami04.png" alt="신재생 및 전기 제품"><span>04</span><strong>신재생·중대형·전기</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#heating-mat"><img src="images/Kiturami05.png" alt="난방매트"><span>05</span><strong>난방매트</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#system"><img src="images/Kiturami06.png" alt="시스템 제품"><span>06</span><strong>시스템 제품</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#air-care"><img src="images/Kiturami07.png" alt="공기청정 및 환기 제품"><span>07</span><strong>공기청정·환기</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#air-conditioner"><img src="images/Kiturami08.png" alt="에어컨"><span>08</span><strong>에어컨</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#thermostat"><img src="images/Kiturami09.png" alt="실내온도조절기"><span>09</span><strong>실내온도조절기</strong><b aria-hidden="true">↗</b></a>
+                    <a class="mall-category-card" href="product.html#etc"><img src="images/Kiturami10.png" alt="기타 제품"><span>10</span><strong>기타 제품</strong><b aria-hidden="true">↗</b></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mall-guide" id="purchase-guide">
+            <div class="mall-container mall-guide__inner">
+                <div>
+                    <p class="mall-eyebrow mall-eyebrow--blue">PURCHASE GUIDE</p>
+                    <h2>구매 전, 가까운<br>판매점을 확인해 보세요.</h2>
+                    <p>제품의 구매 가능 여부와 상담은 가까운 공식 판매점 및 서비스 관련 안내를 통해 확인할 수 있습니다.</p>
+                </div>
+                <a class="mall-button" href="cc.html#service-center">판매점·서비스센터 안내 <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="mall-help" id="member-guide">
+            <div class="mall-container">
+                <div class="mall-heading mall-heading--center">
+                    <p class="mall-eyebrow mall-eyebrow--blue">SHOPPING INFORMATION</p>
+                    <h2>온라인몰 이용 안내</h2>
+                    <p>이 페이지는 포트폴리오용으로 제작한 내부 쇼핑 안내 화면입니다.</p>
+                </div>
+                <div class="mall-help-grid">
+                    <article><span>01</span><h3>제품 정보 확인</h3><p>제품 카테고리에서 관심 있는 제품의 상세 정보를 확인하세요.</p><a href="product.html">제품 소개 바로가기 <b aria-hidden="true">→</b></a></article>
+                    <article><span>02</span><h3>구매 상담</h3><p>구매 및 제품 관련 문의는 고객센터 안내를 이용해 주세요.</p><a href="cc.html#as-request">고객센터 바로가기 <b aria-hidden="true">→</b></a></article>
+                    <article><span>03</span><h3>이용 지원</h3><p>제품 사용 중 도움이 필요하다면 자가진단과 지원 정보를 확인하세요.</p><a href="cc.html#self-check">고객 지원 확인하기 <b aria-hidden="true">→</b></a></article>
+                </div>
+                <p class="mall-disclaimer">※ 실제 상품 결제, 회원가입 및 주문 조회 기능은 제공하지 않습니다.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="ft-inner ft-top-inner">
+            <a class="ft-logo" href="index.html" aria-label="귀뚜라미 메인페이지"><img src="images/ft-logo.png" alt="Kiturami"></a>
+            <div class="ft-right"><div class="ft-family"><label class="sr-only" for="family-site">페이지 이동</label><select id="family-site"><option value="" selected>페이지 이동</option><option value="index.html">메인페이지</option><option value="brand.html">브랜드 소개</option><option value="product.html">제품 소개</option><option value="mall.html">귀뚜라미몰</option><option value="pr.html">홍보센터</option><option value="cc.html">고객센터</option></select></div></div>
+        </div>
+        <nav class="ft-nav" aria-label="푸터 메뉴"><ul class="ft-inner"><li><a href="brand.html">회사소개</a></li><li><a href="product.html">제품소개</a></li><li><a href="pr.html">홍보센터</a></li><li><a href="cc.html">고객센터</a></li><li><a href="mall.html" aria-current="page">귀뚜라미몰</a></li></ul></nav>
+        <div class="ft-inner ft-awards-inner"><p class="ft-copy">Copyright &copy; KITURAMI. All Rights Reserved.</p></div>
+    </footer>
+</div>
+</body>
+</html>
