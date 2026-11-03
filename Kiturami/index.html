@@ -1057,10 +1057,36 @@
             closeTimer = setTimeout(closeMegaMenu, 140);
         };
 
+        let openedByHover = null;
+
+        // 모바일 폭에서는 각 서브메뉴를 해당 키워드(li) 안으로 옮겨 키워드 아래에 세로로 펼침
+        const mobileMenuQuery = window.matchMedia('(max-width: 1024px)');
+        const megaMenuSlots = Array.from(megaMenus).map((menu) => {
+            const trigger = Array.from(menuTriggers).find((item) => item.getAttribute('aria-controls') === menu.id);
+            const slot = document.createComment(menu.id);
+            menu.before(slot);
+            return { menu, slot, item: trigger ? trigger.closest('.gnb-item') : null };
+        });
+        const placeMegaMenus = () => {
+            megaMenuSlots.forEach(({ menu, slot, item }) => {
+                if (mobileMenuQuery.matches && item) item.appendChild(menu);
+                else slot.after(menu);
+            });
+        };
+        placeMegaMenus();
+        mobileMenuQuery.addEventListener('change', () => {
+            closeMegaMenu();
+            placeMegaMenus();
+        });
+
         menuTriggers.forEach((trigger) => {
             const parent = trigger.closest('.gnb-item');
             parent.addEventListener('mouseenter', () => {
                 if (!window.matchMedia('(max-width: 1024px)').matches) {
+                    openMegaMenu(trigger);
+                } else if (window.matchMedia('(hover: hover)').matches && trigger.getAttribute('aria-expanded') !== 'true') {
+                    // 모바일 폭에서 마우스를 올리면 키워드 바로 아래로 서브메뉴가 펼쳐짐
+                    openedByHover = trigger;
                     openMegaMenu(trigger);
                 }
             });
@@ -1073,7 +1099,10 @@
                 event.preventDefault();
                 if (window.matchMedia('(max-width: 1024px)').matches) {
                     const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-                    if (isOpen) {
+                    if (openedByHover === trigger) {
+                        // 마우스를 올려서 막 열린 메뉴는 클릭해도 닫지 않음
+                        openedByHover = null;
+                    } else if (isOpen) {
                         closeMegaMenu();
                     } else {
                         openMegaMenu(trigger);

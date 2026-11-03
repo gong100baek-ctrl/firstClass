@@ -920,3 +920,48 @@ body {
       border-radius: 20px;
       background: #fff;
     }
+
+
+/* Mobile: the submenu opens vertically right under the tapped / hovered keyword */
+@media (max-width: 1024px) {
+    .header .mega-menu {
+        position: static;
+        display: none;
+        max-height: none;
+        overflow: visible;
+        padding: 0 0 12px;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        transition: none;
+    }
+
+    .header.mega-menu-open .mega-menu.is-active {
+        display: block;
+    }
+
+    .header .mega-menu-inner,
+    #product-mega-menu .mega-menu-inner,
+    #promo-mega-menu .mega-menu-inner,
+    #customer-mega-menu .mega-menu-inner {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        width: 100%;
+        padding: 0 0 0 12px;
+    }
+
+    .header .mega-menu-inner > a {
+        width: 100%;
+        padding: 9px 0;
+        font-size: 14px;
+        white-space: normal;
+    }
+}
