@@ -102,119 +102,122 @@
     </header>
 
     <main class="about-main">
-        <section class="about-visual" aria-labelledby="about-title">
-            <div class="about-visual__image" role="img" aria-label="브랜드 대표 이미지가 들어갈 영역">
-                <span class="image-placeholder-label">BRAND VISUAL IMAGE</span>
+        <section class="about-visual company-hero" aria-labelledby="about-title">
+            <div class="company-hero__visual" aria-hidden="true">
+                <div class="hero-orbit hero-orbit--one"></div>
+                <div class="hero-orbit hero-orbit--two"></div>
+                <div class="hero-glow"></div>
+                <span class="hero-wordmark">KITURAMI</span>
             </div>
-            <div class="about-visual__shade"></div>
             <div class="about-visual__content">
                 <p class="about-eyebrow">ABOUT KITURAMI</p>
-                <h2 id="about-title">따뜻한 기술로<br>더 나은 일상을 만듭니다.</h2>
-                <p>일상의 온기를 생각하는 귀뚜라미의 브랜드 이야기를 소개합니다.</p>
+                <h2 id="about-title">따뜻한 기술,<br>더 나은 생활의 시작</h2>
+                <p>귀뚜라미의 기업비전과 발자취, 브랜드 아이덴티티를 소개합니다.</p>
             </div>
             <div class="about-visual__breadcrumb">
-                <a href="index.html">HOME</a><span aria-hidden="true">/</span><span>회사소개</span><span aria-hidden="true">/</span><strong>브랜드 소개</strong>
+                <a href="index.html">HOME</a><span aria-hidden="true">/</span><strong>회사소개</strong>
             </div>
+            <a class="hero-scroll" href="#company-vision"><span></span>SCROLL DOWN</a>
         </section>
 
-        <nav class="about-local-nav" aria-label="브랜드 소개 페이지 메뉴">
-            <a href="#brand-story" class="is-active">브랜드 스토리</a>
-            <a href="#brand-value">브랜드 가치</a>
-            <a href="#brand-history">브랜드 역사</a>
+        <nav class="about-local-nav" aria-label="회사소개 페이지 메뉴">
+            <a href="#company-vision" class="is-active">기업비전</a>
+            <a href="#company-history">기업연혁</a>
+            <a href="#company-ci">CI소개</a>
+            <a href="#company-branch">국내외지사</a>
+            <a href="#company-awards">수상실적</a>
+            <a href="#company-recruit">채용안내</a>
+            <a href="#company-location">찾아오시는 길</a>
         </nav>
 
-        <section class="about-section story-section" id="brand-story" aria-labelledby="story-title">
+        <section class="about-section vision-section" id="company-vision" aria-labelledby="vision-title">
             <div class="about-container">
                 <div class="section-heading">
-                    <p class="section-eyebrow">BRAND STORY</p>
-                    <h2 id="story-title">생활에 온기를 더하는<br><span>귀뚜라미의 약속</span></h2>
+                    <p class="section-eyebrow">01 / COMPANY VISION</p>
+                    <h2 id="vision-title">기업비전</h2>
+                    <p class="section-description">귀뚜라미가 추구하는 방향과 기업의 비전을 살펴보는 공간입니다.</p>
                 </div>
-                <div class="story-layout">
-                    <div class="story-image image-placeholder" role="img" aria-label="귀뚜라미 브랜드 스토리 이미지가 들어갈 영역">
-                        <span class="image-placeholder-label">STORY IMAGE</span>
+                <div class="vision-feature">
+                    <div class="vision-feature__number">KITURAMI</div>
+                    <div class="vision-feature__copy">
+                        <p class="vision-kicker">A BETTER LIFE</p>
+                        <h3>기술을 통해<br><em>생활의 가치를</em> 생각합니다.</h3>
+                        <p>기업의 비전과 경영 방향에 관한 자세한 내용은 귀뚜라미 공식 기업비전 페이지에서 확인할 수 있습니다.</p>
+                        <a class="about-outline-link" href="https://krb.co.kr/about" target="_blank" rel="noopener noreferrer">공식 기업비전 보기 <span aria-hidden="true">↗</span></a>
                     </div>
-                    <div class="story-copy">
-                        <p class="story-lead">기술의 가치는 사람들의 일상 속에서 완성됩니다.</p>
-                        <p>귀뚜라미는 따뜻하고 편안한 생활환경을 고민하며, 생활에 필요한 에너지와 기술의 역할을 생각합니다. 제품을 넘어 사람과 공간, 오늘과 내일을 연결하는 브랜드가 되고자 합니다.</p>
-                        <p>앞으로도 고객의 목소리에 귀 기울이고 변화하는 생활환경에 맞춰 더 나은 경험을 만들어가겠습니다.</p>
-                        <a class="about-text-link" href="#brand-value">브랜드 가치 알아보기 <span aria-hidden="true">→</span></a>
-                    </div>
+                    <div class="vision-feature__decoration" aria-hidden="true">K</div>
                 </div>
             </div>
         </section>
 
-        <section class="about-section value-section" id="brand-value" aria-labelledby="value-title">
+        <section class="about-section company-history-section" id="company-history" aria-labelledby="history-title">
+            <div class="about-container">
+                <div class="section-heading section-heading--split">
+                    <div><p class="section-eyebrow">02 / HISTORY</p><h2 id="history-title">기업연혁</h2></div>
+                    <div><p class="section-description">귀뚜라미가 걸어온 주요 발자취를 연도별로 확인할 수 있습니다.</p><a class="about-text-link" href="https://krb.co.kr/history" target="_blank" rel="noopener noreferrer">전체 연혁 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <div class="history-banner">
+                    <div class="history-banner__graphic" aria-hidden="true"><span>HISTORY</span><i></i><i></i><i></i></div>
+                    <div class="history-banner__copy"><p>OUR JOURNEY</p><h3>시간을 넘어 이어지는<br>기술과 도전의 기록</h3><span>공식 연혁에서 자세한 연도와 주요 내용을 확인하세요.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section ci-section" id="company-ci" aria-labelledby="ci-title">
             <div class="about-container">
                 <div class="section-heading section-heading--center">
-                    <p class="section-eyebrow">BRAND VALUE</p>
-                    <h2 id="value-title">귀뚜라미가 지켜가는<br><span>세 가지 가치</span></h2>
-                    <p class="section-description">브랜드가 고객과 사회를 대하는 기준을 세 가지 방향으로 정리했습니다.</p>
+                    <p class="section-eyebrow">03 / CORPORATE IDENTITY</p>
+                    <h2 id="ci-title">CI소개</h2>
+                    <p class="section-description">기업을 대표하는 심벌과 로고 등 브랜드 아이덴티티를 소개합니다.</p>
                 </div>
-                <div class="value-grid">
-                    <article class="value-card">
-                        <span class="value-number">01</span>
-                        <div class="value-icon value-icon--technology" aria-hidden="true"><span></span></div>
-                        <h3>기술과 전문성</h3>
-                        <p>축적된 기술과 끊임없는 연구를 바탕으로 생활에 필요한 솔루션을 고민합니다.</p>
-                    </article>
-                    <article class="value-card">
-                        <span class="value-number">02</span>
-                        <div class="value-icon value-icon--comfort" aria-hidden="true"><span></span></div>
-                        <h3>고객 중심</h3>
-                        <p>고객의 목소리와 사용 경험을 소중히 여기며 더 편리한 일상을 지향합니다.</p>
-                    </article>
-                    <article class="value-card">
-                        <span class="value-number">03</span>
-                        <div class="value-icon value-icon--future" aria-hidden="true"><span></span></div>
-                        <h3>지속 가능한 내일</h3>
-                        <p>변화하는 환경을 살피고 더 나은 미래를 위한 기술과 가능성을 탐구합니다.</p>
-                    </article>
+                <div class="ci-board">
+                    <div class="ci-board__brand"><span class="ci-symbol">K</span><strong>KITURAMI</strong><small>CI PREVIEW</small></div>
+                    <div class="ci-board__info"><p class="ci-board__label">CORPORATE IDENTITY</p><h3>브랜드를 기억하게 하는<br>고유한 시각 언어</h3><p>공식 CI의 형태, 색상, 사용 규정은 아래 공식 자료를 기준으로 확인해 주세요.</p><a class="about-outline-link" href="https://krb.co.kr/ci" target="_blank" rel="noopener noreferrer">공식 CI 자세히 보기 <span aria-hidden="true">↗</span></a></div>
                 </div>
             </div>
         </section>
 
-        <section class="about-section history-section" id="brand-history" aria-labelledby="history-title">
+        <section class="about-section branch-section" id="company-branch" aria-labelledby="branch-title">
             <div class="about-container">
-                <div class="history-heading">
-                    <div class="section-heading">
-                        <p class="section-eyebrow">BRAND HISTORY</p>
-                        <h2 id="history-title">변화 속에서도 이어온<br><span>도전과 성장</span></h2>
-                    </div>
-                    <p class="history-intro">귀뚜라미가 걸어온 구체적인 연도와 주요 사건은 공식 연혁 자료 확인 후 입력할 수 있도록 구성했습니다.</p>
+                <div class="section-heading">
+                    <p class="section-eyebrow">04 / GLOBAL NETWORK</p>
+                    <h2 id="branch-title">국내외지사</h2>
+                    <p class="section-description">국내외 사업 거점과 지사 정보를 공식 안내 페이지에서 확인할 수 있습니다.</p>
                 </div>
-                <div class="history-content">
-                    <div class="history-image image-placeholder" role="img" aria-label="귀뚜라미 브랜드 역사 이미지가 들어갈 영역">
-                        <span class="image-placeholder-label">HISTORY ARCHIVE IMAGE</span>
-                    </div>
-                    <ol class="history-list">
-                        <li>
-                            <span class="history-index">01</span>
-                            <div><strong>브랜드의 시작</strong><p>귀뚜라미의 출발과 브랜드가 지향한 첫 번째 목표를 소개하는 영역입니다.</p></div>
-                            <span class="history-period">YEAR</span>
-                        </li>
-                        <li>
-                            <span class="history-index">02</span>
-                            <div><strong>기술의 발전</strong><p>제품과 기술의 변화, 연구개발을 통해 쌓아온 성장을 소개합니다.</p></div>
-                            <span class="history-period">YEAR</span>
-                        </li>
-                        <li>
-                            <span class="history-index">03</span>
-                            <div><strong>생활환경의 확장</strong><p>고객의 다양한 생활환경에 맞춰 넓혀온 사업과 제품 영역을 소개합니다.</p></div>
-                            <span class="history-period">YEAR</span>
-                        </li>
-                        <li>
-                            <span class="history-index">04</span>
-                            <div><strong>더 나은 미래를 향해</strong><p>현재의 도전과 앞으로 만들어갈 브랜드의 방향을 소개합니다.</p></div>
-                            <span class="history-period">NOW</span>
-                        </li>
-                    </ol>
+                <div class="branch-panel">
+                    <div class="branch-panel__map" aria-hidden="true"><span class="map-dot map-dot--a"></span><span class="map-dot map-dot--b"></span><span class="map-dot map-dot--c"></span><span class="map-label">K</span></div>
+                    <div class="branch-panel__copy"><p class="section-eyebrow">NETWORK</p><h3>더 넓은 연결,<br>더 가까운 고객</h3><p>국내외 지사 및 관련 거점의 위치와 상세 정보는 공식 페이지에서 확인해 주세요.</p><a class="about-outline-link" href="https://krb.co.kr/branch" target="_blank" rel="noopener noreferrer">국내외지사 확인하기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section awards-section" id="company-awards" aria-labelledby="awards-title">
+            <div class="about-container awards-layout">
+                <div class="section-heading"><p class="section-eyebrow">05 / AWARDS & CERTIFICATION</p><h2 id="awards-title">수상실적</h2><p class="section-description">귀뚜라미의 수상 및 인증 관련 정보를 확인하는 영역입니다.</p><a class="about-text-link" href="https://krb.co.kr/winner" target="_blank" rel="noopener noreferrer">수상실적 전체 보기 <span aria-hidden="true">↗</span></a></div>
+                <div class="award-card"><span class="award-card__mark" aria-hidden="true">K</span><p>AWARDS & CERTIFICATION</p><h3>신뢰를 쌓아온<br>성과와 기록</h3><span class="award-card__note">수상명과 인증 정보는 공식 자료를 확인해 주세요.</span></div>
+            </div>
+        </section>
+
+        <section class="about-section recruit-section" id="company-recruit" aria-labelledby="recruit-title">
+            <div class="about-container recruit-panel">
+                <div><p class="section-eyebrow">06 / CAREERS</p><h2 id="recruit-title">채용안내</h2><p>귀뚜라미와 함께할 인재를 위한 채용 정보를 확인해 보세요.</p></div>
+                <a class="about-cta-button" href="https://krb.co.kr/recruit" target="_blank" rel="noopener noreferrer">채용 페이지 바로가기 <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
+        <section class="about-section location-section" id="company-location" aria-labelledby="location-title">
+            <div class="about-container">
+                <div class="section-heading section-heading--center"><p class="section-eyebrow">07 / LOCATION</p><h2 id="location-title">찾아오시는 길</h2><p class="section-description">방문 전 공식 안내 페이지에서 주소와 교통 정보를 확인해 주세요.</p></div>
+                <div class="location-card">
+                    <div class="location-card__visual" aria-hidden="true"><div class="location-pin">K</div><span>LOCATION</span></div>
+                    <div class="location-card__copy"><p class="section-eyebrow">KITURAMI</p><h3>귀뚜라미를 찾아오시는 길</h3><p>본사 및 사업장 위치, 상세 주소와 안내 정보는 공식 페이지에서 확인할 수 있습니다.</p><a class="about-outline-link" href="https://krb.co.kr/location" target="_blank" rel="noopener noreferrer">오시는 길 확인하기 <span aria-hidden="true">↗</span></a></div>
                 </div>
             </div>
         </section>
 
         <section class="about-bottom-cta">
             <div class="about-container about-bottom-cta__inner">
-                <div><p class="section-eyebrow">KITURAMI</p><h2>귀뚜라미의 다양한 이야기를 만나보세요.</h2></div>
+                <div><p class="section-eyebrow">KITURAMI</p><h2>귀뚜라미의 제품과 다양한 소식을 만나보세요.</h2></div>
                 <a href="index.html" class="about-cta-button">메인페이지 보기 <span aria-hidden="true">→</span></a>
             </div>
         </section>
