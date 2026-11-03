@@ -956,8 +956,8 @@
 @media(max-width:600px) { .product-intro-grid { grid-template-columns:1fr; } .product-intro-card__visual { min-height:180px; } .product-intro-card__body { padding:22px; } }
 
 
-/* Mobile: show product category navigation in two rows */
-@media (max-width: 600px) {
+/* Mobile portrait: switch product category navigation to two rows */
+@media (max-width: 900px) and (orientation: portrait) {
     .product-local-nav {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
