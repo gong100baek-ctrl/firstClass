@@ -1,7 +1,8 @@
-/* Brand introduction page interactions */
+/* About page: global navigation and page interactions */
 (() => {
     const header = document.querySelector(".header");
     const menuToggle = document.querySelector(".menu-toggle");
+    const navItems = [...document.querySelectorAll(".gnb-item")];
     const language = document.querySelector(".language");
     const languageToggle = document.querySelector(".language-toggle");
     const languageMenu = document.querySelector(".language-menu");
@@ -12,11 +13,72 @@
         .map((link) => document.querySelector(link.getAttribute("href")))
         .filter(Boolean);
 
-    if (menuToggle && header) {
+    const closeSubmenus = () => {
+        navItems.forEach((item) => {
+            item.classList.remove("is-open");
+            item.querySelector(":scope > a[aria-controls]")?.setAttribute("aria-expanded", "false");
+        });
+    };
+
+    if (header && menuToggle) {
         menuToggle.addEventListener("click", () => {
             const isOpen = header.classList.toggle("menu-open");
             menuToggle.setAttribute("aria-expanded", String(isOpen));
             menuToggle.setAttribute("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
+            if (!isOpen) closeSubmenus();
+        });
+
+        navItems.forEach((item) => {
+            const trigger = item.querySelector(":scope > a[aria-controls]");
+            const submenu = item.querySelector(":scope > .mega-menu");
+            if (!trigger || !submenu) return;
+
+            trigger.addEventListener("click", (event) => {
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    event.preventDefault();
+                    const willOpen = !item.classList.contains("is-open");
+                    closeSubmenus();
+                    item.classList.toggle("is-open", willOpen);
+                    trigger.setAttribute("aria-expanded", String(willOpen));
+                }
+            });
+
+            item.addEventListener("mouseenter", () => {
+                if (!window.matchMedia("(max-width: 1024px)").matches) {
+                    closeSubmenus();
+                    item.classList.add("is-open");
+                    header.classList.add("mega-menu-open");
+                }
+            });
+            item.addEventListener("focusin", () => {
+                if (!window.matchMedia("(max-width: 1024px)").matches) {
+                    closeSubmenus();
+                    item.classList.add("is-open");
+                    header.classList.add("mega-menu-open");
+                }
+            });
+        });
+
+        header.addEventListener("mouseleave", () => {
+            if (!window.matchMedia("(max-width: 1024px)").matches) {
+                closeSubmenus();
+                header.classList.remove("mega-menu-open");
+            }
+        });
+        header.addEventListener("focusout", (event) => {
+            if (!header.contains(event.relatedTarget) && !window.matchMedia("(max-width: 1024px)").matches) {
+                closeSubmenus();
+                header.classList.remove("mega-menu-open");
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeSubmenus();
+                header.classList.remove("mega-menu-open", "menu-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "메뉴 열기");
+            }
         });
     }
 
@@ -65,15 +127,16 @@
                 }
             });
         }, { rootMargin: "-25% 0px -60% 0px" });
-
         sections.forEach((section) => observer.observe(section));
     }
 
     localLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            if (header && header.classList.contains("menu-open")) {
+            if (header?.classList.contains("menu-open")) {
                 header.classList.remove("menu-open");
                 menuToggle?.setAttribute("aria-expanded", "false");
+                menuToggle?.setAttribute("aria-label", "메뉴 열기");
+                closeSubmenus();
             }
         });
     });
