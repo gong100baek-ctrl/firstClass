@@ -1058,6 +1058,7 @@
         };
 
         let openedByHover = null;
+        let lastHoverOpenAt = 0;
 
         // 모바일 폭에서는 각 서브메뉴를 해당 키워드(li) 안으로 옮겨 키워드 아래에 세로로 펼침
         const mobileMenuQuery = window.matchMedia('(max-width: 1024px)');
@@ -1084,11 +1085,16 @@
             parent.addEventListener('mouseenter', () => {
                 if (!window.matchMedia('(max-width: 1024px)').matches) {
                     openMegaMenu(trigger);
-                } else if (window.matchMedia('(hover: hover)').matches && trigger.getAttribute('aria-expanded') !== 'true') {
-                    // 모바일 폭에서 마우스를 올리면 키워드 바로 아래로 서브메뉴가 펼쳐짐
-                    openedByHover = trigger;
-                    openMegaMenu(trigger);
                 }
+            });
+            // 모바일 폭에서 키워드(+)에 마우스를 올리면 그 키워드 바로 아래로 서브메뉴가 펼쳐짐
+            // (메뉴가 펼쳐지며 줄이 밀려도 포인터 아래의 다른 줄이 연쇄로 열리지 않도록 잠시 무시)
+            trigger.addEventListener('mouseenter', () => {
+                if (!mobileMenuQuery.matches || !window.matchMedia('(hover: hover)').matches) return;
+                if (trigger.getAttribute('aria-expanded') === 'true' || Date.now() - lastHoverOpenAt < 400) return;
+                lastHoverOpenAt = Date.now();
+                openedByHover = trigger;
+                openMegaMenu(trigger);
             });
             parent.addEventListener('mouseleave', () => {
                 if (!window.matchMedia('(max-width: 1024px)').matches) {
@@ -1115,7 +1121,9 @@
 
         megaMenus.forEach((menu) => {
             menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-            menu.addEventListener('mouseleave', delayedCloseMegaMenu);
+            menu.addEventListener('mouseleave', () => {
+                if (!window.matchMedia('(max-width: 1024px)').matches) delayedCloseMegaMenu();
+            });
         });
 
         document.addEventListener('keydown', (event) => {
