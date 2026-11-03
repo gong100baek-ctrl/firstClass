@@ -1,5 +1,25 @@
 /* About page: global navigation and page interactions */
 (() => {
+    const heroSwiperElement = document.querySelector(".about-visual-swiper");
+    if (heroSwiperElement && typeof Swiper !== "undefined") {
+        new Swiper(heroSwiperElement, {
+            loop: true,
+            speed: 700,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: ".about-swiper-next",
+                prevEl: ".about-swiper-prev"
+            },
+            pagination: {
+                el: ".about-swiper-pagination",
+                clickable: true
+            }
+        });
+    }
+
     const header = document.querySelector(".header");
     const menuToggle = document.querySelector(".menu-toggle");
     const navItems = [...document.querySelectorAll(".gnb-item")];
