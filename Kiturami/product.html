@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="귀뚜라미 제품 카테고리를 소개합니다.">
+    <title>제품 소개 | Kiturami</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product-page.css">
+    <script src="js/product-page.js" defer></script>
+</head>
+<body>
+<div id="wrap" class="product-page">
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html" aria-label="귀뚜라미 메인페이지"><span class="logo-en">Kiturami</span><span class="logo-ko">귀뚜라미</span></a></h1>
+            <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+            <nav class="gnb" id="site-navigation" aria-label="주요 메뉴">
+                <ul>
+                    <li class="gnb-item gnb-company"><a href="brand.html">회사소개</a></li>
+                    <li class="gnb-item gnb-product is-current"><a href="#product-menu" aria-expanded="false" aria-controls="product-menu">제품소개</a></li>
+                    <li class="gnb-item"><a href="index.html">홍보센터</a></li>
+                    <li class="gnb-item"><a href="index.html">고객센터</a></li>
+                    <li class="gnb-item gnb-shop"><a href="https://kituramimall.com/" target="_blank" rel="noopener noreferrer">귀뚜라미몰 바로가기</a></li>
+                </ul>
+            </nav>
+            <div class="mega-menu" id="product-menu" aria-label="제품소개 하위 메뉴">
+                <nav class="mega-menu-inner" aria-label="제품 카테고리">
+                    <a href="#gas-boiler">가스보일러</a><a href="#oil-boiler">기름보일러</a><a href="#water-heater">온수기</a><a href="#renewable">신재생/중대형/전기</a><a href="#heating-mat">난방매트</a><a href="#system">시스템 제품</a><a href="#air-care">공기청정/환기</a><a href="#air-conditioner">에어컨</a><a href="#thermostat">실내온도조절기</a><a href="#etc">기타</a>
+                </nav>
+            </div>
+            <div class="language">
+                <button class="language-toggle" type="button" aria-label="언어 선택" aria-expanded="false" aria-controls="language-menu"><img class="language-icon" src="images/web.svg" alt=""><span class="language-current">한국어</span><img class="language-arrow" src="images/chevron-down.svg" alt=""></button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <button type="button" class="language-option is-selected" data-language="한국어">한국어</button><button type="button" class="language-option" data-language="English">English</button><button type="button" class="language-option" data-language="日本語">日本語</button><button type="button" class="language-option" data-language="中文">中文</button><button type="button" class="language-option" data-language="Русский">Русский</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="product-main">
+        <section class="product-hero">
+            <div class="product-hero__image" role="img" aria-label="귀뚜라미 제품 대표 이미지 영역"></div>
+            <div class="product-hero__shade"></div>
+            <div class="product-container product-hero__content">
+                <p class="product-eyebrow">PRODUCTS</p>
+                <h2>생활을 더 편리하게,<br>귀뚜라미 제품</h2>
+                <p>다양한 생활환경에 맞춘 제품 카테고리를 확인해보세요.</p>
+                <a href="#product-categories" class="product-hero__link">제품 카테고리 보기 <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="product-breadcrumb"><a href="index.html">HOME</a><span>/</span><strong>제품소개</strong></div>
+        </section>
+        <nav class="product-local-nav" aria-label="제품 카테고리 바로가기">
+            <a href="#gas-boiler">가스보일러</a><a href="#oil-boiler">기름보일러</a><a href="#water-heater">온수기</a><a href="#renewable">신재생/중대형/전기</a><a href="#heating-mat">난방매트</a><a href="#system">시스템 제품</a><a href="#air-care">공기청정/환기</a><a href="#air-conditioner">에어컨</a><a href="#thermostat">실내온도조절기</a><a href="#etc">기타</a>
+        </nav>
+        <section class="product-intro" id="product-categories">
+            <div class="product-container">
+                <div class="product-section-heading">
+                    <p class="product-eyebrow product-eyebrow--blue">PRODUCT CATEGORY</p>
+                    <h2>귀뚜라미 제품을<br><span>한눈에 살펴보세요.</span></h2>
+                    <p>관심 있는 제품 분야를 선택하면 해당 카테고리로 이동합니다.</p>
+                </div>
+                <div class="product-category-grid">
+                    <a class="product-category-card" href="#gas-boiler"><img src="images/Kiturami02.png" alt="가스보일러 제품 이미지" loading="lazy"><span class="product-category-card__number">01</span><strong>가스보일러</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#oil-boiler"><img src="images/Kiturami01.png" alt="기름보일러 제품 이미지" loading="lazy"><span class="product-category-card__number">02</span><strong>기름보일러</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#water-heater"><img src="images/Kiturami03.png" alt="온수기 제품 이미지" loading="lazy"><span class="product-category-card__number">03</span><strong>온수기</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#renewable"><img src="images/Kiturami04.png" alt="신재생 중대형 전기 제품 이미지" loading="lazy"><span class="product-category-card__number">04</span><strong>신재생/중대형/전기</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#heating-mat"><img src="images/Kiturami05.png" alt="난방매트 제품 이미지" loading="lazy"><span class="product-category-card__number">05</span><strong>난방매트</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#system"><img src="images/Kiturami06.png" alt="시스템 제품 이미지" loading="lazy"><span class="product-category-card__number">06</span><strong>시스템 제품</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#air-care"><img src="images/Kiturami07.png" alt="공기청정 환기 제품 이미지" loading="lazy"><span class="product-category-card__number">07</span><strong>공기청정/환기</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#air-conditioner"><img src="images/Kiturami08.png" alt="에어컨 제품 이미지" loading="lazy"><span class="product-category-card__number">08</span><strong>에어컨</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#thermostat"><img src="images/Kiturami09.png" alt="실내온도조절기 제품 이미지" loading="lazy"><span class="product-category-card__number">09</span><strong>실내온도조절기</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                    <a class="product-category-card" href="#etc"><img src="images/Kiturami10.png" alt="기타 제품 이미지" loading="lazy"><span class="product-category-card__number">10</span><strong>기타</strong><span class="product-category-card__arrow" aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
+        <section class="product-detail-list" aria-label="제품 카테고리 상세">
+            <div class="product-container">
+                <article class="product-detail" id="gas-boiler"><div class="product-detail__image"><img src="images/Kiturami02.png" alt="가스보일러 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 01</p><h2>가스보일러</h2><p>가스보일러 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail product-detail--reverse" id="oil-boiler"><div class="product-detail__image"><img src="images/Kiturami01.png" alt="기름보일러 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 02</p><h2>기름보일러</h2><p>기름보일러 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product2" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail" id="water-heater"><div class="product-detail__image"><img src="images/Kiturami03.png" alt="온수기 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 03</p><h2>온수기</h2><p>온수기 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product7" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail product-detail--reverse" id="renewable"><div class="product-detail__image"><img src="images/Kiturami04.png" alt="신재생 중대형 전기 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 04</p><h2>신재생/중대형/전기</h2><p>신재생·중대형·전기 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product6" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail" id="heating-mat"><div class="product-detail__image"><img src="images/Kiturami05.png" alt="난방매트 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 05</p><h2>난방매트</h2><p>난방매트 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product11" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail product-detail--reverse" id="system"><div class="product-detail__image"><img src="images/Kiturami06.png" alt="시스템 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 06</p><h2>시스템 제품</h2><p>시스템 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product12" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail" id="air-care"><div class="product-detail__image"><img src="images/Kiturami07.png" alt="공기청정 환기 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 07</p><h2>공기청정/환기</h2><p>공기청정 및 환기 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product14" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail product-detail--reverse" id="air-conditioner"><div class="product-detail__image"><img src="images/Kiturami08.png" alt="에어컨 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 08</p><h2>에어컨</h2><p>에어컨 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product8" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail" id="thermostat"><div class="product-detail__image"><img src="images/Kiturami09.png" alt="실내온도조절기 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 09</p><h2>실내온도조절기</h2><p>실내온도조절기 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product9" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+                <article class="product-detail product-detail--reverse" id="etc"><div class="product-detail__image"><img src="images/Kiturami10.png" alt="기타 제품 이미지" loading="lazy"></div><div class="product-detail__copy"><p class="product-eyebrow product-eyebrow--blue">CATEGORY 10</p><h2>기타</h2><p>기타 제품 카테고리입니다. 세부 모델과 제품 사양은 공식 제품 정보를 기준으로 확인해주세요.</p><a href="https://krb.co.kr/product10" target="_blank" rel="noopener noreferrer">공식 제품 정보 확인 <span aria-hidden="true">↗</span></a></div></article>
+            </div>
+        </section>
+        <section class="product-bottom-cta"><div class="product-container"><div><p class="product-eyebrow">KITURAMI</p><h2>제품에 대해 더 궁금한 점이 있으신가요?</h2></div><a href="https://krb.co.kr/product" target="_blank" rel="noopener noreferrer">공식 제품 페이지 바로가기 <span aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top"><a class="footer-logo" href="index.html">KITURAMI</a><div class="footer-family"><label for="family-site">FAMILY SITE</label><select id="family-site"><option value="">FAMILY SITE</option><option value="https://kituramimall.com/">귀뚜라미몰</option></select></div></div>
+            <div class="footer-bottom"><p>본 페이지는 웹사이트 리뉴얼 포트폴리오를 위한 구성입니다. 제품 상세 정보는 귀뚜라미 공식 홈페이지에서 확인해주세요.</p><a href="index.html">메인으로</a></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
