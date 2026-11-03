@@ -960,8 +960,22 @@ body {
 
     .header .mega-menu-inner > a {
         width: 100%;
-        padding: 9px 0;
+        padding: 6px 0;
         font-size: 14px;
+        line-height: 1.4;
         white-space: normal;
+    }
+
+    .header .mega-menu {
+        padding-bottom: 8px;
+    }
+
+    .header .gnb-item > a {
+        min-height: 44px;
+        padding: 8px 0;
+    }
+
+    .gnb > ul {
+        padding: 4px 20px 12px;
     }
 }
