@@ -1101,22 +1101,8 @@
                     delayedCloseMegaMenu();
                 }
             });
-            trigger.addEventListener('click', (event) => {
-                event.preventDefault();
-                if (window.matchMedia('(max-width: 1024px)').matches) {
-                    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-                    if (openedByHover === trigger) {
-                        // 마우스를 올려서 막 열린 메뉴는 클릭해도 닫지 않음
-                        openedByHover = null;
-                    } else if (isOpen) {
-                        closeMegaMenu();
-                    } else {
-                        openMegaMenu(trigger);
-                    }
-                } else {
-                    openMegaMenu(trigger);
-                }
-            });
+            // 클릭은 각 키워드의 href를 따라 내부 페이지로 이동하고,
+            // 데스크톱에서는 마우스 오버로 하위 메뉴를 열 수 있도록 유지합니다.
         });
 
         megaMenus.forEach((menu) => {
