@@ -18,6 +18,7 @@
             item.classList.remove("is-open");
             item.querySelector(":scope > a[aria-controls]")?.setAttribute("aria-expanded", "false");
         });
+        header?.classList.remove("mega-menu-open");
     };
 
     if (header && menuToggle) {
@@ -34,6 +35,10 @@
             if (!trigger || !submenu) return;
 
             trigger.addEventListener("click", (event) => {
+                if (!window.matchMedia("(max-width: 1024px)").matches) {
+                    event.preventDefault();
+                    return;
+                }
                 event.preventDefault();
                 const willOpen = !item.classList.contains("is-open");
                 closeSubmenus();
@@ -43,13 +48,6 @@
             });
 
             item.addEventListener("mouseenter", () => {
-                if (!window.matchMedia("(max-width: 1024px)").matches) {
-                    closeSubmenus();
-                    item.classList.add("is-open");
-                    header.classList.add("mega-menu-open");
-                }
-            });
-            item.addEventListener("focusin", () => {
                 if (!window.matchMedia("(max-width: 1024px)").matches) {
                     closeSubmenus();
                     item.classList.add("is-open");
