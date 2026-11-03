@@ -6,10 +6,12 @@
     <meta name="description" content="귀뚜라미의 브랜드 스토리와 핵심 가치, 역사를 소개합니다.">
     <title>브랜드 소개 | Kiturami</title>
     <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/about.css">
+    <script src="../npm/swiper/swiper-bundle.min.js" defer></script>
     <script src="js/about.js" defer></script>
 </head>
 <body>
@@ -102,22 +104,20 @@
     </header>
 
     <main class="about-main">
-        <section class="about-visual company-hero" aria-labelledby="about-title">
-            <div class="company-hero__visual" aria-hidden="true">
-                <div class="hero-orbit hero-orbit--one"></div>
-                <div class="hero-orbit hero-orbit--two"></div>
-                <div class="hero-glow"></div>
-                <span class="hero-wordmark">KITURAMI</span>
+        <section class="about-visual about-hero-swiper" aria-label="귀뚜라미 주요 소식 배너">
+            <div class="swiper about-visual-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/visual01.png" alt="귀뚜라미보일러 AI 방방 난방 시스템 소개 배너">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/visual02.png" alt="귀뚜라미 가정용 보일러 렌탈서비스 따숨케어 소개 배너">
+                    </div>
+                </div>
+                <button type="button" class="about-swiper-prev" aria-label="이전 배너"></button>
+                <button type="button" class="about-swiper-next" aria-label="다음 배너"></button>
+                <div class="about-swiper-pagination"></div>
             </div>
-            <div class="about-visual__content">
-                <p class="about-eyebrow">ABOUT KITURAMI</p>
-                <h2 id="about-title">따뜻한 기술,<br>더 나은 생활의 시작</h2>
-                <p>귀뚜라미의 기업비전과 발자취, 브랜드 아이덴티티를 소개합니다.</p>
-            </div>
-            <div class="about-visual__breadcrumb">
-                <a href="index.html">HOME</a><span aria-hidden="true">/</span><strong>회사소개</strong>
-            </div>
-            <a class="hero-scroll" href="#company-vision"><span></span>SCROLL DOWN</a>
         </section>
 
         <nav class="about-local-nav product-local-nav" aria-label="제품소개 메뉴">
