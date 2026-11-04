@@ -135,15 +135,15 @@
 .ft-info-item h2 {
     margin: 0 0 16px;
     color: #111111;
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: -0.3px;
 }
 
 .ft-info-item p {
     margin: 0;
     color: #6b717c;
-    font-size: 19px;
+    font-size: 15px;
     line-height: 1.45;
     letter-spacing: -0.4px;
 }
@@ -205,7 +205,7 @@
 .ft-copy {
     margin: 22px 0 0;
     color: #8b919b;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: -0.2px;
 }
 
