@@ -909,3 +909,59 @@
         font-size: 14px;
     }
 }
+
+/* company history keywords */
+.brand-history-panel {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.brand-history-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.brand-history-keywords a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 999px;
+    background: var(--color-surface-default);
+    color: var(--color-text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.brand-history-keywords a:hover,
+.brand-history-keywords a:focus-visible {
+    border-color: var(--color-action-primary);
+    background: var(--color-action-primary);
+    color: #fff;
+}
+
+.brand-history-keywords a:focus-visible {
+    outline: 3px solid var(--color-accent-blue, #0b6bcb);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .brand-history-keywords {
+        gap: 8px;
+    }
+
+    .brand-history-keywords a {
+        min-height: 40px;
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}
