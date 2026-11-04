@@ -106,7 +106,7 @@
     justify-content: center;
     gap: 20px;
     height: 130px;
-    padding: 0 59px;
+    padding: 30px;
     border: 1px solid var(--color-text-secondary);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.4);
