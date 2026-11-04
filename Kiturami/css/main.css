@@ -73,7 +73,6 @@ body {
 }
 
 .gnb {
-    margin-left: auto;
     flex: 0 0 auto;
 }
 
@@ -190,7 +189,7 @@ body {
 .hero-sec .swiper {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 830px;
 }
 
 .hero-sec .swiper img {
