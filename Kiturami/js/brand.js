@@ -149,30 +149,48 @@
         });
     }
 
-    const historyTabs = [...document.querySelectorAll(".brand-history-tab")];
-    const activateHistoryTab = (tab, focus) => {
-        historyTabs.forEach((item) => {
-            const selected = item === tab;
-            item.classList.toggle("is-active", selected);
-            item.setAttribute("aria-selected", String(selected));
-            item.tabIndex = selected ? 0 : -1;
-            const pane = document.getElementById(item.getAttribute("aria-controls"));
-            if (pane) pane.hidden = !selected;
-        });
-        if (focus) tab.focus();
-    };
+    document.querySelectorAll("[role='tablist']").forEach((list) => {
+        const tabs = [...list.querySelectorAll("[role='tab']")];
+        const activate = (tab, focus) => {
+            tabs.forEach((item) => {
+                const selected = item === tab;
+                item.classList.toggle("is-active", selected);
+                item.setAttribute("aria-selected", String(selected));
+                item.tabIndex = selected ? 0 : -1;
+                const pane = document.getElementById(item.getAttribute("aria-controls"));
+                if (pane) pane.hidden = !selected;
+            });
+            if (focus) tab.focus();
+        };
 
-    historyTabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => activateHistoryTab(tab));
-        tab.addEventListener("keydown", (event) => {
-            const keys = { ArrowRight: 1, ArrowLeft: -1 };
-            if (event.key in keys) {
-                event.preventDefault();
-                activateHistoryTab(historyTabs[(index + keys[event.key] + historyTabs.length) % historyTabs.length], true);
-            } else if (event.key === "Home" || event.key === "End") {
-                event.preventDefault();
-                activateHistoryTab(historyTabs[event.key === "Home" ? 0 : historyTabs.length - 1], true);
-            }
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => activate(tab));
+            tab.addEventListener("keydown", (event) => {
+                const keys = { ArrowRight: 1, ArrowLeft: -1 };
+                if (event.key in keys) {
+                    event.preventDefault();
+                    activate(tabs[(index + keys[event.key] + tabs.length) % tabs.length], true);
+                } else if (event.key === "Home" || event.key === "End") {
+                    event.preventDefault();
+                    activate(tabs[event.key === "Home" ? 0 : tabs.length - 1], true);
+                }
+            });
+        });
+    });
+
+    document.querySelectorAll(".branch-filters").forEach((bar) => {
+        const chips = [...bar.querySelectorAll("[data-filter]")];
+        const cards = [...document.querySelectorAll("#" + bar.dataset.target + " [data-region]")];
+        chips.forEach((chip) => {
+            chip.addEventListener("click", () => {
+                chips.forEach((item) => {
+                    item.classList.toggle("is-active", item === chip);
+                    item.setAttribute("aria-pressed", String(item === chip));
+                });
+                cards.forEach((card) => {
+                    card.hidden = chip.dataset.filter !== "all" && card.dataset.region !== chip.dataset.filter;
+                });
+            });
         });
     });
 })();

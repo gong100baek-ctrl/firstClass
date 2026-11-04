@@ -113,11 +113,11 @@
                 </div>
                 <div class="brand-history-panel">
                     <div class="brand-history-keywords" role="tablist" aria-label="기업연혁 시기 선택">
-                        <button type="button" class="brand-history-tab is-active" role="tab" id="history-tab-history1" aria-controls="history-history1" aria-selected="true" tabindex="0">세계로 뻗어가는 귀뚜라미</button>
-                        <button type="button" class="brand-history-tab" role="tab" id="history-tab-history2" aria-controls="history-history2" aria-selected="false" tabindex="-1">사업의 다각화</button>
-                        <button type="button" class="brand-history-tab" role="tab" id="history-tab-history3" aria-controls="history-history3" aria-selected="false" tabindex="-1">성장기</button>
-                        <button type="button" class="brand-history-tab" role="tab" id="history-tab-history4" aria-controls="history-history4" aria-selected="false" tabindex="-1">도약기</button>
-                        <button type="button" class="brand-history-tab" role="tab" id="history-tab-history5" aria-controls="history-history5" aria-selected="false" tabindex="-1">창업기</button>
+                        <button type="button" class="brand-pill is-active" role="tab" id="history-tab-history1" aria-controls="history-history1" aria-selected="true" tabindex="0">세계로 뻗어가는 귀뚜라미</button>
+                        <button type="button" class="brand-pill" role="tab" id="history-tab-history2" aria-controls="history-history2" aria-selected="false" tabindex="-1">사업의 다각화</button>
+                        <button type="button" class="brand-pill" role="tab" id="history-tab-history3" aria-controls="history-history3" aria-selected="false" tabindex="-1">성장기</button>
+                        <button type="button" class="brand-pill" role="tab" id="history-tab-history4" aria-controls="history-history4" aria-selected="false" tabindex="-1">도약기</button>
+                        <button type="button" class="brand-pill" role="tab" id="history-tab-history5" aria-controls="history-history5" aria-selected="false" tabindex="-1">창업기</button>
                     </div>
                     <div class="brand-history-body">
                     <div class="brand-history-pane" role="tabpanel" id="history-history1" aria-labelledby="history-tab-history1">
@@ -268,14 +268,263 @@
             </div>
         </section>
 
-        <section class="brand-section brand-info-section" id="branches" aria-labelledby="branches-title">
-            <div class="brand-container brand-info-layout">
+        <section class="brand-section brand-info-section branches" id="branches" aria-labelledby="branches-title">
+            <div class="brand-container">
                 <div class="brand-section-heading">
                     <p class="brand-eyebrow brand-eyebrow--blue">GLOBAL NETWORK</p>
                     <h2 id="branches-title">국내외지사</h2>
-                    <p class="brand-lead">국내 사업장과 해외 지사 정보를 지역별로 확인할 수 있는 영역입니다.</p>
+                    <p class="brand-lead">전국 지사와 해외 법인·대리점 정보를 확인하실 수 있습니다.</p>
                 </div>
-                <div class="brand-info-placeholder"><strong>국내외 지사 정보 영역</strong><span>지사명 · 주소 · 연락처 · 지도 정보 삽입 예정</span></div>
+                <div class="branch-panel">
+                    <div class="brand-history-keywords" role="tablist" aria-label="국내외지사 구분">
+                        <button type="button" class="brand-pill is-active" role="tab" id="branch-tab-domestic" aria-controls="branch-domestic" aria-selected="true" tabindex="0">국내</button>
+                        <button type="button" class="brand-pill" role="tab" id="branch-tab-world" aria-controls="branch-world" aria-selected="false" tabindex="-1">해외</button>
+                    </div>
+                    <div class="branch-pane" role="tabpanel" id="branch-domestic" aria-labelledby="branch-tab-domestic">
+                        <ul class="branch-grid">
+                            <li class="branch-card">
+                                <h4>북부지사</h4>
+                                <address>경기도 의정부시 발곡로10 백상프라자 202호</address>
+                                
+                            </li>
+                            <li class="branch-card">
+                                <h4>동부지사</h4>
+                                <address>서울특별시 강서구 마곡중앙로 86</address>
+                                
+                            </li>
+                            <li class="branch-card">
+                                <h4>영업본부</h4>
+                                <address>서울특별시 강서구 마곡중앙로 86</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0226009222">02) 2600-9222</a></dd></div><div><dt>FAX</dt><dd>02) 2606-9349</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>강원지사</h4>
+                                <address>강원도 원주시 봉화서부로 14-3(단계동 1177-1), 201호</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:07047139811">070) 4713-9811</a></dd></div><div><dt>FAX</dt><dd>033) 745-1613</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>남부지사</h4>
+                                <address>서울특별시 강서구 마곡중앙로 86</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0322535083">032) 253-5083</a></dd></div><div><dt>FAX</dt><dd>032) 257-0273</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>중부지사</h4>
+                                <address>대전광역시 동구 한밭대로 1215 (용전동)</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0429310635">042) 931-0635~6</a></dd></div><div><dt>FAX</dt><dd>042) 931-0637</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>경북지사</h4>
+                                <address>경상북도 안동시 풍산읍 유통단지길 32</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0549002032">054) 900-2032</a></dd></div><div><dt>FAX</dt><dd>054) 900-2035</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>전북지사</h4>
+                                <address>전북특별자치도 전주시 덕진구 만성북로 63, 2층</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:07047007391">070) 4700-7391</a></dd></div><div><dt>FAX</dt><dd>063) 904-5161</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>대구지사</h4>
+                                <address>대구광역시 동구 동대구로 501, 5층</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0537445011">053) 744-5011</a></dd></div><div><dt>FAX</dt><dd>053) 745-0934</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>전남지사</h4>
+                                <address>광주광역시 광산구 하남산단6번로 57 지식산업센터 KBI 하남 A동 1016호</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0625111592">062) 511-1592</a></dd></div><div><dt>FAX</dt><dd>062) 511-1594</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>경남지사</h4>
+                                <address>경상남도 진주시 사봉면 지수로 9</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0559217822">055) 921-7822</a></dd></div><div><dt>FAX</dt><dd>055) 921-7825</dd></div></dl>
+                            </li>
+                            <li class="branch-card">
+                                <h4>부산지사</h4>
+                                <address>부산광역시 중구 중앙대로 135 귀뚜라미부산사옥 1층</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd><a href="tel:0514626601">051) 462-6601</a></dd></div><div><dt>FAX</dt><dd>051) 463-6605</dd></div></dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="branch-pane" role="tabpanel" id="branch-world" aria-labelledby="branch-tab-world" hidden>
+                        <div class="branch-filters" data-target="branch-world" role="group" aria-label="권역 선택">
+                            <button type="button" class="brand-pill is-active" data-filter="all" aria-pressed="true">전체</button>
+                            <button type="button" class="brand-pill" data-filter="asia" aria-pressed="false">아시아</button>
+                            <button type="button" class="brand-pill" data-filter="europe" aria-pressed="false">유럽</button>
+                            <button type="button" class="brand-pill" data-filter="mea" aria-pressed="false">중동·아프리카</button>
+                            <button type="button" class="brand-pill" data-filter="oceania" aria-pressed="false">북미·오세아니아</button>
+                        </div>
+                        <ul class="branch-grid">
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">China</p>
+                                <h4>Kiturami Century (Tian Jin) Industrial Co., Ltd.</h4>
+                                <address>NO.99 5TH, COSTAL WAY, Tianjin China Free Trade Zone</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>86-22-2576-1800</dd></div><div><dt>FAX</dt><dd>86-22-2576-0359</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">China</p>
+                                <h4>Kyungwon Air-Conditioning (Shanghai) Co., Ltd.</h4>
+                                <address>Factory 14#, No.458 Xinyu Road, Songjiang Hi-Tech Park, Shanghai</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>86-57735291~2</dd></div><div><dt>FAX</dt><dd>86-21-57735053</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">China</p>
+                                <h4>Kyungwon Air-Conditioning (Beijing) Co., Ltd.</h4>
+                                <address>Room 2510, No.419 Wangjing New City, Chaoyang District, Beijing</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>86-57735291~2</dd></div><div><dt>FAX</dt><dd>86-21-57735053</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Norway</p>
+                                <h4>GI Trading AS</h4>
+                                <address>Industriveien 1, N-2020 Skedsmokorset</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>47-63-87-88-44</dd></div><div><dt>FAX</dt><dd>47-63-87-88-01</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Turkey</p>
+                                <h4>Kiturami Ilhanli</h4>
+                                <address>E-5 Yanyol Üzeri No:175 Kat 1, Avcılar, Istanbul</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>90-212-593-8604</dd></div><div><dt>FAX</dt><dd>90-212-593-5620</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Turkey</p>
+                                <h4>Teknoklima San ve Tic Ltd.</h4>
+                                <address>Akleylek sok. Akasya 16 Villa:10, Bahcesehir, Istanbul 34538</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>90-212-347-1105</dd></div><div><dt>FAX</dt><dd>90-212-347-1107</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Turkey</p>
+                                <h4>Kiturami Kombi</h4>
+                                <address>E-5 Yanyol Üzeri No:175/1, Avcılar, Istanbul</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>90-212-593-8604</dd></div><div><dt>FAX</dt><dd>90-212-593-5620</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Italy</p>
+                                <h4>IBT Srl</h4>
+                                <address>Via Marconi 51, 31050 Villorba (TV)</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>39-0422-616311</dd></div><div><dt>FAX</dt><dd>39-0422-616330</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Cyprus</p>
+                                <h4>Chanat Limited</h4>
+                                <address>34 Demofontos Street, 1075 Nicosia (P.O. Box 25516)</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>357-22-762191</dd></div><div><dt>FAX</dt><dd>357-22-763041</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="mea">
+                                <p class="branch-card__country">Egypt</p>
+                                <h4>Sphinx Refrigeration &amp; Air-Conditioning</h4>
+                                <address>Sphinx Trading, 2B Boktor Square, Heliopolis, Cairo</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>20-2-620-2207~9</dd></div><div><dt>FAX</dt><dd>20-2-620-2212</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Pakistan</p>
+                                <h4>Mohatta Engineering Co.</h4>
+                                <address>8-C 5th Sunset Lane, #5 Phase-2, Ext. D.H.A., Karachi</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>92-21-580-4171</dd></div><div><dt>FAX</dt><dd>92-21-589-7152</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Taiwan</p>
+                                <h4>Win Years Trading Co., Ltd.</h4>
+                                <address>6F-3, No.231, Chung Hsiao East Road, Sec.4, Taipei</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>886-2-27415105</dd></div><div><dt>FAX</dt><dd>886-2-27411662</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Vietnam</p>
+                                <h4>Kiturami Bumyang Vietnam Co., Ltd.</h4>
+                                <address>8F, 32-34 Ngo Duc Ke Street, District 1, Ho Chi Minh City</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>84-8-2220-0511</dd></div><div><dt>FAX</dt><dd>84-8-2220-0513</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Vietnam</p>
+                                <h4>Cong Ty TNHH-TM-DV Dien Lanh Hong Hai</h4>
+                                <address>3/2 Do Son St., P-4, Tan Binh Dist., Ho Chi Minh City</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>84-8-293-7385, 84-95-8655-055</dd></div><div><dt>FAX</dt><dd>84-8-293-7385</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Philippines</p>
+                                <h4>Century (Philippines) Coolingsystem Inc.</h4>
+                                <address>4201, 2nd Floor, Ramon Magsaysay Blvd., Sta. Mesa, Manila</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>63-2-715-8765, 63-9174098168</dd></div><div><dt>FAX</dt><dd>63-2-714-1278</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Bangladesh</p>
+                                <h4>Confidence Trade Ltd.</h4>
+                                <address>09-05 Navana Tower, 45 Gulshan Avenue, Gulshan-1, Dhaka-1212</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>880-2-881-2151, 880-1199857520</dd></div><div><dt>FAX</dt><dd>880-2-9886665</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="mea">
+                                <p class="branch-card__country">Iran</p>
+                                <h4>Tose&#x27;e Tasisat Atrina Engineering Group</h4>
+                                <address>No.90, West Soleymani St., Andarzgoo Blvd., Farmanieh, Tehran</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>9821-2273-4820</dd></div><div><dt>FAX</dt><dd>9821-2273-4899</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Indonesia</p>
+                                <h4>PT. Imecon Anugerah Perkasa</h4>
+                                <address>Ruko Pulogadung Trade Centre (PTC) blok 8A No.31, Pulogadung, Jakarta 13920</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>62-21-4616199</dd></div><div><dt>FAX</dt><dd>62-21-4613399</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Sri Lanka</p>
+                                <h4>KS Trading (Pvt) Ltd.</h4>
+                                <address>1/37, 1/1, Veediya Bandara MW, Etul Kotte</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>94-11-5368531</dd></div><div><dt>FAX</dt><dd>94-11-440-2152</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="asia">
+                                <p class="branch-card__country">Singapore</p>
+                                <h4>Heat Controller International LLC</h4>
+                                <address>15 West Coast Highway, #03-07, Pasir Panjang Building, Singapore 117861</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>65-67770039</dd></div><div><dt>FAX</dt><dd>65-67770061</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="oceania">
+                                <p class="branch-card__country">Australia</p>
+                                <h4>Century Air Pty Ltd</h4>
+                                <address>Unit 21, 2 Railway Parade, Lidcombe NSW 2141</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>02-9646-1111, 0411-740-034</dd></div><div><dt>FAX</dt><dd>02-9646-4848</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="oceania">
+                                <p class="branch-card__country">New Zealand</p>
+                                <h4>Malcom Revenscroft Ltd.</h4>
+                                <address>10 Saxon Street, P.O. Box 21-038, Christchurch</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>64-3-389-2231</dd></div><div><dt>FAX</dt><dd>64-3-389-2245</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="oceania">
+                                <p class="branch-card__country">U.S.A</p>
+                                <h4>KCA International</h4>
+                                <address>3000 W. 6th St. #200, Los Angeles, CA 90020</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>213-251-0354</dd></div><div><dt>FAX</dt><dd>213-385-4928</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Greece</p>
+                                <h4>Clima Control A.E.</h4>
+                                <address>Parallel of Egnatia Str., Diavata Junction, Ionia, Thessaloniki</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>30-231-057-4803/4920</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="europe">
+                                <p class="branch-card__country">Russia</p>
+                                <h4>Moscow</h4>
+                                <address>117342, Moscow, ul. Butlerova 17, BC &quot;Neo Geo&quot;, office 2010</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>8 800 707-25-02, +7 499 707-25-00</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="mea">
+                                <p class="branch-card__country">Kuwait</p>
+                                <h4>SAMA Co.</h4>
+                                <address>P.O. Box 34129, Al-Adiliya 73252, Kuwait</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>965-2261-0072</dd></div><div><dt>FAX</dt><dd>965-2261-0073</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="mea">
+                                <p class="branch-card__country">U.A.E</p>
+                                <h4>GPS Co.</h4>
+                                <address>P.O. Box 46711, Abu Dhabi</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>971-2-6418500</dd></div><div><dt>FAX</dt><dd>971-2-6411461</dd></div></dl>
+                            </li>
+                            <li class="branch-card" data-region="mea">
+                                <p class="branch-card__country">Saudi Arabia</p>
+                                <h4>Abu-Haimed Group</h4>
+                                <address>P.O. Box 30237, Al-Khobar 31952, K.S.A.</address>
+                                <dl class="branch-contact"><div><dt>TEL</dt><dd>966-3-898-3278</dd></div><div><dt>FAX</dt><dd>966-3-894-6157</dd></div></dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="brand-note">공식 홈페이지 지사 안내를 바탕으로 정리한 내용입니다. 연락처와 주소는 변경될 수 있으니 게시 전 최신 정보를 확인해주세요.</p>
             </div>
         </section>
 

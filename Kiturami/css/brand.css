@@ -927,7 +927,7 @@
     list-style: none;
 }
 
-.brand-history-tab {
+.brand-pill {
     display: inline-flex;
     font-family: inherit;
     cursor: pointer;
@@ -944,14 +944,14 @@
     transition: color .2s ease, border-color .2s ease, background-color .2s ease;
 }
 
-.brand-history-tab:hover,
-.brand-history-tab:focus-visible {
+.brand-pill:hover,
+.brand-pill:focus-visible {
     border-color: var(--color-action-primary);
     background: var(--color-action-primary);
     color: #fff;
 }
 
-.brand-history-tab:focus-visible {
+.brand-pill:focus-visible {
     outline: 3px solid var(--color-accent-blue, #0b6bcb);
     outline-offset: 2px;
 }
@@ -961,14 +961,14 @@
         gap: 8px;
     }
 
-    .brand-history-tab {
+    .brand-pill {
         min-height: 40px;
         padding: 0 16px;
         font-size: 14px;
     }
 }
 
-.brand-history-tab.is-active {
+.brand-pill.is-active {
     border-color: var(--color-action-primary);
     background: var(--color-action-primary);
     color: #fff;
@@ -1214,5 +1214,116 @@
     .ci-color {
         width: 100%;
         min-width: 0;
+    }
+}
+
+/* domestic / overseas branches */
+.branch-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.branch-pane[hidden],
+.branch-card[hidden] {
+    display: none;
+}
+
+.branch-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.branch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.branch-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 28px 24px;
+    border: 1px solid var(--color-border-default);
+    border-top: 3px solid var(--color-action-primary);
+    background: var(--color-surface-default);
+}
+
+.branch-card__country {
+    margin: 0;
+    color: var(--color-action-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.branch-card h4 {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+.branch-card address {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.65;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.branch-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: auto 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border-default);
+    font-size: 14px;
+}
+
+.branch-contact > div {
+    display: flex;
+    gap: 12px;
+}
+
+.branch-contact dt {
+    flex: 0 0 34px;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+}
+
+.branch-contact dd {
+    min-width: 0;
+    margin: 0;
+    color: var(--color-text-primary);
+    overflow-wrap: anywhere;
+}
+
+.branch-contact a:hover {
+    color: var(--color-action-primary);
+}
+
+@media (max-width: 600px) {
+    .branch-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .branch-card {
+        padding: 22px 20px 20px;
     }
 }
