@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header-menu.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/mall.css">
     <script src="js/mall.js" defer></script>
+    <script src="js/header-menu.js" defer></script>
 </head>
 <body class="mall-page">
 <div id="wrap">
@@ -18,30 +20,28 @@
         <div class="header-inner">
             <h1 class="logo"><a href="index.html" aria-label="귀뚜라미 메인페이지"><span class="logo-en">Kiturami</span><span class="logo-ko">귀뚜라미</span></a></h1>
             <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
-            <nav class="gnb" id="site-navigation" aria-label="주요 메뉴">
-                <ul>
-                    <li class="gnb-item"><a href="brand.html" aria-controls="brand-mega-menu">회사소개</a></li>
-                    <li class="gnb-item"><a href="product.html" aria-controls="product-mega-menu">제품소개</a></li>
-                    <li class="gnb-item"><a href="pr.html">홍보센터</a></li>
-                    <li class="gnb-item"><a href="cc.html" aria-controls="customer-mega-menu">고객센터</a></li>
-                    <li class="gnb-item gnb-shop is-current"><a href="mall.html" aria-current="page">귀뚜라미몰 바로가기</a></li>
-                </ul>
-            </nav>
-            <div class="mega-menu" id="brand-mega-menu" aria-label="회사소개 하위 메뉴">
-                <nav class="mega-menu-inner" aria-label="회사소개 메뉴">
-                    <a href="brand.html">브랜드 소개</a><a href="brand.html#company-vision">기업비전</a><a href="brand.html#brand-history">기업연혁</a><a href="brand.html#ci-intro">CI소개</a><a href="brand.html#branches">국내외지사</a><a href="brand.html#awards">수상실적</a><a href="brand.html#recruit">채용안내</a><a href="brand.html#location">찾아오시는 길</a>
-                </nav>
-            </div>
-            <div class="mega-menu" id="product-mega-menu" aria-label="제품소개 하위 메뉴">
-                <nav class="mega-menu-inner" aria-label="제품소개 메뉴">
-                    <a href="product.html#gas-boiler">가스보일러</a><a href="product.html#oil-boiler">기름보일러</a><a href="product.html#water-heater">온수기</a><a href="product.html#renewable">신재생/중대형/전기</a><a href="product.html#heating-mat">난방매트</a><a href="product.html#system">시스템 제품</a><a href="product.html#air-care">공기청정/환기</a><a href="product.html#air-conditioner">에어컨</a><a href="product.html#thermostat">실내온도조절기</a><a href="product.html#etc">기타</a>
-                </nav>
-            </div>
-            <div class="mega-menu" id="customer-mega-menu" aria-label="고객센터 하위 메뉴">
-                <nav class="mega-menu-inner" aria-label="고객센터 메뉴">
-                    <a href="cc.html#self-check">자가진단메뉴얼</a><a href="cc.html#as-request">A/S신청&amp;문의하기</a><a href="cc.html#service-center">서비스센터찾기</a><a href="cc.html#support-menu">다운로드</a><a href="cc.html#support-menu">제품등록</a>
-                </nav>
-            </div>
+            <nav class="gnb" id="site-navigation" aria-label="주요 메뉴"><ul>
+                <li class="gnb-item gnb-company"><a href="brand.html" data-menu-id="menu-company">회사소개</a></li>
+                <li class="gnb-item gnb-product"><a href="product.html" data-menu-id="menu-product">제품소개</a></li>
+                <li class="gnb-item gnb-pr"><a href="pr.html" data-menu-id="menu-pr">홍보센터</a></li>
+                <li class="gnb-item gnb-customer"><a href="cc.html" data-menu-id="menu-customer">고객센터</a></li>
+                <li class="gnb-item gnb-shop"><a href="mall.html" data-menu-id="menu-mall">귀뚜라미몰 바로가기</a></li>
+            </ul></nav>
+            <div class="mega-menu" id="menu-company" aria-label="회사소개 하위 메뉴"><nav class="mega-menu-inner" aria-label="회사소개 메뉴">
+                <a href="brand.html#brand-story">브랜드 소개</a><a href="brand.html#company-vision">기업비전</a><a href="brand.html#brand-history">기업연혁</a><a href="brand.html#ci-intro">CI소개</a><a href="brand.html#branches">국내외지사</a><a href="brand.html#awards">수상실적</a><a href="brand.html#recruit">채용안내</a><a href="brand.html#location">찾아오시는 길</a>
+            </nav></div>
+            <div class="mega-menu" id="menu-product" aria-label="제품소개 하위 메뉴"><nav class="mega-menu-inner" aria-label="제품 카테고리">
+                <a href="product.html#gas-boiler">가스보일러</a><a href="product.html#oil-boiler">기름보일러</a><a href="product.html#water-heater">온수기</a><a href="product.html#renewable">신재생/중대형/전기</a><a href="product.html#heating-mat">난방매트</a><a href="product.html#system">시스템 제품</a><a href="product.html#air-care">공기청정/환기</a><a href="product.html#air-conditioner">에어컨</a><a href="product.html#thermostat">실내온도조절기</a><a href="product.html#etc">기타</a>
+            </nav></div>
+            <div class="mega-menu" id="menu-pr" aria-label="홍보센터 하위 메뉴"><nav class="mega-menu-inner" aria-label="홍보센터 메뉴">
+                <a href="pr.html#press">보도자료</a><a href="pr.html#video">홍보영상</a><a href="pr.html#sns">SNS</a>
+            </nav></div>
+            <div class="mega-menu" id="menu-customer" aria-label="고객센터 하위 메뉴"><nav class="mega-menu-inner" aria-label="고객센터 메뉴">
+                <a href="cc.html#self-check">자가진단 메뉴얼</a><a href="cc.html#as-request">A/S 신청·문의하기</a><a href="cc.html#service-center">서비스센터 찾기</a><a href="cc.html#support-menu">다운로드</a><a href="cc.html#support-menu">제품등록·안전 안내</a>
+            </nav></div>
+            <div class="mega-menu" id="menu-mall" aria-label="귀뚜라미몰 하위 메뉴"><nav class="mega-menu-inner" aria-label="귀뚜라미몰 메뉴">
+                <a href="mall.html#mall-products">제품 카테고리</a><a href="mall.html#purchase-guide">구매 안내</a><a href="mall.html#member-guide">온라인몰 이용 안내</a>
+            </nav></div>
             <div class="language">
                 <button class="language-toggle" type="button" aria-label="언어 선택" aria-expanded="false" aria-controls="language-menu"><img class="language-icon" src="images/web.svg" alt=""><span class="language-current">한국어</span><img class="language-arrow" src="images/chevron-down.svg" alt=""></button>
                 <div class="language-menu" id="language-menu" hidden>
