@@ -846,16 +846,23 @@
     word-break: keep-all;
 }
 .company-vision__visual {
-    line-height: 0;
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    background: var(--color-background-default);
+    color: var(--color-text-primary);
+    text-align: center;
 }
-.company-vision__visual img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+.company-vision__visual span { font-weight: 700; }
+.company-vision__visual small { color: var(--color-text-secondary); }
 @media (max-width: 768px) {
     .company-vision { padding-top: 48px; padding-bottom: 64px; }
     .company-vision__intro { padding-bottom: 42px; }
     .company-vision__content { grid-template-columns: 1fr; padding-top: 42px; }
     .company-vision__copy br { display: none; }
+    .company-vision__visual { min-height: 220px; }
 }
