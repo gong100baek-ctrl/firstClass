@@ -148,4 +148,31 @@
             history.replaceState(null, "", localSelect.value);
         });
     }
+
+    const historyTabs = [...document.querySelectorAll(".brand-history-tab")];
+    const activateHistoryTab = (tab, focus) => {
+        historyTabs.forEach((item) => {
+            const selected = item === tab;
+            item.classList.toggle("is-active", selected);
+            item.setAttribute("aria-selected", String(selected));
+            item.tabIndex = selected ? 0 : -1;
+            const pane = document.getElementById(item.getAttribute("aria-controls"));
+            if (pane) pane.hidden = !selected;
+        });
+        if (focus) tab.focus();
+    };
+
+    historyTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => activateHistoryTab(tab));
+        tab.addEventListener("keydown", (event) => {
+            const keys = { ArrowRight: 1, ArrowLeft: -1 };
+            if (event.key in keys) {
+                event.preventDefault();
+                activateHistoryTab(historyTabs[(index + keys[event.key] + historyTabs.length) % historyTabs.length], true);
+            } else if (event.key === "Home" || event.key === "End") {
+                event.preventDefault();
+                activateHistoryTab(historyTabs[event.key === "Home" ? 0 : historyTabs.length - 1], true);
+            }
+        });
+    });
 })();
