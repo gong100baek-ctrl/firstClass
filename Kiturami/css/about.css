@@ -254,7 +254,7 @@
 }
 .history-index { color: var(--color-action-primary); font-size: 14px; font-weight: 800; }
 .history-list strong { display: block; margin-bottom: 10px; font-size: 21px; font-weight: 700; }
-.history-list p { color: var(--color-text-secondary); font-size: 15px; line-height: 1.75; }
+.history-list p { color: var(--color-text-secondary); font-size: 16px; line-height: 1.75; }
 .history-period { padding-top: 3px; color: var(--color-text-secondary); font-size: 12px; font-weight: 700; text-align: right; letter-spacing: .8px; }
 .about-bottom-cta { padding: 54px 0; background: #eaf2f8; }
 .about-bottom-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
@@ -432,8 +432,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 18px 32px;
-    width: 100%;
-    max-width: 1724px;
+    width: min(1050px, 100%);
+    max-width: none;
     margin: 0 auto;
 }
 .header .mega-menu-inner > a {
