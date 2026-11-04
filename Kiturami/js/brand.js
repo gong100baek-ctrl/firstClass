@@ -10,11 +10,11 @@
     const languageMenu = document.querySelector(".language-menu");
     const languageCurrent = document.querySelector(".language-current");
     const familySite = document.querySelector("#family-site");
-    const localLinks = [...document.querySelectorAll(".brand-local-nav a")];
+    const localSelect = document.querySelector("#brand-local-select");
+    const localOptions = localSelect ? [...localSelect.options] : [];
     const sectionLinks = [...document.querySelectorAll("#header-mega-menu a[href^='#']")];
-    const allSectionLinks = [...localLinks, ...sectionLinks];
-    const sections = [...new Set(allSectionLinks
-        .map((link) => document.querySelector(link.getAttribute("href")))
+    const sections = [...new Set([...localOptions.map((option) => option.value), ...sectionLinks.map((link) => link.getAttribute("href"))]
+        .map((hash) => document.querySelector(hash))
         .filter(Boolean))];
 
     const closeCompanyMenu = () => {
@@ -127,21 +127,25 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
-                localLinks.forEach((link) => {
-                    link.classList.toggle("is-active", link.hash === "#" + entry.target.id);
-                });
+                if (localSelect && localOptions.some((option) => option.value === "#" + entry.target.id)) {
+                    localSelect.value = "#" + entry.target.id;
+                }
             });
         }, { rootMargin: "-22% 0px -65% 0px" });
 
         sections.forEach((section) => observer.observe(section));
     }
 
-    localLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+    if (localSelect) {
+        localSelect.addEventListener("change", () => {
+            const target = document.querySelector(localSelect.value);
+            if (!target) return;
             closeCompanyMenu();
             header?.classList.remove("menu-open");
             menuToggle?.setAttribute("aria-expanded", "false");
             menuToggle?.setAttribute("aria-label", "메뉴 열기");
+            target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+            history.replaceState(null, "", localSelect.value);
         });
-    });
+    }
 })();

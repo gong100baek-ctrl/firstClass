@@ -71,12 +71,15 @@
 
     <main class="brand-main">
         <nav class="brand-local-nav" aria-label="회사소개 목차">
-            <a href="#company-vision">기업비전</a>
-            <a href="#ci-intro">CI소개</a>
-            <a href="#branches">국내외지사</a>
-            <a href="#awards">수상실적</a>
-            <a href="#recruit">채용안내</a>
-            <a href="#location">찾아오시는 길</a>
+            <label class="sr-only" for="brand-local-select">회사소개 목차 이동</label>
+            <select id="brand-local-select" class="brand-local-select">
+                <option value="#company-vision" selected>기업비전</option>
+                <option value="#ci-intro">CI소개</option>
+                <option value="#branches">국내외지사</option>
+                <option value="#awards">수상실적</option>
+                <option value="#recruit">채용안내</option>
+                <option value="#location">찾아오시는 길</option>
+            </select>
         </nav>
 
 <section class="brand-section brand-info-section company-vision" id="company-vision" aria-labelledby="company-vision-title">
