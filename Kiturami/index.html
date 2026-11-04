@@ -432,23 +432,14 @@
                     <div class="ft-family">
                         <label class="sr-only" for="family-site">패밀리 사이트 선택</label>
                         <select id="family-site">
-                            <option value="" selected>Family Site</option>
-                            
-                            <option value="mall.html">귀뚜라미몰</option>
-                            <option value="http://www.bac.co.kr/">귀뚜라미범양냉방</option>
-                            <option value="http://ishinsung.co.kr/">신성엔지니어링</option>
-                            <option value="http://www.century.co.kr/">센추리</option>
-                            <option value="http://www.nanokem.co.kr/">나노켐</option>
-                            <option value="http://www.kituramienergy.co.kr/">귀뚜라미에너지</option>
-                            <option value="http://www.kr-mc.co.kr/">귀뚜라미냉동기계</option>
-                            <option value="http://kituramiet.com/">귀뚜라미환경테크</option>
-                            <option value="http://www.kfoc.or.kr/">귀뚜라미재단</option>
-                            <option value="http://www.hantancc.co.kr/">한탄강컨트리클럽</option>
-                            <option value="http://www.hantanhotel.co.kr/">한탄강게르마늄온천호텔</option>
-                            <option value="http://www.tbc.co.kr/">TBC대구방송</option>
-                            <option value="http://www.drrobbin.com/">닥터로빈</option>
-                            <option value="http://www.kitutennis.co.kr/">귀뚜라미크린테니스13</option>
-                        </select>
+    <option value="" selected>Family Site</option>
+    <option value="index.html">메인페이지</option>
+    <option value="brand.html">브랜드 소개</option>
+    <option value="product.html">제품 소개</option>
+    <option value="pr.html">홍보센터</option>
+    <option value="cc.html">고객센터</option>
+    <option value="mall.html">귀뚜라미몰</option>
+</select>
                     </div>
                 </div>
             </div>
@@ -1160,7 +1151,7 @@
         });
         const familySite = document.getElementById('family-site');
         familySite.addEventListener('change', () => {
-            if (familySite.value) window.open(familySite.value, '_blank', 'noopener');
+            if (familySite.value) window.location.href = familySite.value;
             familySite.selectedIndex = 0;
         });
 
