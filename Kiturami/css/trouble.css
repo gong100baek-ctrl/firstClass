@@ -16,7 +16,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     justify-content: space-between;
     align-items: stretch;
-    gap: 60px;
+    gap: 40px;
     width: min(1200px, calc(100% - 80px));
     min-height: 590px;
     margin: 0 auto;
@@ -66,7 +66,7 @@
     height: 100%;
     min-height: 100px;
     padding: 16px 20px 16px;
-    border-radius: 20px;
+    border-radius: 16px;
     background: var(--color-surface-default);
     box-shadow: 0 2px 10px rgba(31, 41, 55, 0.04);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -137,7 +137,7 @@
     justify-content: flex-end;
     min-height: 440px;
     padding: 24px;
-    border-radius: 36px;
+    border-radius: 16px;
     background: var(--color-trouble-panel) no-repeat center / cover;
     overflow: hidden;
 }
@@ -178,7 +178,7 @@
     align-items: center;
     gap: 12px;
     padding: 6px 24px 6px 8px;
-    border-radius: 999px;
+    border-radius: 16px;
     background: var(--color-surface-default);
     box-shadow: 0 4px 16px rgba(31, 41, 55, 0.08);
 }
@@ -209,7 +209,7 @@
 
 .trouble-help {
     padding: 26px 30px 28px;
-    border-radius: 24px;
+    border-radius: 16px;
     background: var(--color-surface-default);
     box-shadow: 0 8px 28px rgba(31, 41, 55, 0.08);
 }
@@ -247,7 +247,7 @@
     height: 52px;
     padding: 0 22px;
     border: 1px solid var(--color-trouble-line);
-    border-radius: 14px;
+    border-radius: 16px;
     background: var(--color-surface-default);
     color: var(--color-text-primary);
     font-size: 16px;
@@ -287,7 +287,7 @@
     .trouble-inner {
         width: min(1200px, calc(100% - 64px));
         min-height: 540px;
-        gap: 36px;
+        gap: 40px;
     }
 
     .trouble-diagnosis h2 {
@@ -328,7 +328,7 @@
 
     .trouble-inner {
         grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
+        gap: 40px;
         width: calc(100% - 40px);
         min-height: 0;
     }
@@ -358,7 +358,7 @@
     .trouble-panel {
         min-height: 420px;
         padding: 20px;
-        border-radius: 28px;
+        border-radius: 16px;
     }
 
     .trouble-call {
@@ -406,7 +406,7 @@
     .trouble-panel {
         min-height: 340px;
         padding: 14px;
-        border-radius: 24px;
+        border-radius: 16px;
     }
 
     .trouble-call {
@@ -428,7 +428,7 @@
 
     .trouble-help {
         padding: 18px 16px 16px;
-        border-radius: 18px;
+        border-radius: 16px;
     }
 
     .trouble-help h3 {
@@ -448,7 +448,7 @@
         flex: 1 1 calc(50% - 4px);
         height: 46px;
         padding: 0 10px;
-        border-radius: 12px;
+        border-radius: 16px;
         font-size: 14px;
     }
 
