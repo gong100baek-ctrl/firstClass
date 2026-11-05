@@ -1425,28 +1425,14 @@
     margin: 0;
     text-align: left;
 }
-.awards-gallery__visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.awards-gallery__image {
+    display: block;
     width: 100%;
     height: 112px;
-    margin: 0 auto 12px;
-    border: 1px solid #e5e7eb;
-    background: linear-gradient(145deg, #f8f9fb, #eef1f5);
-    color: #8a713c;
-    font-family: Georgia, serif;
-    font-size: 27px;
-    font-weight: 700;
-    letter-spacing: .04em;
+    margin: 0 0 12px;
+    object-fit: contain;
+    object-position: left center;
 }
-.awards-gallery__visual span {
-    display: inline-block;
-    padding: 10px 14px;
-    border: 1px solid currentColor;
-}
-.awards-gallery__visual--medal { color: #a32626; background: linear-gradient(135deg,#fff,#f8eeee); }
-.awards-gallery__visual--trophy { color: #a17b30; background: linear-gradient(135deg,#fffdf6,#f2ead8); font-size: 42px; }
 .awards-gallery__item figcaption {
     color: var(--color-text-secondary);
     font-size: 14px;
@@ -1464,6 +1450,6 @@
 @media (max-width: 600px) {
     .awards-intro { margin-bottom: 38px; font-size: 14px; }
     .awards-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
-    .awards-gallery__visual { height: 100px; }
+    .awards-gallery__image { height: 100px; }
     .awards-gallery__item figcaption { font-size: 13px; }
 }
