@@ -1422,7 +1422,7 @@
 .awards-gallery__item {
     min-width: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 .awards-gallery__visual {
     display: flex;
