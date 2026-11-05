@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="귀뚜라미 제품 카테고리 상세 안내">
+    <title>제품 상세 정보 | Kiturami</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header-menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+    <script src="js/product-detail.js" defer></script>
+    <script src="js/header-menu.js" defer></script>
+</head>
+<body>
+<div id="wrap" class="product-page product-detail-page">
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html" aria-label="귀뚜라미 메인페이지"><span class="logo-en">Kiturami</span><span class="logo-ko">귀뚜라미</span></a></h1>
+            <nav class="gnb" aria-label="주요 메뉴">
+                <ul>
+                    <li class="gnb-item"><a href="brand.html">회사소개</a></li>
+                    <li class="gnb-item is-current"><a href="product.html" aria-current="page">제품소개</a></li>
+                    <li class="gnb-item"><a href="pr.html">홍보센터</a></li>
+                    <li class="gnb-item"><a href="cc.html">고객센터</a></li>
+                    <li class="gnb-item"><a href="mall.html">귀뚜라미몰 바로가기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="detail-hero">
+            <div class="detail-hero__inner">
+                <p class="detail-eyebrow">KITURAMI PRODUCTS</p>
+                <p class="detail-hero__breadcrumb"><a href="index.html">HOME</a><span>/</span><a href="product.html">제품소개</a><span>/</span><strong id="detail-breadcrumb">제품 상세</strong></p>
+                <h2 id="detail-title">제품 상세 정보</h2>
+                <p id="detail-lead">귀뚜라미 제품 카테고리를 소개합니다.</p>
+            </div>
+        </section>
+
+        <section class="detail-main">
+            <div class="detail-container">
+                <div class="detail-product">
+                    <div class="detail-product__image">
+                        <img id="detail-image" src="images/Kiturami02.png" alt="귀뚜라미 제품 이미지">
+                    </div>
+                    <div class="detail-product__summary">
+                        <p class="detail-eyebrow detail-eyebrow--blue">PRODUCT INFORMATION</p>
+                        <h3 id="detail-summary-title">제품 카테고리</h3>
+                        <p id="detail-summary">선택한 카테고리의 제품을 소개합니다.</p>
+                        <a class="detail-back-link" href="product.html">전체 제품 보기 <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+
+                <section class="detail-info" aria-labelledby="detail-info-title">
+                    <div class="detail-section-heading">
+                        <p class="detail-eyebrow detail-eyebrow--blue">PRODUCT GUIDE</p>
+                        <h3 id="detail-info-title">제품 정보 안내</h3>
+                        <p>카테고리별 제품 정보를 확인할 수 있습니다.</p>
+                    </div>
+                    <div class="detail-info-grid">
+                        <article class="detail-info-card">
+                            <span class="detail-info-card__number">01</span>
+                            <h4>제품 카테고리</h4>
+                            <p id="detail-category">제품 분야</p>
+                        </article>
+                        <article class="detail-info-card">
+                            <span class="detail-info-card__number">02</span>
+                            <h4>제품 이미지</h4>
+                            <p>이미지는 카테고리 소개를 위한 참고 이미지입니다.</p>
+                        </article>
+                        <article class="detail-info-card">
+                            <span class="detail-info-card__number">03</span>
+                            <h4>모델별 상세 사양</h4>
+                            <p>세부 모델명과 사양은 해당 모델의 공식 자료를 기준으로 확인해주세요.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="detail-notice">
+                    <strong>제품 정보 확인 안내</strong>
+                    <p>현재 페이지는 포트폴리오용으로 제작한 제품 카테고리 소개 화면입니다. 실제 판매 모델, 성능 수치 및 세부 사양을 임의로 기재하지 않았습니다.</p>
+                </div>
+                <div class="detail-bottom">
+                    <a href="product.html" class="detail-bottom__button">제품 카테고리로 돌아가기 <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <a class="footer-logo" href="index.html">KITURAMI</a>
+                <div class="footer-family">
+                    <label for="family-site">FAMILY SITE</label>
+                    <select id="family-site">
+                        <option value="" selected>Family Site</option>
+                        <option value="index.html">메인페이지</option>
+                        <option value="brand.html">회사소개</option>
+                        <option value="product.html">제품소개</option>
+                        <option value="pr.html">홍보센터</option>
+                        <option value="cc.html">고객센터</option>
+                        <option value="mall.html">귀뚜라미몰</option>
+                    </select>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>본 페이지는 웹사이트 리뉴얼 포트폴리오를 위한 구성입니다. 실제 제품 정보는 귀뚜라미 공식 홈페이지에서 확인해주세요.</p>
+                <a href="product.html">제품소개</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
