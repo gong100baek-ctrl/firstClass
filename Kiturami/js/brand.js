@@ -221,4 +221,13 @@
             first.closest(".branch-card")?.classList.add("is-selected");
         }
     });
+
+    document.querySelectorAll("[data-print-location]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const root = document.documentElement;
+            root.classList.add("print-location");
+            window.addEventListener("afterprint", () => root.classList.remove("print-location"), { once: true });
+            window.print();
+        });
+    });
 })();

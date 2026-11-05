@@ -732,14 +732,79 @@
             </div>
         </section>
 
-        <section class="brand-section brand-info-section" id="location" aria-labelledby="location-title">
-            <div class="brand-container brand-info-layout">
+        <section class="brand-section brand-info-section location" id="location" aria-labelledby="location-title">
+            <div class="brand-container">
                 <div class="brand-section-heading">
                     <p class="brand-eyebrow brand-eyebrow--blue">LOCATION</p>
                     <h2 id="location-title">찾아오시는 길</h2>
-                    <p class="brand-lead">본사 및 주요 사업장의 위치와 교통 정보를 안내하는 영역입니다.</p>
+                    <p class="brand-lead">본사 및 주요 사업장의 위치와 교통 정보를 안내합니다.</p>
                 </div>
-                <div class="brand-info-placeholder brand-info-placeholder--map"><strong>지도 및 오시는 길 영역</strong><span>지도 이미지 또는 지도 서비스 삽입 예정</span></div>
+                <div class="location-panel">
+                    <div class="brand-history-keywords" role="tablist" aria-label="사업장 선택">
+                        <button type="button" class="brand-pill is-active" role="tab" id="location-tab-asan" aria-controls="location-asan" aria-selected="true" tabindex="0">아산사업장(본점)</button>
+                        <button type="button" class="brand-pill" role="tab" id="location-tab-rnd" aria-controls="location-rnd" aria-selected="false" tabindex="-1">냉난방기술연구소</button>
+                        <button type="button" class="brand-pill" role="tab" id="location-tab-cheongdo" aria-controls="location-cheongdo" aria-selected="false" tabindex="-1">청도사업장</button>
+                    </div>
+                    <div class="location-pane" role="tabpanel" id="location-asan" aria-labelledby="location-tab-asan">
+                        <h3 class="location-print-title">아산사업장(본점)</h3>
+                        <div class="location-layout">
+                            <figure class="location-map">
+                                <img src="images/location/map-asan.png" alt="귀뚜라미 아산사업장(본점) 위치 약도" loading="lazy">
+                            </figure>
+                            <div class="location-info">
+                                <dl class="location-list">
+                                    <div><dt>주소</dt><dd>충청남도 아산시 탕정면 음봉로 850</dd></div>
+                                    <div><dt>전화</dt><dd><a href="tel:0415303514">041-530-3514</a></dd></div>
+                                    <div><dt>팩스</dt><dd>041-538-1493</dd></div>
+                                </dl>
+                                <div class="location-actions">
+                                    <a class="location-button" href="https://www.google.com/maps/search/?api=1&query=%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84%20%EC%95%84%EC%82%B0%EC%8B%9C%20%ED%83%95%EC%A0%95%EB%A9%B4%20%EC%9D%8C%EB%B4%89%EB%A1%9C%20850" target="_blank" rel="noopener noreferrer">지도보기</a>
+                                    <button type="button" class="location-button" data-print-location>인쇄하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-pane" role="tabpanel" id="location-rnd" aria-labelledby="location-tab-rnd" hidden>
+                        <h3 class="location-print-title">냉난방기술연구소</h3>
+                        <div class="location-layout">
+                            <figure class="location-map">
+                                <img src="images/location/map-rnd.png" alt="귀뚜라미 냉난방기술연구소 위치 약도" loading="lazy">
+                            </figure>
+                            <div class="location-info">
+                                <dl class="location-list">
+                                    <div><dt>주소</dt><dd>서울특별시 강서구 마곡중앙로 86</dd></div>
+                                    <div><dt>전화</dt><dd><a href="tel:0226949292">02-2694-9292</a></dd></div>
+                                    <div><dt>팩스</dt><dd>02-2608-6054</dd></div>
+                                    <div><dt>전철</dt><dd>5호선 마곡역 (2번 출구)에서 도보 5분<br>9호선 마곡나루역 (4번 출구)에서 도보 10분<br>공항철도 마곡나루역 (4번 출구)에서 도보 10분</dd></div>
+                                    <div><dt>버스</dt><dd>마곡역 정류장 하차<br>일반 60, 60-3, 88, 601, 605, 654, 1002<br>지선 6629, 6630, 6642, 6645<br>공항 6003, 6008</dd></div>
+                                </dl>
+                                <div class="location-actions">
+                                    <a class="location-button" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EC%84%9C%EA%B5%AC%20%EB%A7%88%EA%B3%A1%EC%A4%91%EC%95%99%EB%A1%9C%2086" target="_blank" rel="noopener noreferrer">지도보기</a>
+                                    <button type="button" class="location-button" data-print-location>인쇄하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-pane" role="tabpanel" id="location-cheongdo" aria-labelledby="location-tab-cheongdo" hidden>
+                        <h3 class="location-print-title">청도사업장</h3>
+                        <div class="location-layout">
+                            <figure class="location-map">
+                                <img src="images/location/map-cheongdo.png" alt="귀뚜라미 청도사업장 위치 약도" loading="lazy">
+                            </figure>
+                            <div class="location-info">
+                                <dl class="location-list">
+                                    <div><dt>주소</dt><dd>경상북도 청도군 청도읍 월곡2길 34</dd></div>
+                                    <div><dt>전화</dt><dd><a href="tel:0543719000">054-371-9000</a></dd></div>
+                                    <div><dt>팩스</dt><dd>054-371-9005</dd></div>
+                                </dl>
+                                <div class="location-actions">
+                                    <a class="location-button" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84%20%EC%B2%AD%EB%8F%84%EA%B5%B0%20%EC%B2%AD%EB%8F%84%EC%9D%8D%20%EC%9B%94%EA%B3%A12%EA%B8%B8%2034" target="_blank" rel="noopener noreferrer">지도보기</a>
+                                    <button type="button" class="location-button" data-print-location>인쇄하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
