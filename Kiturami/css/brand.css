@@ -1405,10 +1405,11 @@
 }
 .awards-intro {
     max-width: 1120px;
-    margin: 0 auto 56px;
+    margin: 0 0 56px;
     color: var(--color-text-secondary);
     font-size: 15px;
     line-height: 1.95;
+    text-align: left;
     word-break: keep-all;
 }
 .awards-intro p + p { margin-top: 18px; }
