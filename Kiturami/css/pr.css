@@ -42,7 +42,7 @@
 .pr-body {
     display: grid;
     grid-template-columns: minmax(0, 780fr) minmax(0, 876fr);
-    column-gap: 100px;
+    column-gap: 40px;
     align-items: start;
 }
 
@@ -145,7 +145,7 @@
 
 @media (max-width: 1600px) {
     .pr-body {
-        column-gap: 60px;
+        column-gap: 40px;
     }
 
     .pr-item {
@@ -220,7 +220,7 @@
 
     .pr-body {
         grid-template-columns: minmax(0, 1fr);
-        row-gap: 32px;
+        row-gap: 40px;
     }
 
     .pr-feature-text {
@@ -258,7 +258,7 @@
     }
 
     .pr-feature-img {
-        border-radius: 14px;
+        border-radius: 16px;
     }
 
     .pr-feature-text {
@@ -274,7 +274,7 @@
         gap: 12px;
         min-height: 88px;
         padding: 16px 20px;
-        border-radius: 14px;
+        border-radius: 16px;
     }
 
     .pr-item-title {
