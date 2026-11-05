@@ -1327,3 +1327,73 @@
         padding: 22px 20px 20px;
     }
 }
+
+/* branch maps */
+.branch-map {
+    margin-bottom: 24px;
+    border: 1px solid var(--color-border-default);
+    background: var(--color-surface-default);
+}
+
+.branch-map iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+    background: var(--color-background-default, #f3f5f8);
+}
+
+.branch-map__caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    margin: 0;
+    padding: 16px 22px;
+    border-top: 1px solid var(--color-border-default);
+    font-size: 14px;
+}
+
+.branch-map__caption strong {
+    color: var(--color-text-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.branch-map__caption span {
+    color: var(--color-text-secondary);
+    overflow-wrap: anywhere;
+}
+
+.branch-map-btn {
+    align-self: flex-start;
+    padding: 6px 0 0;
+    border: 0;
+    background: none;
+    color: var(--color-action-primary);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.branch-map-btn:hover,
+.branch-map-btn:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.branch-card.is-selected {
+    border-color: var(--color-action-primary);
+    box-shadow: 0 6px 20px rgba(1, 113, 189, .14);
+}
+
+@media (max-width: 600px) {
+    .branch-map iframe {
+        height: 300px;
+    }
+
+    .branch-map__caption {
+        padding: 14px 18px;
+    }
+}

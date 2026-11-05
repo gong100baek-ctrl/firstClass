@@ -193,4 +193,32 @@
             });
         });
     });
+
+    const mapSrc = (query) => "https://www.google.com/maps?q=" + encodeURIComponent(query) + "&output=embed&hl=ko";
+    const showBranchMap = (button) => {
+        const pane = button.closest(".branch-pane");
+        const box = pane?.querySelector(".branch-map");
+        const frame = box?.querySelector("iframe");
+        if (!frame) return;
+        frame.src = mapSrc(button.dataset.mapQuery);
+        const caption = box.querySelector(".branch-map__caption");
+        caption.querySelector("strong").textContent = button.dataset.mapName;
+        caption.querySelector("span").textContent = button.dataset.mapAddress;
+        pane.querySelectorAll(".branch-card").forEach((card) => card.classList.toggle("is-selected", card.contains(button)));
+        box.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
+    };
+
+    document.querySelectorAll(".branch-map-btn").forEach((button) => {
+        button.addEventListener("click", () => showBranchMap(button));
+    });
+
+    document.querySelector("#branch-domestic .branch-card")?.classList.add("is-selected");
+    document.querySelector("#branch-tab-world")?.addEventListener("click", () => {
+        const frame = document.querySelector("#branch-map-world iframe");
+        const first = document.querySelector("#branch-world .branch-map-btn");
+        if (frame && first && !frame.getAttribute("src")) {
+            frame.src = mapSrc(first.dataset.mapQuery);
+            first.closest(".branch-card")?.classList.add("is-selected");
+        }
+    });
 })();
