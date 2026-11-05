@@ -1692,3 +1692,78 @@
         font-size: 24px;
     }
 }
+
+/* CI introduction – official structure */
+.ci-intro .ci-subtitle {
+    margin: 52px 0 0;
+    color: var(--color-text-primary);
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.ci-intro .ci-groups {
+    margin-top: 24px;
+}
+
+.ci-note {
+    margin-top: 16px;
+}
+
+.ci-colors {
+    padding-top: 12px;
+}
+
+.ci-intro .ci-colors .ci-subtitle {
+    margin-top: 44px;
+}
+
+.ci-colors__desc {
+    margin: 16px 0 0;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+.ci-color-group {
+    margin-top: 32px;
+}
+
+.ci-color-group h4 {
+    margin: 0 0 14px;
+    color: var(--color-text-primary);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.ci-download {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 56px;
+    padding: 28px 32px;
+    border: 1px solid var(--color-border-default);
+    background: var(--color-surface-default);
+}
+
+.ci-download p {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    word-break: keep-all;
+}
+
+@media (max-width: 600px) {
+    .ci-download {
+        padding: 22px 20px;
+    }
+
+    .ci-download .location-button {
+        width: 100%;
+    }
+}
