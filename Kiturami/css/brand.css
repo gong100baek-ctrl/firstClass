@@ -1397,3 +1397,72 @@
         padding: 14px 18px;
     }
 }
+
+
+/* Awards */
+.awards-section .brand-section-heading {
+    margin-bottom: 34px;
+}
+.awards-intro {
+    max-width: 1120px;
+    margin: 0 auto 56px;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    line-height: 1.95;
+    word-break: keep-all;
+}
+.awards-intro p + p { margin-top: 18px; }
+.awards-intro strong { color: var(--color-text-primary); font-weight: 700; }
+.awards-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 46px 28px;
+    align-items: start;
+}
+.awards-gallery__item {
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+.awards-gallery__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 112px;
+    margin: 0 auto 12px;
+    border: 1px solid #e5e7eb;
+    background: linear-gradient(145deg, #f8f9fb, #eef1f5);
+    color: #8a713c;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+.awards-gallery__visual span {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 1px solid currentColor;
+}
+.awards-gallery__visual--medal { color: #a32626; background: linear-gradient(135deg,#fff,#f8eeee); }
+.awards-gallery__visual--trophy { color: #a17b30; background: linear-gradient(135deg,#fffdf6,#f2ead8); font-size: 42px; }
+.awards-gallery__item figcaption {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    line-height: 1.55;
+    word-break: keep-all;
+}
+.awards-note {
+    margin-top: 28px;
+    color: var(--color-text-tertiary, #888);
+    font-size: 12px;
+}
+@media (max-width: 900px) {
+    .awards-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 20px; }
+}
+@media (max-width: 600px) {
+    .awards-intro { margin-bottom: 38px; font-size: 14px; }
+    .awards-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+    .awards-gallery__visual { height: 100px; }
+    .awards-gallery__item figcaption { font-size: 13px; }
+}
