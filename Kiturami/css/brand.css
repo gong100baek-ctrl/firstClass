@@ -1719,6 +1719,7 @@
 }
 
 .ci-colors__desc {
+    max-width: 920px;
     margin: 16px 0 0;
     color: var(--color-text-secondary);
     font-size: 15px;
