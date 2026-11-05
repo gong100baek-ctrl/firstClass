@@ -1453,3 +1453,87 @@
     .awards-gallery__image { height: 100px; }
     .awards-gallery__item figcaption { font-size: 13px; }
 }
+
+
+/* Recruitment */
+.recruit-section {
+    padding-top: 76px;
+    padding-bottom: 100px;
+}
+.recruit-heading { margin-bottom: 42px; }
+.recruit-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(40px, 5vw, 76px);
+    align-items: start;
+}
+.recruit-block + .recruit-block { margin-top: 56px; }
+.recruit-block h3 {
+    margin-bottom: 22px;
+    color: #246db5;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.recruit-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+.recruit-list li {
+    position: relative;
+    padding-left: 22px;
+}
+.recruit-list li::before {
+    content: "✓";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #246db5;
+    font-weight: 700;
+}
+.recruit-list strong { color: var(--color-text-secondary); font-weight: 600; }
+.recruit-list a { color: #246db5; text-decoration: none; }
+.recruit-list a:hover { text-decoration: underline; }
+.recruit-process { margin-top: 58px !important; }
+.recruit-process img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 48px;
+    object-fit: contain;
+}
+.recruit-contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 285px);
+    min-height: 46px;
+    margin: 24px 0 0;
+    border-radius: 28px;
+    background: #246db5;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease;
+}
+.recruit-contact-button:hover { background: #185b9d; }
+@media (max-width: 800px) {
+    .recruit-layout { grid-template-columns: 1fr; gap: 52px; }
+    .recruit-process { margin-top: 46px !important; }
+    .recruit-process img { margin-top: 30px; }
+}
+@media (max-width: 600px) {
+    .recruit-section { padding-top: 56px; padding-bottom: 72px; }
+    .recruit-heading { margin-bottom: 32px; }
+    .recruit-block + .recruit-block { margin-top: 42px; }
+    .recruit-block h3 { margin-bottom: 16px; font-size: 20px; }
+    .recruit-list { font-size: 14px; line-height: 1.75; }
+    .recruit-list li { padding-left: 19px; }
+    .recruit-contact-button { width: 100%; }
+}
