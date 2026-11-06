@@ -22,7 +22,6 @@
     document.getElementById("detail-lead").textContent = product.lead;
     document.getElementById("detail-summary-title").textContent = product.name;
     document.getElementById("detail-summary").textContent = product.summary;
-    document.getElementById("detail-category").textContent = product.name;
     const image = document.getElementById("detail-image");
     image.src = product.image;
     image.alt = product.name + " 제품 이미지";
