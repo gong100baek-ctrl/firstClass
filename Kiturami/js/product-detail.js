@@ -48,12 +48,23 @@
             centeredSlides: true,
             spaceBetween: 40,
             breakpoints: {
-                1025: { slidesPerView: 4.7, centeredSlides: false },
-                768: { slidesPerView: 2.3, centeredSlides: false },
-                0: { slidesPerView: 1.2, centeredSlides: false, spaceBetween: 20 }
+                1025: {
+                    slidesPerView: 4.7,
+                    centeredSlides: false
+                },
+                768: {
+                    slidesPerView: 2.3,
+                    centeredSlides: false
+                },
+                0: {
+                    slidesPerView: 1.2,
+                    centeredSlides: false,
+                    spaceBetween: 20
+                }
             }
         });
 
+        // 메인 페이지와 동일하게 화면 중앙에 가장 가까운 슬라이드를 강조
         const updateCenterProduct = () => {
             const swiperRect = boilerSwiper.el.getBoundingClientRect();
             const centerX = swiperRect.left + swiperRect.width / 2;
@@ -61,7 +72,7 @@
             let closestDistance = Infinity;
 
             boilerSwiper.slides.forEach((slide) => {
-                slide.querySelector(".boiler-product-card")?.classList.remove("is-center-product");
+                slide.classList.remove("is-center-product");
                 const rect = slide.getBoundingClientRect();
                 const distance = Math.abs((rect.left + rect.width / 2) - centerX);
 
@@ -71,7 +82,7 @@
                 }
             });
 
-            closestSlide?.querySelector(".boiler-product-card")?.classList.add("is-center-product");
+            if (closestSlide) closestSlide.classList.add("is-center-product");
         };
 
         const showFirstProduct = () => {
