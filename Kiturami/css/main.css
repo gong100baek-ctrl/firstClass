@@ -780,7 +780,7 @@ body {
         gap: 12px 20px;
     }
 
-    #product-mega-menu .mega-menu-inner {
+    #menu-product .mega-menu-inner {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -850,7 +850,7 @@ body {
     color: var(--color-action-primary);
 }
 
-#product-mega-menu .mega-menu-inner {
+#menu-product .mega-menu-inner {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     justify-content: stretch;
@@ -944,7 +944,7 @@ body {
     }
 
     .header .mega-menu-inner,
-    #product-mega-menu .mega-menu-inner,
+    #menu-product .mega-menu-inner,
     #promo-mega-menu .mega-menu-inner,
     #customer-mega-menu .mega-menu-inner {
         display: flex;
