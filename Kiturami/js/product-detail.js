@@ -82,7 +82,6 @@
 
         boilerSwiper.on("slideChangeTransitionEnd", updateCenterProduct);
         boilerSwiper.on("resize", updateCenterProduct);
-        boilerSwiper.on("setTranslate", updateCenterProduct);
         updateCenterProduct();
         window.addEventListener("load", showFirstProduct);
         window.addEventListener("pageshow", (event) => {
