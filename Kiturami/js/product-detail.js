@@ -41,18 +41,52 @@
     });
 
     if (window.Swiper) {
-        new Swiper(".boiler-swiper", {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            navigation: {
-                nextEl: ".boiler-swiper-button--next",
-                prevEl: ".boiler-swiper-button--prev"
-            },
+        const boilerSwiper = new Swiper(".boiler-swiper", {
+            direction: "horizontal",
+            loop: true,
+            initialSlide: 0,
+            slidesPerView: 4.7,
+            centeredSlides: true,
+            spaceBetween: 40,
             breakpoints: {
-                600: { slidesPerView: 2, spaceBetween: 18 },
-                900: { slidesPerView: 3, spaceBetween: 20 },
-                1200: { slidesPerView: 4, spaceBetween: 22 }
+                1025: { slidesPerView: 4.7, centeredSlides: false },
+                768: { slidesPerView: 2.3, centeredSlides: false },
+                0: { slidesPerView: 1.2, centeredSlides: false, spaceBetween: 20 }
             }
+        });
+
+        const updateCenterProduct = () => {
+            const swiperRect = boilerSwiper.el.getBoundingClientRect();
+            const centerX = swiperRect.left + swiperRect.width / 2;
+            let closestSlide = null;
+            let closestDistance = Infinity;
+
+            boilerSwiper.slides.forEach((slide) => {
+                slide.querySelector(".boiler-product-card")?.classList.remove("is-center-product");
+                const rect = slide.getBoundingClientRect();
+                const distance = Math.abs((rect.left + rect.width / 2) - centerX);
+
+                if (rect.right > swiperRect.left && rect.left < swiperRect.right && distance < closestDistance) {
+                    closestDistance = distance;
+                    closestSlide = slide;
+                }
+            });
+
+            closestSlide?.querySelector(".boiler-product-card")?.classList.add("is-center-product");
+        };
+
+        const showFirstProduct = () => {
+            boilerSwiper.slideToLoop(0, 0);
+            updateCenterProduct();
+        };
+
+        boilerSwiper.on("slideChangeTransitionEnd", updateCenterProduct);
+        boilerSwiper.on("resize", updateCenterProduct);
+        boilerSwiper.on("setTranslate", updateCenterProduct);
+        updateCenterProduct();
+        window.addEventListener("load", showFirstProduct);
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) showFirstProduct();
         });
     }
 
