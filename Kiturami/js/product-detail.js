@@ -27,6 +27,35 @@
     image.src = product.image;
     image.alt = product.name + " 제품 이미지";
 
+    const productCards = document.querySelectorAll(".boiler-product-card");
+    const detailInfo = document.getElementById("detail-info");
+    const selectedProductName = document.getElementById("selected-product-name");
+
+    productCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            productCards.forEach((item) => item.setAttribute("aria-pressed", String(item === card)));
+            selectedProductName.textContent = card.querySelector(".boiler-product-card__name").textContent;
+            detailInfo.hidden = false;
+            detailInfo.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    if (window.Swiper) {
+        new Swiper(".boiler-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: ".boiler-swiper-button--next",
+                prevEl: ".boiler-swiper-button--prev"
+            },
+            breakpoints: {
+                600: { slidesPerView: 2, spaceBetween: 18 },
+                900: { slidesPerView: 3, spaceBetween: 20 },
+                1200: { slidesPerView: 4, spaceBetween: 22 }
+            }
+        });
+    }
+
     const familySite = document.getElementById("family-site");
     familySite.addEventListener("change", () => {
         if (familySite.value) window.location.href = familySite.value;
