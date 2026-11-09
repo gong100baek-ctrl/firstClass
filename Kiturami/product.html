@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header-menu.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/local-select.css">
     <link rel="stylesheet" href="css/product-page.css">
     <script src="js/product-page.js" defer></script>
     <script src="js/header-menu.js" defer></script>
+    <script src="js/local-select.js" defer></script>
 </head>
 <body>
 <div id="wrap" class="product-page">
@@ -80,8 +82,20 @@
             </div>
             <div class="product-breadcrumb"><a href="index.html">HOME</a><span>/</span><strong>제품소개</strong></div>
         </section>
-        <nav class="product-local-nav" aria-label="제품 카테고리 바로가기">
-            <a href="product-detail.html?category=gas-boiler">가스보일러</a><a href="product-detail.html?category=oil-boiler">기름보일러</a><a href="product-detail.html?category=water-heater">온수기</a><a href="product-detail.html?category=renewable">신재생/중대형/전기</a><a href="product-detail.html?category=heating-mat">난방매트</a><a href="product-detail.html?category=system">시스템 제품</a><a href="product-detail.html?category=air-care">공기청정/환기</a><a href="product-detail.html?category=air-conditioner">에어컨</a><a href="product-detail.html?category=thermostat">실내온도조절기</a><a href="product-detail.html?category=etc">기타</a>
+        <nav class="product-local-nav local-nav" aria-label="제품 카테고리 바로가기">
+            <label class="sr-only" for="product-local-select">제품 카테고리 바로가기</label>
+            <select id="product-local-select" class="local-select">
+                <option value="product-detail.html?category=gas-boiler" selected>가스보일러</option>
+                <option value="product-detail.html?category=oil-boiler">기름보일러</option>
+                <option value="product-detail.html?category=water-heater">온수기</option>
+                <option value="product-detail.html?category=renewable">신재생/중대형/전기</option>
+                <option value="product-detail.html?category=heating-mat">난방매트</option>
+                <option value="product-detail.html?category=system">시스템 제품</option>
+                <option value="product-detail.html?category=air-care">공기청정/환기</option>
+                <option value="product-detail.html?category=air-conditioner">에어컨</option>
+                <option value="product-detail.html?category=thermostat">실내온도조절기</option>
+                <option value="product-detail.html?category=etc">기타</option>
+            </select>
         </nav>
         <section class="product-intro" id="product-categories">
             <div class="product-container">

@@ -99,6 +99,9 @@
         });
     }
 
+    const localSelect = document.getElementById("detail-local-select");
+    if (localSelect) localSelect.value = "product-detail.html?category=" + (products[category] ? category : "gas-boiler");
+
     const familySite = document.getElementById("family-site");
     familySite.addEventListener("change", () => {
         if (familySite.value) window.location.href = familySite.value;

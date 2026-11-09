@@ -10,9 +10,11 @@
 <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header-menu.css">
 <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/local-select.css">
 <link rel="stylesheet" href="css/pr-page.css">
 <script src="js/pr.js" defer></script>
     <script src="js/header-menu.js" defer></script>
+    <script src="js/local-select.js" defer></script>
 </head>
 <body>
 <div id="wrap" class="pr-page">
@@ -74,7 +76,14 @@
   <div class="pr-container pr-hero__content"><p class="pr-eyebrow">KITURAMI · PR CENTER</p><h2>귀뚜라미의 오늘을<br>가장 먼저 만나는 곳</h2><p>새로운 소식과 다양한 홍보 콘텐츠를 확인해보세요.</p><a href="#press" class="pr-hero__cta">소식 확인하기 <span aria-hidden="true">↓</span></a></div>
   <div class="pr-breadcrumb"><a href="index.html">HOME</a><span>/</span><strong>홍보센터</strong></div>
  </section>
- <nav class="pr-local-nav" aria-label="홍보센터 메뉴"><a href="#press">보도자료</a><a href="#video">홍보영상</a><a href="#sns">SNS</a></nav>
+ <nav class="pr-local-nav local-nav" aria-label="홍보센터 메뉴">
+            <label class="sr-only" for="pr-local-select">홍보센터 메뉴</label>
+            <select id="pr-local-select" class="local-select">
+                <option value="#press" selected>보도자료</option>
+                <option value="#video">홍보영상</option>
+                <option value="#sns">SNS</option>
+            </select>
+        </nav>
  <section class="pr-section pr-press" id="press">
   <div class="pr-container">
    <div class="pr-section-heading"><div><p class="pr-eyebrow pr-eyebrow--blue">PRESS RELEASE</p><h2>귀뚜라미 소식</h2><p>귀뚜라미의 주요 소식과 보도자료를 전해드립니다.</p></div><a class="pr-text-link" aria-disabled="true">공식 홍보센터 더보기 <span aria-hidden="true">↗</span></a></div>
