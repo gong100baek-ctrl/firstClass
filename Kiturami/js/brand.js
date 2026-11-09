@@ -230,4 +230,16 @@
             window.print();
         });
     });
+    // 기업 소개 영상: 중앙 재생 버튼을 누르면 컨트롤이 나타나며 재생
+    document.querySelectorAll("[data-video-player]").forEach((box) => {
+        const video = box.querySelector("video");
+        const play = box.querySelector(".company-vision__play");
+        if (!video || !play) return;
+        play.addEventListener("click", () => {
+            video.controls = true;
+            box.classList.add("is-playing");
+            video.play().catch(() => {});
+            video.focus();
+        });
+    });
 })();

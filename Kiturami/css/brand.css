@@ -1780,3 +1780,11 @@
     border-radius: 16px;
     background: #000;
 }
+
+/* 영상 중앙 재생 버튼 */
+.company-vision__player{position:relative}
+.company-vision__play{position:absolute;top:50%;left:50%;width:88px;height:88px;margin:-44px 0 0 -44px;border:0;border-radius:50%;background:rgba(1,113,189,.92);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer;transition:transform .18s ease,background .18s ease}
+.company-vision__play::after{content:"";position:absolute;top:50%;left:50%;margin:-14px 0 0 -9px;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #fff}
+.company-vision__play:hover,.company-vision__play:focus-visible{transform:scale(1.08);background:#0171bd}
+.company-vision__player.is-playing .company-vision__play{display:none}
+@media(max-width:768px){.company-vision__play{width:64px;height:64px;margin:-32px 0 0 -32px}.company-vision__play::after{margin:-10px 0 0 -6px;border-width:10px 0 10px 17px}}
