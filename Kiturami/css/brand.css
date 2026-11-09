@@ -1768,3 +1768,15 @@
         width: 100%;
     }
 }
+
+
+/* Company introduction video */
+.company-vision__visual .company-vision__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 877 / 456;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #000;
+}
