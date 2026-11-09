@@ -1,0 +1,19 @@
+/* 서브 페이지 HERO 공통: 색상·높이 통일 (각 페이지 CSS 뒤에 로드) */
+:root{--hero-height:500px;--hero-bg:linear-gradient(115deg,#173c5b,#28648c 55%,#9db8c9)}
+.brand-hero,.product-hero,.cc-hero,.pr-hero,.mall-hero,.detail-hero{min-height:var(--hero-height);background:var(--hero-bg)}
+.product-hero__image,.pr-hero__visual{background:var(--hero-bg)}
+.product-hero__shade,.pr-hero__overlay,.brand-hero__overlay{background:linear-gradient(90deg,rgba(8,28,47,.76),rgba(8,28,47,.12))}
+.brand-hero__visual{background:var(--hero-bg)}
+/* 제품 상세 HERO: 어두운 배경에 맞춰 글자색 */
+.detail-hero{position:relative;overflow:hidden;color:#fff}
+.detail-hero .detail-eyebrow{color:#fff}
+.detail-hero h2{color:#fff}
+.detail-hero__inner>p:last-child{color:rgba(255,255,255,.85)}
+.detail-hero__breadcrumb,.detail-hero__breadcrumb strong{color:rgba(255,255,255,.7)}
+.detail-hero__breadcrumb strong{color:#fff}
+@media(max-width:700px){:root{--hero-height:390px}}
+.cc-hero__inner,.mall-hero__inner{padding-top:0;padding-bottom:0}
+.brand-hero__content,.product-hero__content,.pr-hero__content{padding-top:0;padding-bottom:0}
+.detail-hero__inner{padding-top:0;padding-bottom:0}
+.detail-hero{align-items:center}
+.detail-hero__breadcrumb{top:-60px}
