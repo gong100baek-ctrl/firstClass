@@ -21,7 +21,38 @@
   img.src = image; img.alt = name + " 제품 이미지";
   document.title = name + " 주문/결제 | 귀뚜라미몰";
 
+  const gasTypes = Array.from({ length: 10 }, (_, i) => ({ name: "가스보일러 제품 " + String(i + 1).padStart(2, "0"), image: "images/gas_" + (i + 1) + ".png" }));
+  const pick = document.getElementById("co-pick");
+  const grid = document.getElementById("co-pick-grid");
   const form = document.getElementById("checkout-form");
+  const change = document.getElementById("co-change");
+  const isGas = key === "gas-boiler";
+  const showPick = () => { pick.hidden = false; form.hidden = true; document.querySelector(".checkout-heading p:last-child").textContent = "구매하실 보일러 종류를 먼저 선택해주세요."; };
+  const showForm = (type) => {
+    pick.hidden = true; form.hidden = false;
+    document.querySelector(".checkout-heading p:last-child").textContent = "선택하신 제품의 주문 정보를 확인하고 결제를 진행해주세요.";
+    if (type) {
+      document.getElementById("co-name").textContent = type.name;
+      img.src = type.image; img.alt = type.name + " 제품 이미지";
+      document.title = type.name + " 주문/결제 | 귀뚜라미몰";
+    }
+    if (isGas) change.hidden = false;
+  };
+  if (isGas) {
+    gasTypes.forEach((type) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "checkout-type";
+      const t = document.createElement("img"); t.src = type.image; t.alt = "";
+      const n = document.createElement("span"); n.textContent = type.name;
+      b.append(t, n);
+      b.addEventListener("click", () => { showForm(type); window.scrollTo({ top: 0, behavior: "smooth" }); });
+      grid.appendChild(b);
+    });
+    change.addEventListener("click", () => { showPick(); window.scrollTo({ top: 0 }); });
+    const chosen = gasTypes.find((t) => t.name === item);
+    if (chosen) showForm(chosen); else showPick();
+  }
+
   const result = document.getElementById("co-result");
   form.addEventListener("submit", (e) => {
     e.preventDefault();

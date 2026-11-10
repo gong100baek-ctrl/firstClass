@@ -80,6 +80,11 @@
                 <p>선택하신 제품의 주문 정보를 확인하고 결제를 진행해주세요.</p>
             </header>
 
+            <section class="checkout-pick" id="co-pick" aria-labelledby="co-pick-title" hidden>
+                <h3 id="co-pick-title">보일러 종류를 선택해주세요</h3>
+                <div class="checkout-pick__grid" id="co-pick-grid"></div>
+            </section>
+
             <form class="checkout-grid" id="checkout-form" novalidate>
                 <div class="checkout-forms">
                     <section class="checkout-card" aria-labelledby="co-orderer">
@@ -128,6 +133,7 @@
                     <label class="checkout-agree"><input type="checkbox" id="co-agree" required> 주문 내용을 확인했으며 결제에 동의합니다.</label>
                     <button type="submit" class="checkout-submit">결제하기</button>
                     <p class="checkout-result" id="co-result" role="status" hidden></p>
+                    <button type="button" class="checkout-change" id="co-change" hidden>제품 다시 선택하기</button>
                     <a class="checkout-back" href="mall.html#mall-products">← 귀뚜라미몰로 돌아가기</a>
                 </aside>
             </form>
