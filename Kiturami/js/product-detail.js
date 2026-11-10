@@ -17,9 +17,12 @@
     const product = products[category] || products["gas-boiler"];
 
     document.title = product.name + " 상세 정보 | Kiturami";
-    document.getElementById("detail-title").textContent = product.name;
-    document.getElementById("detail-breadcrumb").textContent = product.name;
-    document.getElementById("detail-lead").textContent = product.lead;
+    const el_detail_title = document.getElementById("detail-title");
+    if (el_detail_title) el_detail_title.textContent = product.name;
+    const el_detail_breadcrumb = document.getElementById("detail-breadcrumb");
+    if (el_detail_breadcrumb) el_detail_breadcrumb.textContent = product.name;
+    const el_detail_lead = document.getElementById("detail-lead");
+    if (el_detail_lead) el_detail_lead.textContent = product.lead;
     document.getElementById("detail-summary-title").textContent = product.name;
     document.getElementById("detail-summary").textContent = product.summary;
     const image = document.getElementById("detail-image");
