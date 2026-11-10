@@ -1,0 +1,44 @@
+/* 주문/결제 (내부 데모) */
+.checkout{padding:72px 0 120px;background:#f6f8fa}
+.checkout-container{width:min(1200px,calc(100% - 96px));margin:0 auto}
+.checkout-heading{margin-bottom:40px}
+.checkout-eyebrow{margin:0 0 12px;color:var(--color-action-primary);font-size:12px;font-weight:800;letter-spacing:1.8px}
+.checkout-heading h2{margin:0 0 12px;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-1.5px}
+.checkout-heading p:last-child{margin:0;color:var(--color-text-secondary);font-size:16px}
+.checkout-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:32px;align-items:start}
+.checkout-forms{display:grid;gap:24px}
+.checkout-card,.checkout-summary{padding:32px;border:1px solid var(--color-border-default);border-radius:16px;background:#fff}
+.checkout-card h3,.checkout-summary h3{margin:0 0 24px;font-size:20px;font-weight:800}
+.checkout-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.checkout-fields label{display:grid;gap:8px;font-size:14px;font-weight:700}
+.checkout-fields .is-wide{grid-column:1/-1}
+.checkout-fields input{height:48px;padding:0 16px;border:1px solid var(--color-border-default);border-radius:8px;font:inherit;font-size:15px;font-weight:400}
+.checkout-fields input:focus-visible{border-color:var(--color-action-primary);outline:2px solid var(--color-action-primary);outline-offset:1px}
+.checkout-fields input[aria-invalid=true]{border-color:#d93025}
+.checkout-pay{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.checkout-pay label{position:relative}
+.checkout-pay input{position:absolute;opacity:0}
+.checkout-pay span{display:flex;align-items:center;justify-content:center;height:52px;border:1px solid var(--color-border-default);border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}
+.checkout-pay input:checked+span{border-color:var(--color-action-primary);background:#eef6fc;color:var(--color-action-primary)}
+.checkout-pay input:focus-visible+span{outline:2px solid var(--color-action-primary);outline-offset:2px}
+.checkout-note{margin:18px 0 0;color:var(--color-text-secondary);font-size:13px;line-height:1.7}
+.checkout-summary{position:sticky;top:24px}
+.checkout-product{display:flex;align-items:center;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--color-border-default)}
+.checkout-product img{width:88px;height:88px;border-radius:12px;background:#f2f5f7;object-fit:contain}
+.checkout-product strong{display:block;margin-bottom:6px;font-size:17px}
+.checkout-product span{color:var(--color-text-secondary);font-size:14px}
+.checkout-total{margin:20px 0}
+.checkout-total div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:14px}
+.checkout-total dt{color:var(--color-text-secondary)}
+.checkout-total dd{margin:0;font-weight:700}
+.checkout-total .is-total{margin-top:8px;padding-top:18px;border-top:1px solid var(--color-border-default);font-size:16px}
+.checkout-total .is-total dt{color:var(--color-text-primary);font-weight:800}
+.checkout-agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5}
+.checkout-submit{width:100%;height:56px;margin-top:20px;border:0;border-radius:999px;background:var(--color-action-primary);color:#fff;font:inherit;font-size:16px;font-weight:800;cursor:pointer;transition:background .2s ease}
+.checkout-submit:hover,.checkout-submit:focus-visible{background:#005b99}
+.checkout-result{margin:16px 0 0;padding:14px 16px;border-radius:8px;background:#eef6fc;color:#174b6b;font-size:14px;line-height:1.6}
+.checkout-result.is-error{background:#fdecea;color:#b3261e}
+.checkout-back{display:inline-block;margin-top:18px;color:var(--color-text-secondary);font-size:14px;font-weight:600}
+@media(max-width:1024px){.checkout-grid{grid-template-columns:1fr}.checkout-summary{position:static}}
+@media(max-width:700px){.checkout{padding:48px 0 80px}.checkout-container{width:calc(100% - 40px)}.checkout-card,.checkout-summary{padding:22px}.checkout-fields{grid-template-columns:1fr}.checkout-pay{grid-template-columns:1fr}}
+.checkout-agree input{position:static;display:inline-block;flex:none;width:18px;height:18px;margin:1px 0 0;opacity:1;appearance:auto;-webkit-appearance:checkbox;accent-color:var(--color-action-primary)}

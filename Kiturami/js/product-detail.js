@@ -29,6 +29,9 @@
     image.src = product.image;
     image.alt = product.name + " 제품 이미지";
 
+    const buyLink = document.getElementById("detail-buy");
+    if (buyLink) buyLink.href = "checkout.html?category=" + encodeURIComponent(category);
+
     const productCards = document.querySelectorAll(".boiler-product-card");
     const detailInfo = document.getElementById("detail-info");
     const selectedProductName = document.getElementById("selected-product-name");
@@ -37,6 +40,8 @@
         card.addEventListener("click", () => {
             productCards.forEach((item) => item.setAttribute("aria-pressed", String(item === card)));
             selectedProductName.textContent = card.querySelector(".boiler-product-card__name").textContent;
+            const buy = document.getElementById("detail-buy");
+            if (buy) buy.href = "checkout.html?category=" + encodeURIComponent(category) + "&item=" + encodeURIComponent(selectedProductName.textContent);
             detailInfo.hidden = false;
             detailInfo.scrollIntoView({ behavior: "smooth", block: "start" });
         });
