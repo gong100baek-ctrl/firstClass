@@ -109,4 +109,31 @@
     familySite.addEventListener("change", () => {
         if (familySite.value) window.location.href = familySite.value;
     });
+    // 모바일 메뉴 토글 / 언어 선택
+    (() => {
+        const header = document.querySelector(".header");
+        const toggle = document.querySelector(".menu-toggle");
+        toggle?.addEventListener("click", () => {
+            const opened = header.classList.toggle("menu-open");
+            toggle.setAttribute("aria-expanded", String(opened));
+            toggle.setAttribute("aria-label", opened ? "메뉴 닫기" : "메뉴 열기");
+        });
+        const lang = document.querySelector(".language");
+        const langToggle = document.querySelector(".language-toggle");
+        const langMenu = document.querySelector(".language-menu");
+        const langCurrent = document.querySelector(".language-current");
+        if (lang && langToggle && langMenu && langCurrent) {
+            langToggle.addEventListener("click", () => {
+                const opened = langToggle.getAttribute("aria-expanded") === "true";
+                langToggle.setAttribute("aria-expanded", String(!opened));
+                langMenu.hidden = opened;
+            });
+            langMenu.querySelectorAll(".language-option").forEach((o) => o.addEventListener("click", () => {
+                langCurrent.textContent = o.dataset.language;
+                langToggle.setAttribute("aria-expanded", "false");
+                langMenu.hidden = true;
+            }));
+            document.addEventListener("click", (e) => { if (!lang.contains(e.target)) { langToggle.setAttribute("aria-expanded", "false"); langMenu.hidden = true; } });
+        }
+    })();
 })();
