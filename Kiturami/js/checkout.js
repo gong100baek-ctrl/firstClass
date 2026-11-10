@@ -13,7 +13,8 @@
   };
   const params = new URLSearchParams(location.search);
   const key = products[params.get("category")] ? params.get("category") : "gas-boiler";
-  let [name, image] = products[key];
+  const [catName, image] = products[key];
+  let name = catName;
   const item = params.get("item");
   if (item) name = item.replace(/[^0-9A-Za-z가-힣 ·/]/g, "").slice(0, 30) || name;
   document.getElementById("co-name").textContent = name;
@@ -21,13 +22,16 @@
   img.src = image; img.alt = name + " 제품 이미지";
   document.title = name + " 주문/결제 | 귀뚜라미몰";
 
-  const gasTypes = Array.from({ length: 10 }, (_, i) => ({ name: "가스보일러 제품 " + String(i + 1).padStart(2, "0"), image: "images/gas_" + (i + 1) + ".png" }));
+  // 카테고리별 제품 종류. 가스보일러는 실제 이미지(gas_1~10), 나머지는 카테고리 대표 이미지를 쓰는 임시 항목(PLACEHOLDER_COUNT)입니다.
+  const PLACEHOLDER_COUNT = 6;
+  const types = key === "gas-boiler"
+    ? Array.from({ length: 10 }, (_, i) => ({ name: catName + (catName.endsWith("제품") ? " " : " 제품 ") + String(i + 1).padStart(2, "0"), image: "images/gas_" + (i + 1) + ".png" }))
+    : Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => ({ name: catName + (catName.endsWith("제품") ? " " : " 제품 ") + String(i + 1).padStart(2, "0"), image }));
   const pick = document.getElementById("co-pick");
   const grid = document.getElementById("co-pick-grid");
   const form = document.getElementById("checkout-form");
   const change = document.getElementById("co-change");
-  const isGas = key === "gas-boiler";
-  const showPick = () => { pick.hidden = false; form.hidden = true; document.querySelector(".checkout-heading p:last-child").textContent = "구매하실 보일러 종류를 먼저 선택해주세요."; };
+    const showPick = () => { pick.hidden = false; form.hidden = true; document.querySelector(".checkout-heading p:last-child").textContent = "구매하실 종류를 먼저 선택해주세요."; };
   const showForm = (type) => {
     pick.hidden = true; form.hidden = false;
     document.querySelector(".checkout-heading p:last-child").textContent = "선택하신 제품의 주문 정보를 확인하고 결제를 진행해주세요.";
@@ -36,10 +40,10 @@
       img.src = type.image; img.alt = type.name + " 제품 이미지";
       document.title = type.name + " 주문/결제 | 귀뚜라미몰";
     }
-    if (isGas) change.hidden = false;
+    change.hidden = false;
   };
-  if (isGas) {
-    gasTypes.forEach((type) => {
+  {
+    types.forEach((type) => {
       const b = document.createElement("button");
       b.type = "button"; b.className = "checkout-type";
       const t = document.createElement("img"); t.src = type.image; t.alt = "";
@@ -49,7 +53,7 @@
       grid.appendChild(b);
     });
     change.addEventListener("click", () => { showPick(); window.scrollTo({ top: 0 }); });
-    const chosen = gasTypes.find((t) => t.name === item);
+    const chosen = types.find((t) => t.name === item);
     if (chosen) showForm(chosen); else showPick();
   }
 
