@@ -14,19 +14,21 @@
   const params = new URLSearchParams(location.search);
   const key = products[params.get("category")] ? params.get("category") : "gas-boiler";
   const [catName, image] = products[key];
-  let name = catName;
+  // 카테고리별 제품(이름/이미지)은 js/product-data.js 에서 가져옵니다. 이미지가 없으면 카테고리 대표 이미지를 씁니다.
+  const imgSrc = window.KITURAMI_IMG || ((path) => path);
+  const lineup = (window.KITURAMI_LINEUPS || {})[key];
+  const types = lineup ? lineup.items.map(([typeName, path]) => ({ name: typeName, image: path ? imgSrc(path) : image })) : [];
   const item = params.get("item");
-  if (item) name = item.replace(/[^0-9A-Za-z가-힣 ·/]/g, "").slice(0, 30) || name;
+  const chosen = types.find((t) => t.name === item);
+  let name = chosen ? chosen.name : catName;
+  if (!chosen && item) name = item.replace(/[^0-9A-Za-z가-힣 ·/]/g, "").slice(0, 30) || name;
   document.getElementById("co-name").textContent = name;
   const img = document.getElementById("co-image");
-  img.src = image; img.alt = name + " 제품 이미지";
+  img.referrerPolicy = "no-referrer";
+  img.addEventListener("error", () => { if (img.getAttribute("src") !== image) img.src = image; });
+  img.src = chosen ? chosen.image : image; img.alt = name + " 제품 이미지";
   document.title = name + " 주문/결제 | 귀뚜라미몰";
 
-  // 카테고리별 제품 종류. 가스보일러는 실제 이미지(gas_1~10), 나머지는 카테고리 대표 이미지를 쓰는 임시 항목(PLACEHOLDER_COUNT)입니다.
-  const PLACEHOLDER_COUNT = 6;
-  const types = key === "gas-boiler"
-    ? Array.from({ length: 10 }, (_, i) => ({ name: catName + (catName.endsWith("제품") ? " " : " 제품 ") + String(i + 1).padStart(2, "0"), image: "images/gas_" + (i + 1) + ".png" }))
-    : Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => ({ name: catName + (catName.endsWith("제품") ? " " : " 제품 ") + String(i + 1).padStart(2, "0"), image }));
   const pick = document.getElementById("co-pick");
   const grid = document.getElementById("co-pick-grid");
   const form = document.getElementById("checkout-form");
@@ -46,14 +48,13 @@
     types.forEach((type) => {
       const b = document.createElement("button");
       b.type = "button"; b.className = "checkout-type";
-      const t = document.createElement("img"); t.src = type.image; t.alt = "";
+      const t = document.createElement("img"); t.referrerPolicy = "no-referrer"; t.loading = "lazy"; t.addEventListener("error", () => { if (t.getAttribute("src") !== image) t.src = image; }); t.src = type.image; t.alt = "";
       const n = document.createElement("span"); n.textContent = type.name;
       b.append(t, n);
       b.addEventListener("click", () => { showForm(type); window.scrollTo({ top: 0, behavior: "smooth" }); });
       grid.appendChild(b);
     });
     change.addEventListener("click", () => { showPick(); window.scrollTo({ top: 0 }); });
-    const chosen = types.find((t) => t.name === item);
     if (chosen) showForm(chosen); else showPick();
   }
 
