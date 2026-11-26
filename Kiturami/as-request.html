@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A/S 신청 및 문의 | 귀뚜라미</title>
+<link rel="stylesheet" href="../css/default.css"><link rel="stylesheet" href="../font/css/pretendardvariable.css">
+<link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/header-menu.css"><link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/as-request.css"><script src="js/header-menu.js" defer></script>
+</head>
+<body class="as-request-page"><div id="wrap">
+<header class="header"><div class="header-inner">
+<h1 class="logo"><a href="index.html" aria-label="귀뚜라미 홈"><span class="logo-en">Kiturami</span><span class="logo-ko">귀뚜라미</span></a></h1>
+<nav class="gnb" aria-label="주요 메뉴"><ul>
+<li><a href="brand.html">회사소개</a></li><li><a href="product-detail.html?category=gas-boiler">제품소개</a></li><li><a href="pr.html">홍보센터</a></li><li class="is-current"><a href="cc.html" aria-current="page">고객센터</a></li><li><a href="mall.html">귀뚜라미몰 바로가기</a></li>
+</ul></nav>
+</div></header>
+<main>
+<section class="as-hero"><div class="as-wrap"><p class="as-eyebrow">A/S SERVICE</p><h2>A/S 신청 및 문의하기</h2><p>제품 점검 및 서비스가 필요하신 경우 아래 내용을 작성해 주세요.</p><div class="as-breadcrumb"><a href="index.html">HOME</a><span>›</span><a href="cc.html">고객센터</a><span>›</span><strong>A/S 신청</strong></div></div></section>
+<section class="as-content as-wrap">
+<div class="as-notice"><strong>서비스 접수 안내</strong><p>실제 서비스 접수는 공식 고객센터를 통해 진행됩니다. 아래 양식은 사이트 내부 UI 예시이며 서버 접수 기능은 연결되어 있지 않습니다.</p><a href="https://krb.co.kr/" target="_blank" rel="noopener noreferrer">귀뚜라미 공식 홈페이지 확인 ↗</a></div>
+<div class="as-layout"><aside class="as-side"><p class="as-eyebrow">CONTACT</p><h3>전화 상담</h3><a class="as-phone" href="tel:15889000">1588-9000</a><p>귀뚜라미 고객센터</p><div class="as-side-line"></div><h3>신청 전 확인</h3><ul><li>제품 모델명 및 설치 장소 확인</li><li>증상과 에러코드 확인</li><li>연락 가능한 전화번호 준비</li></ul></aside>
+<form class="as-form" id="as-form"><h3>문의 정보 입력</h3>
+<label>문의 유형 <select required><option value="">선택해 주세요</option><option>A/S 방문 신청</option><option>제품 문의</option><option>사용 방법 문의</option><option>기타</option></select></label>
+<div class="as-fields"><label>이름 <input type="text" name="name" placeholder="이름 입력" required></label><label>연락처 <input type="tel" name="phone" placeholder="010-0000-0000" required></label></div>
+<div class="as-fields"><label>제품 종류 <select name="product" required><option value="">선택해 주세요</option><option>가스보일러</option><option>기름보일러</option><option>온수기</option><option>난방매트</option><option>기타 제품</option></select></label><label>제품 모델명 <input name="model" placeholder="모델명 입력 (선택)"></label></div>
+<label>주소 <input name="address" placeholder="서비스 방문 주소 입력" required></label>
+<label>문의 내용 <textarea name="message" rows="5" placeholder="제품 증상 및 문의 내용을 작성해 주세요." required></textarea></label>
+<label class="as-agree"><input type="checkbox" required><span>문의 처리를 위한 개인정보 수집 및 이용 안내에 동의합니다. (필수)</span></label>
+<button type="submit" class="as-submit">문의 내용 확인 <span>↗</span></button><p class="as-form-note" id="as-form-note" role="status"></p>
+</form></div></section></main>
+<footer class="as-footer"><div class="as-wrap"><a href="cc.html">← 고객센터로 돌아가기</a><p>Copyright © KITURAMI. All Rights Reserved.</p></div></footer>
+</div>
+<script>document.getElementById('as-form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('as-form-note').textContent='양식 UI 확인 완료입니다. 실제 접수는 고객센터 1588-9000 또는 공식 홈페이지를 이용해 주세요.';});</script>
+</body></html>
