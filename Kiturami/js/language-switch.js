@@ -76,7 +76,18 @@
         document.head.appendChild(script);
       }
     } else {
-      setTimeout(() => applyLanguage(code), 300);
+      window.__kituramiTranslateTarget = code;
+      let attempts = 0;
+      const waitForCombo = () => {
+        const readyCombo = document.querySelector(".goog-te-combo");
+        if (readyCombo) {
+          readyCombo.value = code;
+          readyCombo.dispatchEvent(new Event("change"));
+        } else if (attempts++ < 20) {
+          setTimeout(waitForCombo, 250);
+        }
+      };
+      waitForCombo();
     }
   }
   window.kituramiGoogleTranslateInit = function () {
@@ -97,6 +108,17 @@
     style.textContent = ".goog-te-banner-frame,.skiptranslate iframe,.goog-te-gadget,.goog-te-balloon-frame{display:none!important}body{top:0!important}.goog-tooltip,.goog-tooltip:hover{display:none!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}";
     document.head.appendChild(style);
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => { mountHiddenWidget(); initUI(); });
-  else { mountHiddenWidget(); initUI(); }
+  function boot() {
+    mountHiddenWidget();
+    initUI();
+    if (!document.getElementById("kiturami-translate-script")) {
+      const script = document.createElement("script");
+      script.id = "kiturami-translate-script";
+      script.src = "https://translate.google.com/translate_a/element.js?cb=kituramiGoogleTranslateInit";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
