@@ -124,3 +124,6 @@
 .detail-buy-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-width:200px;height:54px;margin-top:28px;padding:0 28px;border-radius:999px;background:var(--color-action-primary);color:#fff;font-size:15px;font-weight:700;transition:background .2s ease}
 .detail-buy-button:hover,.detail-buy-button:focus-visible{background:#005b99}
 @media(max-width:700px){.detail-buy-button{width:100%}}
+.detail-info-images{max-width:1000px;margin:42px auto 0;border-radius:16px;overflow:hidden;background:#fff}
+.detail-info-images img{display:block;width:100%;height:auto}
+@media(max-width:600px){.detail-info-images{margin-top:28px;border-radius:12px}}

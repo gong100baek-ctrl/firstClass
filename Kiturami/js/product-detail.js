@@ -87,10 +87,41 @@
     const detailInfo = document.getElementById("detail-info");
     const selectedProductName = document.getElementById("selected-product-name");
 
+    // 제품 카드를 누르면 제품정보안내 영역에 그 제품의 상세 이미지를 순서대로 이어 붙입니다.
+    const detailImages = document.getElementById("detail-info-images");
+    const renderDetailImages = (item) => {
+        if (!detailImages) return;
+        const paths = (item && item[2]) || [];
+        detailImages.textContent = "";
+        const showEmpty = (message) => {
+            detailImages.className = "detail-info-image-placeholder";
+            const span = document.createElement("span");
+            span.textContent = message;
+            detailImages.appendChild(span);
+        };
+        if (!paths.length) return showEmpty("등록된 상세 이미지가 없습니다.");
+        detailImages.className = "detail-info-images";
+        let failed = 0;
+        paths.forEach((path, index) => {
+            const img = document.createElement("img");
+            img.src = imgSrc(path);
+            img.alt = item[0] + " 상세 이미지 " + (index + 1);
+            img.referrerPolicy = "no-referrer";
+            img.loading = index === 0 ? "eager" : "lazy";
+            img.addEventListener("error", () => {
+                img.remove();
+                failed += 1;
+                if (failed === paths.length) showEmpty("상세 이미지를 불러올 수 없습니다.");
+            });
+            detailImages.appendChild(img);
+        });
+    };
+
     productCards.forEach((card) => {
         card.addEventListener("click", () => {
             productCards.forEach((item) => item.setAttribute("aria-pressed", String(item === card)));
             selectedProductName.textContent = card.querySelector(".boiler-product-card__name").textContent;
+            renderDetailImages(lineups[category] && lineups[category].items[Number(card.dataset.productIndex) - 1]);
             const buy = document.getElementById("detail-buy");
             if (buy) buy.href = "checkout.html?category=" + encodeURIComponent(category) + "&item=" + encodeURIComponent(selectedProductName.textContent);
             detailInfo.hidden = false;
