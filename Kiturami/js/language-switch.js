@@ -105,7 +105,7 @@
       document.body.appendChild(holder);
     }
     const style = document.createElement("style");
-    style.textContent = ".goog-te-banner-frame,.skiptranslate iframe,.goog-te-gadget,.goog-te-balloon-frame{display:none!important}body{top:0!important}.goog-tooltip,.goog-tooltip:hover{display:none!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}";
+    style.textContent = ".language{position:relative!important;z-index:99999!important}.language-toggle{position:relative!important;z-index:99999!important;pointer-events:auto!important;cursor:pointer!important}.language-menu:not([hidden]){display:block!important;position:absolute!important;z-index:100000!important;pointer-events:auto!important}.language-menu[hidden]{display:none!important}.language-option{pointer-events:auto!important;cursor:pointer!important}.goog-te-banner-frame,.skiptranslate iframe,.goog-te-gadget,.goog-te-balloon-frame{display:none!important}body{top:0!important}.goog-tooltip,.goog-tooltip:hover{display:none!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}";
     document.head.appendChild(style);
   }
   function boot() {
