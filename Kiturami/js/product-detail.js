@@ -180,9 +180,9 @@
         "etc": {
             eyebrow: "OTHER PRODUCT LINEUP", title: "기타 제품",
             items: [
-                ["세이프온 일산화탄소(CO) 경보기", null],
-                ["귀뚜라미 펌프", null],
-                ["팬코일 유닛", null]
+                ["세이프온 일산화탄소(CO) 경보기", "images/etc_1.png"],
+                ["귀뚜라미 펌프", "images/etc_2.png"],
+                ["팬코일 유닛", "images/etc_3.png"]
             ]
         }
     };
@@ -209,7 +209,7 @@
             };
             if (path) {
                 const img = document.createElement("img");
-                img.src = KRB_IMG + path;
+                img.src = path.startsWith("images/") ? path : KRB_IMG + path;
                 img.alt = name;
                 img.loading = "lazy";
                 img.referrerPolicy = "no-referrer";
