@@ -59,14 +59,22 @@
         }
     }
     if (category === "oil-boiler") {
+        const oilNames = [
+            "스텐 하이핀 BLUE 기름보일러",
+            "스텐 하이핀 eco 기름보일러",
+            "터보 하이핀 eco 기름보일러",
+            "거꾸로 콘덴싱 eco 기름보일러",
+            "스텐 하이핀 L10 기름보일러",
+            "스텐 하이핀 N 기름보일러"
+        ];
         Array.from(productCards).forEach((card, index) => {
             const slide = card.closest(".swiper-slide");
-            if (index >= 6) { slide.style.display = "none"; return; }
-            slide.style.display = "";
+            if (index >= oilNames.length) { if (slide) slide.style.display = "none"; return; }
+            if (slide) slide.style.display = "";
             const img = card.querySelector(".boiler-product-card__image img");
             img.src = "images/oil_" + (index + 1) + ".png";
-            img.alt = "귀뚜라미 기름보일러 제품 " + (index + 1);
-            card.querySelector(".boiler-product-card__name").textContent = "기름보일러 제품 " + String(index + 1).padStart(2, "0");
+            img.alt = oilNames[index];
+            card.querySelector(".boiler-product-card__name").textContent = oilNames[index];
         });
         const sectionHeading = document.querySelector(".boiler-products .detail-section-heading");
         if (sectionHeading) {
