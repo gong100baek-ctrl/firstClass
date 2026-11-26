@@ -33,6 +33,22 @@
     if (buyLink) buyLink.href = "checkout.html?category=" + encodeURIComponent(category);
 
     const productCards = document.querySelectorAll(".boiler-product-card");
+    if (category === "oil-boiler") {
+        Array.from(productCards).forEach((card, index) => {
+            const slide = card.closest(".swiper-slide");
+            if (index >= 6) { slide.style.display = "none"; return; }
+            slide.style.display = "";
+            const img = card.querySelector(".boiler-product-card__image img");
+            img.src = "images/oil_" + (index + 1) + ".png";
+            img.alt = "귀뚜라미 기름보일러 제품 " + (index + 1);
+            card.querySelector(".boiler-product-card__name").textContent = "기름보일러 제품 " + String(index + 1).padStart(2, "0");
+        });
+        const sectionHeading = document.querySelector(".boiler-products .detail-section-heading");
+        if (sectionHeading) {
+            sectionHeading.querySelector(".detail-eyebrow").textContent = "OIL BOILER LINEUP";
+            sectionHeading.querySelector("h3").textContent = "기름보일러 제품";
+        }
+    }
     const detailInfo = document.getElementById("detail-info");
     const selectedProductName = document.getElementById("selected-product-name");
 
