@@ -910,6 +910,7 @@
             if (key && !originalTexts.has(node)) originalTexts.set(node, node.nodeValue);
         }
 
+        const languageCodes = { '한국어': 'ko', 'English': 'en', '日本語': 'ja', '中文': 'zh-CN', 'Русский': 'ru' };
         const applyLanguage = (selectedLanguage) => {
             const dictionary = translations[selectedLanguage] || {};
             originalTexts.forEach((original, node) => {
@@ -971,6 +972,8 @@
             const pauseLabel = swiper.autoplay.running ? "배너 일시정지" : "배너 재생";
             document.querySelector('.swiper-autoplay').setAttribute('aria-label', dictionary[pauseLabel] || pauseLabel);
             localStorage.setItem('kiturami-language', selectedLanguage);
+            // 다른 페이지(구글 번역 방식)와 선택 언어를 공유하기 위해 번역 쿠키도 함께 저장합니다.
+            document.cookie = 'googtrans=/ko/' + (languageCodes[selectedLanguage] || 'ko') + ';path=/';
         };
 
         languageMenu.querySelectorAll('.language-option').forEach((option) => {
@@ -982,7 +985,10 @@
             });
         });
 
-        const savedLanguage = localStorage.getItem('kiturami-language') || '한국어';
+        // 다른 페이지에서 고른 언어(번역 쿠키)가 있으면 그 언어를 우선 적용합니다.
+        const cookieCode = ((document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/) || [])[1] || '');
+        const cookieLanguage = Object.keys(languageCodes).find((name) => languageCodes[name] === decodeURIComponent(cookieCode).split('/').pop());
+        const savedLanguage = cookieLanguage || localStorage.getItem('kiturami-language') || '한국어';
         applyLanguage(savedLanguage);
 
         document.addEventListener('click', (event) => {

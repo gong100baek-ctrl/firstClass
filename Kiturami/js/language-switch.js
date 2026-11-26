@@ -17,17 +17,21 @@
       headerInner.appendChild(wrapper);
     }
 
-    const toggle = wrapper.querySelector(".language-toggle");
-    const current = wrapper.querySelector(".language-current");
+    let toggle = wrapper.querySelector(".language-toggle");
     let menu = wrapper.querySelector(".language-menu");
-    if (!toggle || !current || !menu) return;
+    if (!toggle || !menu) return;
+    // 페이지별 스크립트(cc.js, mall.js 등)가 같은 버튼에 먼저 단 이벤트와 겹치면 메뉴가 열리자마자 닫히므로,
+    // 언어 메뉴의 이벤트는 이 스크립트가 단독으로 관리하도록 기존 버튼을 새 버튼으로 교체합니다.
+    toggle = replaceWithClone(toggle);
+    const current = wrapper.querySelector(".language-current");
+    if (!current) return;
 
     menu.id = menu.id || "language-menu";
     toggle.setAttribute("aria-controls", menu.id);
     if (!menu.querySelector(".language-option")) {
       menu.innerHTML = labels.map(label => '<button type="button" class="language-option" data-language="' + label + '">' + label + '</button>').join("");
     }
-    const options = Array.from(menu.querySelectorAll(".language-option"));
+    const options = Array.from(menu.querySelectorAll(".language-option")).map(replaceWithClone);
     options.forEach(option => {
       const label = option.dataset.language || option.textContent.trim();
       option.dataset.language = label;
@@ -52,6 +56,8 @@
         event.stopPropagation();
         const language = option.dataset.language || option.textContent.trim();
         current.textContent = language;
+        markSelected(options, language);
+        saveLanguage(language);
         menu.hidden = true;
         toggle.setAttribute("aria-expanded", "false");
         applyLanguage(languageMap[language]);
@@ -65,17 +71,41 @@
       }
     });
 
-    const saved = readGoogleCookie();
-    if (saved) {
-      const code = saved.split("/").pop();
-      const label = Object.entries(languageMap).find(([name, value]) => value === code)?.[0];
-      if (label) current.textContent = label;
+    // 저장된 언어 복원: 구글 번역 쿠키를 우선하고, 없으면 메인 페이지에서 고른 언어(localStorage)를 따릅니다.
+    const cookieCode = readGoogleCookie().split("/").pop();
+    const code = cookieCode || languageMap[readSavedLanguage()] || "";
+    const label = Object.entries(languageMap).find(([name, value]) => value === code)?.[0];
+    if (label) {
+      current.textContent = label;
+      markSelected(options, label);
+      saveLanguage(label);
+      // 메인 페이지에서만 고른 언어라면 이 페이지에도 번역을 적용합니다.
+      if (code !== "ko" && cookieCode !== code) applyLanguage(code);
     }
   }
 
   function readGoogleCookie() {
-    const match = document.cookie.match(/(?:^|;\\s*)googtrans=([^;]+)/);
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
     return match ? decodeURIComponent(match[1]) : "";
+  }
+
+  function replaceWithClone(element) {
+    const clone = element.cloneNode(true);
+    element.replaceWith(clone);
+    return clone;
+  }
+
+  function markSelected(options, label) {
+    options.forEach(option => option.classList.toggle("is-selected", option.dataset.language === label));
+  }
+
+  // 메인 페이지(index.html)와 같은 키로 선택 언어를 저장해 페이지를 옮겨도 언어가 이어지게 합니다.
+  function saveLanguage(label) {
+    try { localStorage.setItem("kiturami-language", label); } catch (error) {}
+  }
+
+  function readSavedLanguage() {
+    try { return localStorage.getItem("kiturami-language") || ""; } catch (error) { return ""; }
   }
 
   function applyLanguage(code) {
