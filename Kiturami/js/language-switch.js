@@ -56,7 +56,7 @@
     }
   }
   function readGoogleCookie() {
-    const match = document.cookie.match(/(?:^|;\\s*)googtrans=([^;]+)/);
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
     return match ? decodeURIComponent(match[1]) : "";
   }
   function applyLanguage(code) {
