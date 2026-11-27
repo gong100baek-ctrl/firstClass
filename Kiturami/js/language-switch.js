@@ -102,9 +102,6 @@
   // 메인 페이지(index.html)와 같은 키로 선택 언어를 저장해 페이지를 옮겨도 언어가 이어지게 합니다.
   function saveLanguage(label) {
     try { localStorage.setItem("kiturami-language", label); } catch (error) {}
-    // 번역 위젯이 늦게 뜨거나 실패해도 다음 페이지가 같은 언어로 열리도록 쿠키에도 직접 기록합니다.
-    const code = languageMap[label];
-    if (code) document.cookie = "googtrans=/ko/" + code + ";path=/";
   }
 
   function readSavedLanguage() {
