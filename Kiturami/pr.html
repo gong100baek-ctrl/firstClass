@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/local-select.css">
 <link rel="stylesheet" href="css/pr-page.css">
 <script src="js/pr.js" defer></script>
+<script src="js/pr-news-filter.js" defer></script>
     <script src="js/header-menu.js" defer></script>
     <script src="js/local-select.js" defer></script>
 </head>
@@ -81,18 +82,31 @@
         </nav>
  <section class="pr-section pr-press" id="press">
   <div class="pr-container">
-   <div class="pr-section-heading"><div><p class="pr-eyebrow pr-eyebrow--blue">PRESS RELEASE</p><h2>귀뚜라미 소식</h2><p>귀뚜라미의 주요 소식과 보도자료를 전해드립니다.</p></div><a class="pr-text-link" aria-disabled="true">공식 홍보센터 더보기 <span aria-hidden="true">↗</span></a></div>
+   <div class="pr-section-heading"><div><p class="pr-eyebrow pr-eyebrow--blue">PRESS RELEASE</p><h2>귀뚜라미 소식</h2><p>귀뚜라미의 주요 소식과 보도자료를 전해드립니다.</p></div></div>
    <div class="pr-featured">
-    <a class="pr-featured__image" aria-disabled="true"><img src="images/pr-news.png" alt="귀뚜라미 보일러 AI 관련 홍보 이미지" loading="lazy"><span class="pr-featured__label">FEATURED NEWS</span></a>
-    <div class="pr-featured__copy"><p class="pr-category">NEWS · 보도자료</p><h3>귀뚜라미, “방방난방부터 온수까지 AI가 척척”</h3><p>메인 페이지에 소개된 귀뚜라미의 주요 보도자료입니다. 자세한 내용은 공식 홈페이지에서 확인할 수 있습니다.</p><a aria-disabled="true">보도자료 자세히 보기 <span aria-hidden="true">→</span></a></div>
+    <a class="pr-featured__image" href="news.html?id=27998"><img src="images/pr-news.png" alt="귀뚜라미 대표 소식 이미지" loading="lazy"><span class="pr-featured__label">FEATURED NEWS</span></a>
+    <div class="pr-featured__copy"><p class="pr-category">NEWS · 보도자료 · 2026.11.19</p><h3>귀뚜라미, ‘2026년 한국의 소비자보호지수(KCPI)’ 6년 연속 우수기업 선정... AI 카본매트로 소비자 신뢰 이어가</h3><a href="news.html?id=27998">보도자료 자세히 보기 <span aria-hidden="true">→</span></a></div>
    </div>
-   <div class="pr-list-heading"><h3>최근 보도자료</h3><span>PRESS</span></div>
-   <ul class="pr-news-list">
-    <li><a aria-disabled="true"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, 내게 맞는 수면온도와 절전 기능도 AI가 알아서…</strong><time datetime="2026-10-12">2026.10.12</time><span class="pr-news-list__arrow" aria-hidden="true">↗</span></a></li>
-    <li><a aria-disabled="true"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, 보일러 렌탈하면 매트리스 케어가 무료…</strong><time datetime="2026-10-08">2026.10.08</time><span class="pr-news-list__arrow" aria-hidden="true">↗</span></a></li>
-    <li><a aria-disabled="true"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, ‘보일러도 카본매트도 AI 시대’ 신규 CF 동시 공개</strong><time datetime="2026-10-06">2026.10.06</time><span class="pr-news-list__arrow" aria-hidden="true">↗</span></a></li>
+   <div class="pr-list-heading"><h3>최근 소식</h3><span>PRESS</span></div>
+   <div class="pr-news-tabs" role="tablist" aria-label="소식 분류">
+    <button type="button" class="is-active" data-filter="ALL">전체</button><button type="button" data-filter="NEWS">보도자료</button><button type="button" data-filter="CF">광고영상</button><button type="button" data-filter="CSR">사회공헌</button>
+   </div>
+   <ul class="pr-news-list" id="pr-news-list">
+    <li data-category="NEWS"><a href="news.html?id=27857"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미보일러, ‘소비자가 가장 추천하는 브랜드’ 10년 연속 1위... AI 난방·안심관리로 신뢰 이어가</strong><time datetime="2026-10-29">2026.10.29</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27853"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, ‘2026년 AX 품질만족지수(AX-QEI)’ 콘덴싱가스보일러 부문 1위... AI 사용 편의 인정</strong><time datetime="2026-10-28">2026.10.28</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27839"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미그룹, ‘하프코 2026’서 AI 데이터센터부터 원…</strong><time datetime="2026-10-21">2026.10.21</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27834"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, “방방난방부터 온수까지 AI가 척척”... ‘귀…</strong><time datetime="2026-10-19">2026.10.19</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27824"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, 내게 맞는 수면온도와 절전 기능도 AI가 알아서…</strong><time datetime="2026-10-12">2026.10.12</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27814"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, 보일러 렌탈하면 매트리스 케어가 무료… ‘따…</strong><time datetime="2026-10-08">2026.10.08</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27797"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, ‘보일러도 카본매트도 AI 시대’ 신규 CF 동시 공개</strong><time datetime="2026-10-06">2026.10.06</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27763"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, ‘K-핵심산업 중심에 60년 냉난방 기술’ 신규…</strong><time datetime="2026-10-01">2026.10.01</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="CF"><a href="news.html?id=27693"><span class="pr-news-list__category">광고영상</span><strong>2026년 귀뚜라미보일러 TV CF</strong><time datetime="2026-10-01">2026.10.01</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="CF"><a href="news.html?id=27689"><span class="pr-news-list__category">광고영상</span><strong>2026년 귀뚜라미 카본매트 ‘온돌’ TV CF</strong><time datetime="2026-10-01">2026.10.01</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="CF"><a href="news.html?id=27686"><span class="pr-news-list__category">광고영상</span><strong>2026년 귀뚜라미 그룹 이미지 광고</strong><time datetime="2026-10-01">2026.10.01</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27433"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미보일러, ‘2026년 콜센터품질지수(KS-CQI) 우수…</strong><time datetime="2026-09-15">2026.09.15</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="NEWS"><a href="news.html?id=27404"><span class="pr-news-list__category">보도자료</span><strong>귀뚜라미, “맞춤 난방부터 자리 비움 절전까지 AI가 척…</strong><time datetime="2026-09-14">2026.09.14</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
+    <li data-category="CSR"><a href="news.html?id=27413"><span class="pr-news-list__category">사회공헌</span><strong>귀뚜라미그룹, 미래 과학기술 이끌 인재 키운다... DGI…</strong><time datetime="2026-09-11">2026.09.11</time><span class="pr-news-list__arrow" aria-hidden="true">→</span></a></li>
    </ul>
-   <p class="pr-source-note">※ 보도자료 제목과 게시일은 기존 메인 페이지에 표시된 정보를 기준으로 구성했습니다. 최신 자료는 공식 홍보센터에서 확인해주세요.</p>
   </div>
  </section>
  <section class="pr-section pr-video" id="video">
