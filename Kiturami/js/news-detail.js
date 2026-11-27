@@ -22,6 +22,7 @@
         $("news-note").textContent = "상세 내용은 준비 중입니다. 제목과 게시일은 홍보센터 목록 기준입니다.";
     }
     const link = (el, n) => { if (!n) return; el.href = "news.html?id=" + n.id; el.title = n.title; el.hidden = false; };
-    link($("news-prev"), list[index + 1]);
-    link($("news-next"), list[index - 1]);
+    // 목록은 최신순입니다. ‘다음 소식’은 더 오래된 기사로, ‘이전 소식’은 방금 지나온 더 최근 기사로 돌아갑니다.
+    link($("news-prev"), list[index - 1]);
+    link($("news-next"), list[index + 1]);
 })();
