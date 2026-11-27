@@ -1,6 +1,5 @@
 /* Kiturami shared language switcher for internal pages. */
 (function () {
-  const SCRIPT_BASE = (document.currentScript && document.currentScript.src || "").replace(/[^/]*$/, "");
   const languageMap = {
     "한국어": "ko", "English": "en", "日本語": "ja", "中文": "zh-CN", "Русский": "ru"
   };
@@ -61,7 +60,7 @@
         saveLanguage(language);
         menu.hidden = true;
         toggle.setAttribute("aria-expanded", "false");
-        location.reload();
+        applyLanguage(languageMap[language]);
       });
     });
 
@@ -81,38 +80,8 @@
       markSelected(options, label);
       saveLanguage(label);
       // 메인 페이지에서만 고른 언어라면 이 페이지에도 번역을 적용합니다.
-      // 쿠키가 이미 있어도 위젯이 자동 적용하지 못하는 경우가 있어 항상 직접 적용합니다.
-      if (code !== "ko") { applyLocalDictionary(label); applyLanguage(code); }
+      if (code !== "ko" && cookieCode !== code) applyLanguage(code);
     }
-  }
-
-
-  // 구글 번역과 별개로, 공통 문구(메뉴·푸터 등)는 내부 번역 사전으로 즉시 바꿉니다.
-  function applyLocalDictionary(label) {
-    const run = function () {
-      const dict = (window.KITURAMI_I18N || {})[label];
-      if (!dict) return;
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-      const nodes = [];
-      while (walker.nextNode()) nodes.push(walker.currentNode);
-      nodes.forEach(function (node) {
-        if (node.parentElement.closest("script, style, .language-menu")) return;
-        const key = node.nodeValue.trim();
-        if (key && dict[key]) node.nodeValue = node.nodeValue.replace(key, dict[key]);
-      });
-      document.querySelectorAll("[aria-label], img[alt]").forEach(function (el) {
-        ["aria-label", "alt"].forEach(function (attr) {
-          const v = el.getAttribute(attr);
-          if (v && dict[v]) el.setAttribute(attr, dict[v]);
-        });
-      });
-      document.documentElement.lang = languageMap[label] === "zh-CN" ? "zh" : languageMap[label];
-    };
-    if (window.KITURAMI_I18N) return run();
-    const script = document.createElement("script");
-    script.src = SCRIPT_BASE + "site-i18n.js";
-    script.onload = run;
-    document.head.appendChild(script);
   }
 
   function readGoogleCookie() {
